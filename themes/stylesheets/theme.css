@@ -12,7 +12,7 @@ body {
 }
 
 a {
-    color: #17AEEF;
+    color: #A7C917;
     text-decoration: none;
 }
 
@@ -44,43 +44,58 @@ ul {
 }
 
 .Content {
-    width: 850px;
+    width: 968px;
     margin: 0px auto;
 }
 
 #Menu {
     text-align: center;
+    background-image: url('../images/menu-background.png');
+    background-repeat: repeat-x;
 }
 
 #Menu ul {
     list-style-type: none;
+    height: 98px;
 }
 
 #Menu ul li {
     display: inline-block;
-    height: 100px !important;
-    width: 100px;
+    height: 98px !important;
+    width: 118px;
 }
 
 #Menu ul li:hover {
-    background-position: 0px 100px;
+    background-position: 0px 98px;
     cursor: crosshair;
 }
 
 #Menu ul li.active {
-    background-position: 0px 100px;
+    background-position: 0px 98px;
+}
+
+#Menu ul li.first {
+    width: 121px !important;
+}
+
+#Menu ul li.last {
+    width: 121px !important;
 }
 
 li.home {
     background-image: url('../images/menu-home.png');
 }
 
-li.formation {
-    background-image: url('../images/menu-formation.png');
-}
-
 li.experience {
     background-image: url('../images/menu-experience.png');
+}
+
+li.competences {
+    background-image: url('../images/menu-competences.png');
+}
+
+li.formation {
+    background-image: url('../images/menu-formation.png');
 }
 
 li.projets {
@@ -97,21 +112,27 @@ li.creations {
 
 li.contact {
     background-image: url('../images/menu-contact.png');
-    width: 101px !important;
 }
 
 #Header {
     background-image: url('../images/header-background.png');
-    height: 200px;
+    background-repeat: repeat-x;
+    height: 208px;
 }
 
 #Title {
     width: 100%;
     text-align: right;
+    padding: 20px 0;
 }
 
 #Page {
     background-image: url('../images/page-background.png');
+    padding: 20px 0;
+}
+
+#Page .Content {
+	width: 960px;
 }
 
 #Bottom {
@@ -120,10 +141,24 @@ li.contact {
     height: 20px;    
 }
 
+#Mention {
+    width: 850px;
+    margin: 20px auto 40px;
+    text-align: right;
+    color: #CCCCCC;
+    font-size: 8pt;
+}
+
 #Footer {
     width: 850px;
-    margin: 10px auto;
-    text-align: right;
+    margin: 20px auto 40px;
+    text-align: center;
+    color: #CCCCCC;
+    font-size: 8pt;
+}
+
+#FooterMenu {
+    text-align: center;
     color: #CCCCCC;
     font-size: 8pt;
 }
@@ -141,16 +176,29 @@ hr.Separator {
 
 #Left {
     float: left;
-    width: 420px;
+    width: 510px;
+}
+
+#Left .links {
+    border-top : 1px solid #CFCFCF;
+    border-bottom : 1px solid #CFCFCF;
+}
+
+#Left .links p {
+    text-align: center;
 }
 
 #Right {
-    width: 430px;
+    width: 402px;
     float: right;
 }
 
+#Right p {
+    padding: 9px;
+}
+
 h2 {
-    color: #17AEEF;
+    color: #A7C917;
     font-size: 14pt;
     letter-spacing: 1px;
     margin: 10px 0px;
@@ -161,95 +209,96 @@ p {
     text-align: justify;
 }
 
-.Preview {
-    float: left;
-    padding: 20px 7px;
-}
-
 /* ************************************************************************** */
-#Formation {
+
+.Picto {
     float: left;
-    width: 500px;
+    width: 290px;
+    padding-top: 9px;
 }
 
-#Formation .year {
-    float: left;
-    width: 82px;
-    margin-top: 20px;
+.Description {
+    margin-left: 290px;
+    padding-top: 9px;
 }
 
-#Formation .degree {
-    margin-left: 90px;
-    margin-top: 20px;
-}
-
-#Formation .degree h3 {
-    color: #17AEEF;
+.Description h3 {
+    color: #A7C917;
     font-size: 11pt;
+    font-weight: bold;
 }
 
-
-#Formation .degree p {
+.Description p {
     margin: 0px;
+    margin-bottom: 20px;
 }
 
-#Competences {
-    float: right;
-    width: 280px;
-}
-
-#Competences div {
-    margin: 6px 0 20px 0;
-}
-
-#Competences div p {
-    margin-top: 0;
-    margin-left: 10px;
-}
-
-#Experience .company {
-    float: left;
-    width: 100px;
-}
-
-#Experience .description {
-    margin-left: 110px;
-}
-
-#Experience .description h3 {
-    color: #17AEEF;
-    font-size: 11pt;
-}
-
-#Experience .description h4 {
+.Description h4 {
     font-size: 10pt;
     font-weight: normal;
     font-style: italic;
     margin-bottom: 6px;
 }
 
-#Experience .description p {
-    margin: 0px;
+.separate {
+    border-top: 1px solid #CCCCCC;
 }
 
-#Experience .cleaner {
-    height: 20px;
-}
-
-#Projects {
-    margin-top: 20px;
-}
-
-#Projects .project {
+.Preview {
     float: left;
-    width: 280px;
-    margin-bottom: 20px;
+    padding: 20px 18px;
 }
 
-#Projects .project p {
-    padding: 0 10px;
+
+
+#Form {
+    width: 480px;
+    margin-left: 40px;
 }
 
-.more {
-    padding: 10px;
+#Form input {
+    padding: 10px 0;
+}
+
+/* ************************************************************************** */
+
+#Contact {
+	border-right: 1px solid #CCCCCC;
+	width: 600px;
+	float: left;
+	padding-left: 29px;
+}
+
+#Contact label { 
+    width: 10em; float: left; 
+}
+
+#Contact label.error { 
+    float: none; 
+    color: red; 
+    padding-left: .5em; 
+    vertical-align: top; 
+}
+
+#Contact .submit { 
+    margin-left: 12em; 
+}
+
+#Contact em { 
+    font-weight: bold; 
+    padding-right: 1em; 
+    vertical-align: top; 
+}
+
+#Contact p.form { 
+    clear: both; 
+}
+
+#Me {
+	padding-left: 29px;
+	float: left;
+}
+
+#Send {
+	margin: 40px;
 }

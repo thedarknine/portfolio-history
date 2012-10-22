@@ -15,6 +15,7 @@
         <img src="resources/photos/photos_03.png" />
     </a>
 </div>
+<div style="clear: both;"> </div>
 
 <div class="Preview">
     <a href="http://photos.carolinenoyer.info" alt="More photos">
@@ -28,14 +29,7 @@
 </div>
 <div class="Preview">
     <a href="http://photos.carolinenoyer.info" alt="More photos">
-        <img src="resources/photos/photos_06.png" />
+      <img src="resources/photos/more-photos.png" alt="See more" />
     </a>
 </div>
-<div style="clear: both;"></div>
-
-<div class="more">
-    <img src="resources/photos/more-photos.png" alt="See more" />
-</div>
-
-
-						
+<div style="clear: both;"> </div>	

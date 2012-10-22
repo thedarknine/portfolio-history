@@ -1,9 +1,11 @@
+
 <?php
 //! @file page.class.php
-//! @author Caro Noyer - Creabox
-//! @date 2011-05-31
+//! @author Caro Noyer
+//! @date 2012-09-09
 
 require_once 'Smarty/Smarty.class.php';
+require_once 'reCaptcha/recaptchalib.php';
 
 class Page
 {
@@ -63,7 +65,12 @@ class Page
         
         // Generate menu
         if ($config['menu']) {
-            $menu = $config['menu'];
+    		foreach ($config['menu'] as $key =>$item) {
+    			if ($item['show'] == 'yes') {
+    				$menu[$key] = $item;
+    			}
+    		}
+
             $menu[$this->mRequestPage]['active'] = true;
             $this->mSmarty->assign('menu', $menu);
             $this->mSmarty->fetch($this->mSmarty->template_dir.'/menu.tpl');
@@ -105,8 +112,17 @@ class Page
         if (!file_exists($tplFile)) {
             $tplFile = $config['website']['pagedir'].'error.tpl';
         }
-        
-    	$this->mSmarty->assign('page', $tplFile);
+       
+	   $this->mSmarty->assign('page', $tplFile);
     }
+	
+	public function getRequestPage()
+	{
+		if ($this->mRequestPage !== '' && $this->mRequestPage !== null) {
+			return $this->mRequestPage;
+		}
+		
+		return null;
+	}
 }
 ?>
