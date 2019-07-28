@@ -1,6 +1,16 @@
 <?php
 
-namespace App;
+declare(strict_types=1);
+
+/**
+ * This file is part of TheDarkNine project n9/website
+ *
+ * (c) Caroline Noyer - All Rights Reserved
+ *
+ * This source file is subject to the proprietary license.
+ */
+
+namespace N9App;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
