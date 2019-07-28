@@ -1,3 +1,0 @@
-n9:
-    resource: "@N9Bundle/Resources/config/routing.yml"
-    prefix:   /
