@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Lato|Open+Sans|Raleway");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
+$font-lato: 'Lato', sans-serif !important;
+$font-josefin: 'Josefin Sans', sans-serif !important;
+$font-raleway: 'Raleway', sans-serif !important;
+
 body {
-  display: flex;
-  height: 100vh;
-  margin: 0;
-  background-color: #565656;
+    font-family: $font-lato;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background-color: #565656;
 }
 
 /*# sourceMappingURL=global.css.map */

@@ -1,10 +1,10 @@
 const Encore = require('@symfony/webpack-encore');
-// const StyleLintPlugin = require('stylelint-webpack-plugin');
-//
-// const cssFormatterFiles = [
-//     '**/*.s?(c|a)ss',
-//     '!fonts/**/*',
-// ];
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+
+const cssFormatterFiles = [
+    '**/*.s?(c|a)ss',
+    '!fonts/**/*',
+];
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -79,12 +79,12 @@ Encore
     //.enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
 
-    // .addPlugin(new StyleLintPlugin({
-    //     configFile: '.stylelintrc.js',
-    //     failOnError: false,
-    //     context: './assets/css',
-    //     files: cssFormatterFiles,
-    // }))
+    .addPlugin(new StyleLintPlugin({
+        configFile: '.stylelintrc.js',
+        failOnError: false,
+        context: './assets/css',
+        files: cssFormatterFiles,
+    }))
 ;
 
 module.exports = Encore.getWebpackConfig();
