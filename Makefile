@@ -54,7 +54,7 @@ test-functional:
 
 ## Compile assets
 assets:
-	yarn encore dev
+	node_modules/.bin/encore dev
 
 ## Reset
 reset: reset-js reset-php
