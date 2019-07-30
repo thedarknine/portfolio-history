@@ -3,7 +3,7 @@ SHELL := /bin/bash
 
 WEBPACK := yarn run webpack
 
-.PHONY: assets build build-js build-php cc cs help install it me-cry reset reset-js reset-php run test test-ci test-functional test-unit
+.PHONY: assets build build-js build-php cc cs help hot install it me-cry reset reset-js reset-php run test test-ci test-functional test-unit
 
 
 ## ------
@@ -72,6 +72,8 @@ reset-js:
 run:
 	bin/console server:run
 
+hot:
+	./node_modules/.bin/encore dev-server --hot
 
 ## ------
 
