@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * This file is part of TheDarkNine project n9/website
+ * This file is part of TheDarkNine project N9/website
  *
  * (c) Caroline Noyer - All Rights Reserved
  *
