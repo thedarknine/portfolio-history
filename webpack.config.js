@@ -63,7 +63,9 @@ Encore
 
     // enables Sass/SCSS support
     .addStyleEntry('global', './assets/css/global.scss')
-    .enableSassLoader()
+    .enableSassLoader(function(options) {
+        options.includePaths = ["./node_modules"];
+    })
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
