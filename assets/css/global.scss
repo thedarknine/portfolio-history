@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Lato|Open+Sans|Raleway");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css");
+
+@import "material-components";
 
 $font-lato: 'Lato', sans-serif !important;
 $font-josefin: 'Josefin Sans', sans-serif !important;
@@ -11,6 +14,20 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #565656;
+}
+
+h1 {
+    font-family: $font-josefin;
+    font-weight: 400;
+    font-size: 2.8em;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-family: $font-raleway;
+    font-style: normal;
 }
 
 /*# sourceMappingURL=global.css.map */
