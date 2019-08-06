@@ -1,0 +1,66 @@
+version: '3'
+
+services:
+
+  #=====================#
+  # PHP7
+  #=====================#
+  php:
+#    container_name: portfolio-php
+    build:
+      context: .docker/php
+    restart: on-failure
+    env_file:
+      - .env.local
+    ports:
+      - 9000:9000
+    user: ${LOCAL_USER}
+    volumes:
+      - .:/var/www/app
+      - .docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - .volumes/app/logs:/var/www/app/var/log
+
+  #=====================#
+  # nginx
+  #=====================#
+  web:
+#    container_name: portfolio-nginx
+    build:
+      context: .docker/nginx
+    restart: on-failure
+    ports:
+      - ${NGINX_PORT}:80
+    volumes:
+      - .:/var/www/app #:cached
+      - .docker/nginx/portfolio.conf:/etc/nginx/conf.d/site.conf
+      - .volumes/nginx/logs:/var/log/nginx/
+      - /var/www/app/vendor/ #:delegated
+    depends_on:
+      - php
+
+  #=====================#
+  # MySQL 5.6
+  #=====================#
+  db:
+    build:
+      context: .docker/mysql
+    restart: on-failure
+    ports:
+      - 3306:3306
+    volumes:
+      - .volumes/portfoliodb:/var/lib/mysql
+    depends_on:
+      - php
+    env_file:
+      - .env.local
+
+  #=====================#
+  # Adminer
+  #=====================#
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - ${ADMINER_PORT}:8080
+    depends_on:
+      - db
