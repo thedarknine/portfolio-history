@@ -2,23 +2,103 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="icon" href="http://carolinenoyer.info/favicon.ico" />
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="keywords" content="CV Product Owner,Développeur,Développeur web full-stack,PHP,Symfony">
+        <meta name="author" content="Caroline Noyer">
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index,follow">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+        <title>Caroline Noyer | {% block title %}Product Owner{% endblock %}</title>
         {% block stylesheets %}
-            {{ encore_entry_link_tags('global') }}
+            <link rel="stylesheet" href="{{ absolute_url('css/style.css') }}">
+            <link rel="stylesheet" href="{{ absolute_url('css/helpers.css') }}">
+            <link rel="stylesheet" href="{{ absolute_url('css/_hover-min.css') }}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         {% endblock %}
     </head>
-    <body>
+    <body class="blue-grey lighten-4">
+        <header class="nav-area{% if page != "home" %} sticky_navigation z-depth-1{% endif %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col m12">
+                        <div class="navbar-fixed-top">
+                            <nav class="pt-15">
+                                <div class="nav-wrapper">
+                                    <a href="/" class="brand-logo"><img src="{{ absolute_url('images/logo-nine.png') }}" alt="TheDarkNine"></a>
+                                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                        <li {% if page == "experience" %}class="active"{% endif %}><a href="/experience" class="hvr-underline-from-center">Expérience</a></li>
+                                        <li {% if page == "competences" %}class="active"{% endif %}><a href="/competences" class="hvr-underline-from-center">Compétences</a></li>
+                                        <li {% if page == "formation" %}class="active"{% endif %}><a href="/formation" class="hvr-underline-from-center">Formation</a></li>
+                                        <li {% if page == "projets" %}class="active"{% endif %}><a href="/projets" class="hvr-underline-from-center">Projets</a></li>
+                                        <li {% if page == "creations" %}class="active"{% endif %}><a href="/creations" class="hvr-underline-from-center">Créations</a></li>
+                                        <li {% if page == "photos" %}class="active"{% endif %}><a href="/photos" class="hvr-underline-from-center">Photos</a></li>
+                                        <li {% if page == "arcade" %}class="active"{% endif %}><a href="/arcade" class="hvr-underline-from-center">Arcade</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-        <div id="app">
-            {% block body %}
-            {% endblock %}
-        </div>
+        {% if page != 'home' %}
+            <div class="mt-50">&nbsp;</div>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <div class=""><h3 class="mt-40">{% block pagetitle %}{% endblock %}</h3></div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% block body %}{% endblock %}
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <p class="grey-text text-lighten-4 right-align">Site under reconstruction...</p>
+
+                        <p class="right-align">
+                            <a href="https://www.linkedin.com/in/carolinenoyer"><span><i class="fa fa-linkedin"></i></span></a>
+                            <a href="https://twitter.com/CaroNoyer"><span><i class="fa fa-twitter"></i></span></a>
+                            <a href="https://github.com/thedarknine"><span><i class="fa fa-github-alt"></i></span></a>
+                            <a href="http://docs.carolinenoyer.info/pdf/cv-cnoyer-productowner.pdf"><span><i class="fa fa-file-pdf"></i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <b>©Nine Copyright</b> 2006-2021
+                </div>
+            </div>
+        </footer>
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            <!-- Compiled and minified JavaScript -->
+            <script src="https://kit.fontawesome.com/4266107922.js" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script src="{{ absolute_url('js/jquery.js') }}"></script>
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-35928055-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-35928055-1');
+            </script>
         {% endblock %}
     </body>
 </html>

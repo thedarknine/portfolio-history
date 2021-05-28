@@ -1,84 +1,42 @@
 .DEFAULT_GOAL := help
 SHELL := /bin/bash
 
-WEBPACK := yarn run webpack
-
-.PHONY: assets build build-js build-php cc cs help hot install it me-cry reset reset-js reset-php run test test-ci test-functional test-unit
-
-
-## ------
-
-## Initialize application
-install: build
-
-## Build project to install dependencies and compile assets
-build: build-php build-js cc
-
-## Build composer dependencies
-build-php:
-	composer validate
-	composer install
-
-## Build webpack
-build-js:
-	yarn install
-
-## Run build, cs-fixer & tests
-it: build cs test
-
-## Alias for it ;)
-me-cry: it
-
-## Clear cache
-cc:
-	(php bin/console ca:cl) || exit 0;
+.PHONY: *
 
 ## Run php cs-fixer
 cs:
-	vendor/bin/php-cs-fixer fix --config=.php_cs --diff --verbose
+	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --verbose
 
-## Run application tests
-test:
-	vendor/bin/phpunit
 
-## Run Continuous Integration tests
-test-ci: test-unit
+## DOCKER ================================================================
+IMAGE_NAME?=portfolio
+IMAGE_TAG?=latest
 
-## Run Unit tests
-test-unit:
-	vendor/bin/phpunit --testsuite unit
+## Run Docker images
+docker-run:
+	docker-compose up -d
 
-## Run Functional tests
-test-functional:
-	vendor/bin/phpunit --testsuite functional
+## Stop Docker images
+docker-stop:
+	docker-compose down --remove-orphans
 
-## Compile assets
-assets:
-	node_modules/.bin/encore dev
+## Attach to main Docker image
+docker-php:
+	docker exec -it portfolio_php-fpm_1 bash
 
-## Reset
-reset: reset-js reset-php
+## Remove all Docker containers
+docker-remove-all-containers:
+	docker rm $(docker ps -a -q)
 
-reset-php:
-	rm -f var/bootstrap.php.cache
-	rm -rf vendor var/cache/*
-
-reset-js:
-	rm -rf node_modules
-	yarn cache clean
-	yarn install --force
-
-## Run server
-run:
-	bin/console server:run
-
-hot:
-	./node_modules/.bin/encore dev-server --hot
+## Remove all Docker images
+docker-remove-all-images:
+	docker rmi $(docker images -q) -f
 
 ## ------
 
 # APPLICATION
-APPLICATION := $(shell (cat package.json 2>/dev/null || cat composer.json) | grep "\"name\"" | head -1 | cut -d\" -f 4 )
+# APPLICATION := $(shell (cat package.json 2>/dev/null || cat composer.json) | grep "\"name\"" | head -1 | cut -d\" -f 4 )
+APPLICATION := Portfolio
 
 # COLORS
 GREEN  := $(shell tput -Txterm setaf 2)
@@ -89,7 +47,7 @@ RESET  := $(shell tput -Txterm sgr0)
 TARGET_MAX_CHAR_NUM=20
 ## Show this help
 help:
-	@echo '# ${YELLOW}${APPLICATION}${RESET} / ${GREEN}${ENV}${RESET}'
+	@echo '# ${YELLOW}${APPLICATION}${RESET}'
 	@echo ''
 	@echo 'Usage:'
 	@echo '  ${YELLOW}make${RESET} ${GREEN}<target>${RESET}'
@@ -105,4 +63,3 @@ help:
 		} \
 	} \
 	{ lastLine = $$0 }' $(MAKEFILE_LIST) | sort
-

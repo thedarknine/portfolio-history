@@ -1,0 +1,45 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Projets{% endblock%}
+{% block pagetitle %}Projets réalisés{% endblock%}
+
+{% block body %}
+    <section class="pb-20">
+        <div class="container pl-10">
+            {% for project in data.listProjects %}
+            <div class="nine-card mt-20 pt-20 pb-20">
+                <div class="right">
+                    <img src="{{ absolute_url('images/project/' ~ project.label ~ '.png') }}" alt="{{project.name}}" width="60px" class="">
+                </div>
+                <h5 class="text-12 text-nine-blue mb-0 pb-0">{{ project.title }}</h5>
+                <p class="mt-0 pt-0">{{project.period}}</p>
+
+                <div class="resume pb-10">
+                    {{project.description|raw}}
+
+                    {% if project.file is not empty %}
+                        <p class="center-align pt-20"><a class="btn btn-flat btn-nine waves-effect waves-light hvr-grow-shadow" href="http://docs.carolinenoyer.info/pdf/{{project.file}}" title="Rapport de stage"><i class="material-icons left">attach_file</i> Rapport de stage</a></p>
+                    {% endif %}
+                </div>
+
+                {% if project.screenshot is not empty %}
+                    {% if project.screenshot is iterable %}
+                        <div class="row pt-20 pb-20">
+                            {% for screenshot in project.screenshot %}
+                                <div class="col s12 m4 l4 center-align">
+                                    <img class="z-depth-2 screenshot" src="{{ absolute_url('images/project/' ~ screenshot) }}">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="center-align pt-20 pb-20">
+                            <img class="z-depth-2 screenshot" src="{{ absolute_url('images/project/' ~ project.screenshot) }}">
+                        </div>
+                    {% endif %}
+
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

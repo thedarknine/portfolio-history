@@ -1,0 +1,246 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Nine Arcade Adventure{% endblock%}
+{% block pagetitle %}Nine Arcade Adventure{% endblock%}
+
+{% block body %}
+    <section class="odd">
+        <div class="container row mt-10">
+            <div class="col s12">
+                <div class="justify-align mb-10">
+                    Tout est parti d’un magazine qui trainait sur une table au boulot, et hop pourquoi pas nous lancer dans la réalisation d’une borne. Ah oui ! Mais d’en avoir une à la maison ce serait encore mieux.
+                </div>
+                <div class="justify-align">
+                    Pour mon arcade perso, j’étais d’abord partie sur l’idée d’acheter un kit bartop prêt à monter. Cependant ceux de base, permettant de recevoir un écran jusqu’à 19", me paraissent insuffisamment larges pour jouer à deux. Quant aux versions XXL, les différents tarifs sont rédhibitoires.  Je pèse le pour et le contre, j’évalue les budgets selon les modèles et le matériel que j’aimerais intégrer. Puis se rappellent à moi mes années de bricolage, et quoi de plus challengeant que de faire tout moi-même ! Le défi est lancé.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="even">
+        <div class="container row mt-10">
+            <div class="col s12">
+                <h4 class="ma0">This is it!</h4>
+            </div>
+            {% set listItemsArcade = data.listArcade['final'] %}
+            {% for arcade in listItemsArcade %}
+                <div class="col s6 m4 l3 xl3 center-align mb-20">
+                    <div>
+                        <div><img src="{{ absolute_url('images/arcade/final/' ~ arcade) }}" alt="" class="z-depth-1 responsive-img bordered"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="odd">
+        <div class="container row mt-10">
+            <div class="col s12">
+                <h4 class="ma0">Step#1: les plans.</h4>
+                <div class="justify-align mb-20">
+                    Je regarde ce qu’il se fait... Les plans pour bartop n’envahissent pas le web, et ne correspondent pas entièrement à ce que j’ai en tête. Ok, alors allons-y pour un plan personnalisé. Je suis partie des plans mis à dispo par <a href="http://forum.hfsplay.fr/plans-prets-emploi/bartop-frankeez-version-t8468.html" alt="Frankeezz" target="_blank">Frankeezz</a>. Je souhaite limiter au max la hauteur du control panel, tout en y insérant un tiroir pour un clavier.
+                </div>
+            </div>
+
+            {% set listItemsArcade = data.listArcade['at-the-beginning'] %}
+            {% for arcade in listItemsArcade %}
+                <div class="col s6 m4 l3 xl3 center-align mb-20">
+                    <div class="">
+                        <div><img src="{{ absolute_url('images/arcade/at-the-beginning/' ~ arcade) }}" alt="" class="z-depth-1 responsive-img bordered"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="even">
+        <div class="container row mt-10">
+            <div class="col s12">
+                <h4 class="ma0">Step#2 : la découpe.</h4>
+                <div class="justify-align mb-20">
+                    L'étape la plus importante, et aussi la plus délicate quand on est perfectionniste.
+                </div>
+            </div>
+
+            <div class="col s12">
+                <h5 class="text-md text-nine-blue">Side Panels</h5>
+            </div>
+            {% set listItemsArcade = data.listArcade['side-panels'] %}
+            {% for arcade in listItemsArcade %}
+                <div class="col s6 m4 l3 xl3 center-align mb-20">
+                    <div class="">
+                        <div><img src="{{ absolute_url('images/arcade/side-panels/' ~ arcade) }}" alt="" class="z-depth-1 responsive-img bordered"></div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="col s12">
+                <h5 class="text-md text-nine-blue">Control Panel</h5>
+            </div>
+            {% set listItemsArcade = data.listArcade['control-panel'] %}
+            {% for arcade in listItemsArcade %}
+                <div class="col s6 m4 l3 xl3 center-align mb-20">
+                    <div class="">
+                        <div><img src="{{ absolute_url('images/arcade/control-panel/' ~ arcade) }}" alt="" class="z-depth-1 responsive-img bordered"></div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="col s12">
+                <h5 class="text-md text-nine-blue">Upper Part</h5>
+            </div>
+            {% set listItemsArcade = data.listArcade['upper-part'] %}
+            {% for arcade in listItemsArcade %}
+                <div class="col s6 m4 l3 xl3 center-align mb-20">
+                    <div class="">
+                        <div><img src="{{ absolute_url('images/arcade/upper-part/' ~ arcade) }}" alt="" class="z-depth-1 responsive-img bordered"></div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="col s12">
+                <h5 class="text-md text-nine-blue">Back Side</h5>
+            </div>
+            {% set listItemsArcade = data.listArcade['back-side'] %}
+            {% for arcade in listItemsArcade %}
+                <div class="col s6 m4 l3 xl3 center-align mb-20">
+                    <div class="">
+                        <div><img src="{{ absolute_url('images/arcade/back-side/' ~ arcade) }}" alt="" class="z-depth-1 responsive-img bordered"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="odd">
+        <div class="container row mt-10">
+            <div class="col s12">
+                <h4 class="ma0">Step#3 : l’assemblage.</h4>
+                <div class="justify-align mt-10 mb-10">
+                    Les différentes pièces se finalisent petit à petit, on monte et on redémonte histoire de contrôler que tout est ok. Au passage un petit coup de peinture. Ca se précise !
+                </div>
+            </div>
+            {% set listItemsArcade = data.listArcade['assemblage'] %}
+            {% for arcade in listItemsArcade %}
+                <div class="col s6 m4 l3 xl3 center-align mb-20">
+                    <div class="">
+                        <div><img src="{{ absolute_url('images/arcade/assemblage/' ~ arcade) }}" alt="" class="z-depth-1 responsive-img bordered"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="even">
+        <div class="container row mt-10">
+            <div class="col s12">
+                <h4 class="ma0">Step#4 : le design.</h4>
+                <div class="justify-align mt-10 mb-10">
+                    Retour en enfance, ma première console a été la NES. Ayant grandi entre les héros de Super Mario et Super Mario Kart, l’évidence a été de baser ma déco sur ce thème avec des design assez modernes malgré tout.
+                </div>
+            </div>
+            {% set listItemsArcade = data.listArcade['design'] %}
+            {% for arcade in listItemsArcade %}
+                <div class="col s6 m4 l3 xl3 center-align mb-20">
+                    <div class="">
+                        <div><img src="{{ absolute_url('images/arcade/design/' ~ arcade) }}" alt="" class="z-depth-1 responsive-img bordered"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="odd">
+        <div class="container row mt-10">
+            <div class="col s12">
+                <h4 class="ma0">Step#5 : l’émulateur.</h4>
+                <div class="justify-align mt-10 mb-10">
+                    Sur ce point j’ai surtout suivi les conseils de mes collègues. Un petit <a href="https://www.recalbox.com" alt="RecalBox" target="_blank">RecalBox</a> viendra s’installer dans ma borne.
+                </div>
+            </div>
+            {% set listItemsArcade = data.listArcade['recalbox'] %}
+            {% for arcade in listItemsArcade %}
+                <div class="col s6 m4 l3 xl3 center-align mb-20">
+                    <div class="">
+                        <div><img src="{{ absolute_url('images/arcade/recalbox/' ~ arcade) }}" alt="" class="z-depth-1 responsive-img bordered"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="even">
+        <div class="container row mt-10">
+            <div class="col s12">
+                <h4 class="ma0">Conception.</h4>
+            </div>
+
+            <div class="col s12 m6">
+                <h5 class="text-md text-nine-blue">Matériel pour la borne</h5>
+                <div class="justify-align mt-10 mb-10 ml-20">
+                    <ul>
+                        <li>&bull; Panneaux de bois en 16mm (voire 18)</li>
+                        <li>&bull; Plaque de Plexiglass</li>
+                        <li>&bull; Chanières universelles plates</li>
+                        <li>&bull; Coulisses à tiroir</li>
+                        <li>&bull; Quincaillerie (vis, équerres, tourillons, aimants...)</li>
+                        <li>&bull; Pieds</li>
+                        <li>&bull; T-modling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <h5 class="text-md text-nine-blue">Composants</h5>
+                <div class="justify-align mt-10 mb-10 ml-20">
+                    <ul>
+                        <li>&bull; Kit Joystick et boutons lumineux Zippy</li>
+                        <li>&bull; Raspberry Pi3B + carte SD 64Go</li>
+                        <li>&bull; Ecran 24"</li>
+                        <li>&bull; Ampli</li>
+                        <li>&bull; Hauts-parleurs 4" 2x20W</li>
+                        <li>&bull; Ruban à LED</li>
+                        <li>&bull; Module alimentation</li>
+                        <li>&bull; Multi-prise</li>
+                        <li>&bull; Rallonge 2 ports USB</li>
+                        <li>&bull; Ventilateur 120</li>
+                        <li>&bull; Grille pour ventilateur</li>
+                        <li>&bull; Câble HDMI</li>
+                        <li>&bull; Câble d'alimentation</li>
+                    </ul>
+                </div>
+            </div>
+            {% set listItemsArcade = data.listArcade['composants'] %}
+            {% for arcade in listItemsArcade %}
+                <div class="col s6 m4 l3 xl3 center-align mb-20">
+                    <div class="">
+                        <div><img src="{{ absolute_url('images/arcade/composants/' ~ arcade) }}" alt="" class="z-depth-1 responsive-img bordered"></div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="col s12">
+                <h5 class="text-md text-nine-blue">Outillage</h5>
+            </div>
+            <div class="col s12">
+                <div class="justify-align mt-10 mb-10 ml-20">
+                    Mes (nouveaux) jouets pour la réalisation :
+                    <ul>
+                        <li>&bull; Défonceuse : fraise droite, fraise à copier, fraise à chanfreiner</li>
+                        <li>&bull; Scie circulaire (ou scie sauteuse)</li>
+                        <li>&bull; Perceuse : mèches plates de 24 et 28 pour les boutons, scie cloche, forêts</li>
+                        <li>&bull; Multi-outils, ponceuse, visseuse, ...</li>
+                    </ul>
+                </div>
+            </div>
+            {% set listItemsArcade = data.listArcade['materiel'] %}
+            {% for arcade in listItemsArcade %}
+                <div class="col s6 m4 l3 xl3 center-align mb-20">
+                    <div class="">
+                        <div><img src="{{ absolute_url('images/arcade/materiel/' ~ arcade) }}" alt="" class="z-depth-1 responsive-img bordered"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

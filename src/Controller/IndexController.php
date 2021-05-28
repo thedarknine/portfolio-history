@@ -1,35 +1,25 @@
 <?php
 
-declare(strict_types=1);
-
 /**
- * This file is part of TheDarkNine project N9/website
+ * This file is part of Portfolio project.
+ * (c) Caroline Noyer <hello@carolinenoyer.info>
  *
- * (c) Caroline Noyer - All Rights Reserved
- *
- * This source file is subject to the proprietary license.
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
-namespace N9App\Controller;
+namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * Class IndexController.
- *
- * @author cnoyer
- *
- * @version 1.0.0
- */
 class IndexController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="homepage")
      */
-    public function index(): Response
+    public function index()
     {
-        return $this->render('index.html.twig', ['plop']);
+        return $this->render('homepage.html.twig', ['page' => 'home']);
     }
 }

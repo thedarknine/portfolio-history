@@ -1,4 +1,6 @@
-# N9website2019
-My porfolio online.
+# Portfolio
+Caroline personal website
 
-**Using SF4 and Vue.js**
+## Utilisation
+* Connexion à l'image Docker
+* Lancer ``symfony server:start`` 

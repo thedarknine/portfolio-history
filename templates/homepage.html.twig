@@ -1,0 +1,75 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Product Owner{% endblock%}
+
+{% block body %}
+    <div id="home" class="banner cus-border">
+        <div class="banner-table">
+            <div class="banner-table-cell">
+                <div class="welcome-text">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="banner-text">
+                                    <h1>Caroline Noyer</h1>
+                                    <h2 class="text-affect"></h2><span class="typed-cursor"></span>
+                                    <p>
+                                        <a href="https://www.linkedin.com/in/carolinenoyer"><span><i class="fa fa-linkedin"></i></span></a>
+                                        <a href="https://twitter.com/CaroNoyer"><span><i class="fa fa-twitter"></i></span></a>
+                                        <a href="https://github.com/thedarknine"><span><i class="fa fa-github-alt"></i></span></a>
+                                        <a href="http://docs.carolinenoyer.info/pdf/cv-cnoyer-productowner.pdf"><span><i class="fa fa-file-pdf"></i></span></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class=""><h4 class="mt-30">A propos</h4></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="">
+        <div class="container row mt1 animated zoomInRight">
+            <div class="col s12 m3 l3 mt2">
+                <div>
+                    <img src="{{ absolute_url('images/cnoyer.jpg') }}" alt="Caroline Noyer • Product Owner & Développeur web senior" class="circle responsive-img z-depth-3">
+                </div>
+            </div>
+            <div class="col s12 m9 l9 mt-10">
+                <div class="justify-align mt-20 mb-10">Passionnée par cet environnement, j’ai enrichi au cours des divers
+                    projets que j'ai menés, mon expertise technique tout en élargissant mon éventail de compétences.
+                    Ceci me permet aujourd'hui de disposer de solides bases autant en <strong>Front-end</strong>
+                    qu'en <strong>Back-end</strong>.</div>
+
+                <div class="justify-align mb-10">Cet univers en constante évolution m'incite à découvrir et maîtriser
+                    régulièrement de nouvelles technologies. Dans le souci de produire des <strong>applications fiables
+                        et de qualité</strong>, j’attache une importance à respecter les standards et les normes
+                    actuelles. <strong>Rigoureuse</strong>, il me semble essentiel de présenter les outils les plus adaptés.</div>
+
+                <div class="justify-align mb-10"><strong>Force de proposition et organisée</strong>, mon expérience dans
+                    les différentes équipes a développé ma capacité de communication ainsi que mon aptitude à analyser
+                    tant les besoins utilisateurs que les spécificités du domaine d’application. Mon parcours
+                    professionnel a affiné ma sensibilité visuelle que ce soit au niveau de l’aspect graphique ou
+                    de <strong>l’expérience utilisateur</strong>.</div>
+
+                <div class="justify-align mb-10"><strong>Dynamique et motivée</strong> par l’envie d’évoluer, je prends
+                    plaisir à relever de nouveaux challenges me permettant de m'épanouir et ainsi de mettre en avant
+                    et de consolider mes connaissances.</div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ absolute_url('js/typed.js') }}"></script>
+    <script src="{{ absolute_url('js/nine.js') }}"></script>
+{% endblock %}

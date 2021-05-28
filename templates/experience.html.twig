@@ -1,0 +1,77 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Expérience{% endblock%}
+{% block pagetitle %}Expériences professionnelles{% endblock%}
+
+{% block body %}
+    <section class="timeline pb-20">
+        <div class="container pl-10">
+            {% for experience in data.listExperiences %}
+
+            <div class="timeline-item {{experience.company.label}}" id="{{experience.company.label}}">
+                <!--div class="date">
+                    {% if experience.endDate is empty %}
+                        Depuis {{experience.startDate|date("F Y")}}
+                    {% else %}
+                        De {{experience.startDate|date("F Y")}} à {{experience.endDate|date("F Y")}}
+                    {% endif %}
+                </div-->
+                <div class="timeline-content timeline-card">
+                    <div class="right">
+                        <img src="{{ absolute_url('images/company/' ~ experience.company.label ~ '.png') }}" alt="{{experience.company.name}}" width="60px" class="mt-10">
+                    </div>
+                    <h5 class="left-align valign-wrapper text-md text-nine-blue mb-0 pb-0"><span class="text-nine-indigo pr-15">{{experience.startDate|date("Y")}}</span> {{experience.title}}</h5>
+                    <p class="mt-0 pt-0 mb-0">
+                        {% if experience.company.url is not empty %}
+                            <a href="{{experience.company.url}}" class="company_url" target="_blank">{{experience.company.name}}</a>
+                        {% else %}
+                            {{experience.company.name}}
+                        {% endif %}
+                        - <span class="text-09">{{experience.company.city}} ({{experience.company.department}})</span>
+                    </p>
+                    <p class="mt-0 pt-0">
+                        <span class="date"><i class="far fa-calendar-alt"></i>&nbsp;
+                            {% if experience.endDate is empty %}
+                                Depuis {{experience.startDate|date("m/Y")}}
+                            {% else %}
+                                De {{experience.startDate|date("m/Y")}} à {{experience.endDate|date("m/Y")}}
+                            {% endif %}
+                            <i class="text-09">(
+                            {% if experience.duration.nbYears > 0 %}
+                                {{ experience.duration.nbYears }}
+                                {% if experience.duration.nbYears == 1 %}
+                                    an
+                                {% else %}
+                                    ans
+                                {% endif %}
+                            {% endif %}
+                            {%  if experience.duration.nbMonths != 0  %}
+                                {%  if experience.duration.nbYears > 0  %}
+                                    et
+                                {% endif %}
+                                {{ experience.duration.nbMonths }} mois
+                            {% endif %}
+                            )</i>
+                        </span>
+                    </p>
+                    <p class="mt-0 mb-0"><strong class="text-12 text-nine-indigo">{{experience.subtitle}}</strong></p>
+
+                    <div class="">
+                        {{experience.description|raw}}
+
+                        {% if experience.skills is not empty %}
+                            <p><b class="">Stack technique</b></p>
+                            <div class="ml-20 mb-10">
+                                {% for skill in experience.skills %}
+                                    <img src="{{ absolute_url('images/skills/' ~ skill.label ~ '.png') }}" alt="{{skill.title}}" width="40px" class="mr-10">
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

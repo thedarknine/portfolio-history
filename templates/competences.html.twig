@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Compétences{% endblock%}
+{% block pagetitle %}Compétences{% endblock%}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {% for type in data.listSkillTypes %}
+            <div class="col s12 m6 mb-20">
+                <div class="nine-card">
+                    <h5 class="left-align valign-wrapper text-md text-nine-blue mb-0 pb-20"><i class="{{type.icon}} text-nine-indigo pr-10"></i> {{type.name}}</h5>
+
+                    <div class="row">
+                    {% set skills = data.listSkills[type.label] %}
+                    {% for skill in skills %}
+                        <div class="col s12 m6 mb-10">
+                        <b class="pr-5">{{skill.title|raw}}</b>
+                        <span class="text-09 blue-grey-text text-lighten-2">
+                            ({% if skill.duration is not empty %}
+                                XP  {{skill.duration}}
+                            {% else %}
+                                <em>En cours...</em>
+                            {% endif %})
+                        </span>
+                        </div>
+                    {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
