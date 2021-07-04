@@ -5,32 +5,20 @@
 
 {% block body %}
     <section class="timeline pb-20">
-        <div class="container pl-10">
-            {% for experience in data.listExperiences %}
 
-            <div class="timeline-item {{experience.company.label}}" id="{{experience.company.label}}">
-                <!--div class="date">
-                    {% if experience.endDate is empty %}
-                        Depuis {{experience.startDate|date("F Y")}}
-                    {% else %}
-                        De {{experience.startDate|date("F Y")}} à {{experience.endDate|date("F Y")}}
-                    {% endif %}
-                </div-->
-                <div class="timeline-content timeline-card">
-                    <div class="right">
-                        <img src="{{ absolute_url('images/company/' ~ experience.company.label ~ '.png') }}" alt="{{experience.company.name}}" width="60px" class="mt-10">
+        <div class="container pl-10">
+            <!-- Timeline -->
+            <ul class="timeline">
+                {% for experience in data.listExperiences %}
+                <li class="timeline-item bg-white rounded ml-30 p-4 shadow {{experience.company.label}} wow fadeInRight" id="" >
+                    <div class="timeline-arrow"></div>
+                    <div class="">
+                        <img src="{{ absolute_url('images/company/' ~ experience.company.label ~ '.png') }}" alt="{{experience.company.name}}" width="60px" class="float-end mt-10">
                     </div>
-                    <h5 class="left-align valign-wrapper text-md text-nine-blue mb-0 pb-0"><span class="text-nine-indigo pr-15">{{experience.startDate|date("Y")}}</span> {{experience.title}}</h5>
-                    <p class="mt-0 pt-0 mb-0">
-                        {% if experience.company.url is not empty %}
-                            <a href="{{experience.company.url}}" class="company_url" target="_blank">{{experience.company.name}}</a>
-                        {% else %}
-                            {{experience.company.name}}
-                        {% endif %}
-                        - <span class="text-09">{{experience.company.city}} ({{experience.company.department}})</span>
-                    </p>
-                    <p class="mt-0 pt-0">
-                        <span class="date"><i class="far fa-calendar-alt"></i>&nbsp;
+                    <h5 class="h5 text-nine-blue mb-10"><span class="text-nine-indigo pr-15">{{experience.startDate|date("Y")}}</span> {{experience.title}}</h5>
+
+                    <div class="xp-info ml-20">
+                        <span class="date"><i class="far fa-calendar-alt mr-5"></i>&nbsp;
                             {% if experience.endDate is empty %}
                                 Depuis {{experience.startDate|date("m/Y")}}
                             {% else %}
@@ -45,33 +33,38 @@
                                     ans
                                 {% endif %}
                             {% endif %}
-                            {%  if experience.duration.nbMonths != 0  %}
-                                {%  if experience.duration.nbYears > 0  %}
-                                    et
+                                {%  if experience.duration.nbMonths != 0  %}
+                                    {%  if experience.duration.nbYears > 0  %}
+                                        et
+                                    {% endif %}
+                                    {{ experience.duration.nbMonths }} mois
                                 {% endif %}
-                                {{ experience.duration.nbMonths }} mois
-                            {% endif %}
                             )</i>
                         </span>
-                    </p>
-                    <p class="mt-0 mb-0"><strong class="text-12 text-nine-indigo">{{experience.subtitle}}</strong></p>
+                        <span class="text-muted ml-20"><i class="fas fa-map-marker-alt mr-5"></i> {{experience.company.name}}
+                            - <span class="text-09">{{experience.company.city}} ({{experience.company.department}})</span>
+                        </span>
+                    </div>
+                    <p class="mt-20 mb-10"><strong class="text-12 text-nine-indigo">{{experience.subtitle}}</strong></p>
 
                     <div class="">
                         {{experience.description|raw}}
 
                         {% if experience.skills is not empty %}
-                            <p><b class="">Stack technique</b></p>
+                            <p class="mt-30"><b class="">Stack technique</b></p>
                             <div class="ml-20 mb-10">
                                 {% for skill in experience.skills %}
+                                    {% if skill.disable == 0 %}
                                     <img src="{{ absolute_url('images/skills/' ~ skill.label ~ '.png') }}" alt="{{skill.title}}" width="40px" class="mr-10">
+                                    {% endif %}
                                 {% endfor %}
                             </div>
                         {% endif %}
                     </div>
-                </div>
-            </div>
+                </li>
+                {% endfor %}
+            </ul><!-- End -->
 
-            {% endfor %}
         </div>
     </section>
 {% endblock %}

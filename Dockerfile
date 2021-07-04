@@ -1,7 +1,7 @@
 FROM php:7.3-fpm-alpine
 
 # Apk install
-RUN apk --no-cache update && apk --no-cache add bash git
+RUN apk --no-cache update && apk --no-cache add bash git yarn make
 
 # Install pdo
 RUN docker-php-ext-install pdo_mysql

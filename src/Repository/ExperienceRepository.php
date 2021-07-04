@@ -19,7 +19,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ExperienceRepository extends ServiceEntityRepository
 {
-    /**
+    /**timeline-badge
      * ExperienceRepository constructor.
      */
     public function __construct(ManagerRegistry $registry)
@@ -27,7 +27,7 @@ class ExperienceRepository extends ServiceEntityRepository
         parent::__construct($registry, Experience::class);
     }
 
-    public function getExperiencesWithCompany(): array
+    public function getExperiencesWithCompany($limit = null): array
     {
         $qb = $this->createQueryBuilder('exp');
 
@@ -36,6 +36,10 @@ class ExperienceRepository extends ServiceEntityRepository
             ->innerJoin('exp.company', 'comp')
             ->addSelect('comp')
             ->orderBy('exp.startDate', 'DESC');
+
+        if ($limit) {
+            $qb->setMaxResults(3);
+        }
 
         return $qb
             ->getQuery()

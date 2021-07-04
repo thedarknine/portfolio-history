@@ -7,6 +7,13 @@ SHELL := /bin/bash
 cs:
 	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --verbose
 
+## Run php server
+run-php:
+	symfony serve
+
+## Webpack dev
+run-dev:
+	yarn encore dev --watch
 
 ## DOCKER ================================================================
 IMAGE_NAME?=portfolio

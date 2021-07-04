@@ -7,7 +7,7 @@
     {% for type in data.listCreationTypes %}
     <section class="timeline {% if loop.first %}pt-0{% endif %} {% if loop.index is odd %}odd{% else %}even{% endif %}">
         <div class="container">
-            <h5 class="center-align text-lg text-nine-blue mb-20 pl-10 pb-20">{{type.name}}</h5>
+            <h5 class="center-align text-lg text-nine-blue mb-50 mt-20 pb-20">{{type.name}}</h5>
 
             <div class="row">
                 {% set listItemsCreations = data.listCreations[type.label] %}
