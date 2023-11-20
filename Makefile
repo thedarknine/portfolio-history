@@ -3,6 +3,10 @@ SHELL := /bin/bash
 
 .PHONY: *
 
+## Clear cache
+cc:
+	symfony console cache:clear
+
 ## Run php cs-fixer
 cs:
 	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --verbose
