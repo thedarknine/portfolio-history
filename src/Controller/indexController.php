@@ -10,6 +10,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ExperienceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,8 +24,9 @@ class indexController extends AbstractController
     }
 
     #[Route('/', name: 'homepage')]
-    public function index(): Response
+    public function index(ExperienceRepository $experienceRepository): Response
     {
+        $data = ['nbYearsExperience' => (new \DateTime('2006-10-01'))->diff(new \DateTime('now'))->y];
         $finder = new Finder();
         $finder->in($this->getImagesDir().'creations')->depth('<2')->name('*.JPG');
 
@@ -35,6 +37,8 @@ class indexController extends AbstractController
         shuffle($creationsList);
         $data['creationsList'] = array_slice($creationsList, 0, 12);
 
-        return $this->render('layout.html.twig', ['page' => 'home', 'data' => $data]);
+        $data['lastExperiences'] = $experienceRepository->getExperiencesWithCompany(3);
+
+        return $this->render('homepage.html.twig', ['page' => 'home', 'data' => $data]);
     }
 }

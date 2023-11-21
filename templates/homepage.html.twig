@@ -1,0 +1,172 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Product Owner{% endblock %}
+
+{% block body %}
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mt-20" data-aos="fade-right" data-aos-duration="3000">
+                    <div class="text-center">
+                        <img src="{{ absolute_url('images/cnoyer.jpg') }}" alt="Caroline Noyer • Product Owner & Développeur web senior" class="img-fluid shadow-lg rounded-circle w-75">
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 mt-20" data-aos="fade-left" data-aos-duration="3000">
+                    <h3>Passionnée par l'univers du web depuis 2005</h3>
+                    <div class="mt-20 mb-10">Au cours des divers projets que j'ai menés, j’ai enrichi mon expertise
+                        technique tout en élargissant mon éventail de compétences. Ceci me permet aujourd'hui de
+                        disposer de <strong>solides bases</strong> autant en Front-end qu'en Back-end. C’est ainsi
+                        que j’ai rejoint l’équipe R&D de Coffreo en 2017 en qualité de <strong>développeur PHP
+                            senior</strong>.</div>
+
+                    <div class="mb-10"><strong>Empathique</strong>, je m’intègre aisément au sein d’un groupe. La
+                        valeur du <strong>collectif</strong> et l’<strong>esprit d’équipe</strong> sont primordiaux,
+                        lorsque je suis en confiance, c’est avec plaisir que je fais en sorte de renforcer la
+                        <strong>cohésion</strong> et pourquoi pas avec quelques touches d’humour !</div>
+
+                    <div class="mb-10">Ayant une appétence pour la coordination et la gestion de projets, j’ai évolué
+                        fin 2019 sur un poste de <strong>Product Owner</strong>, me permettant d’allier mes
+                        connaissances techniques, mon envie de dynamiser une équipe et d’élaborer une vision Produit.</div>
+
+                    <div class="mb-10">Mon parcours professionnel a affiné ma sensibilité visuelle que ce soit au
+                        niveau de l’aspect graphique ou de l’<strong>expérience utilisateur</strong>.
+                        <strong>Motivée</strong> par l’envie de me dépasser, voire même de me surprendre, j’ai voulu
+                        donner un sens à ce que je faisais et j’ai alors suivi une formation de <strong>Product
+                            Designer</strong> pour mettre mes compétences au service des utilisateurs.</div>
+
+                    <div class="mb-10"><strong>Curieuse</strong> de nature, je m’intéresse à des sujets variés et
+                        aime apprendre de nouvelles choses, notamment dans le domaine de l’<strong>amélioration de
+                            soi</strong> et de la qualité de vie. Apprendre des autres mais également apprendre de soi :
+                        c’est un vrai défi qui demande de l’<strong>ouverture d’esprit</strong>.</div>
+
+                    <div class="mb-10"><strong>Dynamique et motivée</strong> par l’envie d’évoluer, je prends plaisir
+                        à relever de nouveaux challenges me permettant de m’épanouir.</div>
+
+                    {# <div class="mt-20 mb-10">J’ai enrichi au cours des divers
+                        projets que j'ai menés, mon expertise technique tout en élargissant mon éventail de compétences.
+                        Ceci me permet aujourd'hui de disposer de solides bases autant en <strong>Front-end</strong>
+                        qu'en <strong>Back-end</strong>.</div>
+
+                    <div class="mb-10">Cet univers en constante évolution m'incite à découvrir et maîtriser
+                        régulièrement de nouvelles technologies. Dans le souci de produire des <strong>applications fiables
+                            et de qualité</strong>, j’attache une importance à respecter les standards et les normes
+                        actuelles. <strong>Rigoureuse</strong>, il me semble essentiel de présenter les outils les plus adaptés.</div>
+
+                    <div class="mb-10"><strong>Force de proposition et organisée</strong>, mon expérience dans
+                        les différentes équipes a développé ma capacité de communication ainsi que mon aptitude à analyser
+                        tant les besoins utilisateurs que les spécificités du domaine d’application. Mon parcours
+                        professionnel a affiné ma sensibilité visuelle que ce soit au niveau de l’aspect graphique ou
+                        de <strong>l’expérience utilisateur</strong>.</div>
+
+                    <div class="mb-10"><strong>Dynamique et motivée</strong> par l’envie d’évoluer, je prends
+                        plaisir à relever de nouveaux challenges me permettant de m'épanouir et ainsi de mettre en avant
+                        et de consolider mes connaissances.</div>
+                    #}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dark section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                    <strong><i class="fas fa-seedling"></i></strong>
+                    <p class="text-md">{{ data.nbYearsExperience }} ans d'expérience</p>
+                </div>
+                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
+                    <strong><i class="fas fa-code"></i></strong>
+                    <p class="text-md">Développement</p>
+                </div>
+                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="900">
+                    <strong><i class="fas fa-pencil-ruler"></i></strong>
+                    <p class="text-md">Web design</p>
+                </div>
+                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1300">
+                    <strong><i class="fas fa-tasks"></i></strong>
+                    <p class="text-md">Agile/Scrum</p>
+                </div>
+            </div>
+        </div>
+        <div class="waves">
+            <svg width="100%" height="200px" fill="none">
+                <path
+                        fill="#dde1e6"
+                        d="M 0 67 C 273,183 822,-40 1920,106 V 359 H 0 V 67 Z">
+                    <animate
+                            repeatCount="indefinite"
+                            fill="#d8dde3"
+                            attributeName="d"
+                            dur="15s"
+                            values="
+                        M0 77 C 473,283 822,-40 1920,116 V 359 H 0 V 67 Z;
+                        M0 77 C 473,-40 1222,283 1920,136 V 359 H 0 V 67 Z;
+                        M0 77 C 973,260 1722,-53 1920,120 V 359 H 0 V 67 Z;
+                        M0 77 C 473,283 822,-40 1920,116 V 359 H 0 V 67 Z
+                        ">
+                    </animate>
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="experience" class="bg-gray section-padding">
+        <div class="container">
+            <h2 class="mb-50" id="">Expérience</h2>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Tabs nav -->
+                    <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        {% for experience in data.lastExperiences %}
+                            <a class="nav-link mb-3 p-3 shadow {% if loop.first %}active{% endif %}" id="v-pills-{{ experience.label }}-tab" data-toggle="pill" href="#v-pills-{{ experience.label }}" role="tab" aria-controls="v-pills-{{ experience.label }}" aria-selected="{% if loop.first %}true{% else %}false{% endif %}">
+                                <img src="{{ absolute_url('images/company/' ~ experience.company.label ~ '.png') }}" alt="{{ experience.company.name }}" width="40px" class=""> &nbsp;
+                                <span class="font-weight-bold small text-uppercase">{{ experience.title }}</span></a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <!-- Tabs content -->
+                    <div class="tab-content" id="v-pills-tabContent">
+                        {% for experience in data.lastExperiences %}
+                            <div class="tab-pane fade shadow rounded bg-white {% if loop.first %}show active{% endif %} p-5" id="v-pills-{{ experience.label }}" role="tabpanel" aria-labelledby="v-pills-{{ experience.label }}-tab">
+                                <h4 class="font-italic mb-4">{{ experience.subtitle }}</h4>
+                                <p class="font-italic text-muted mb-2">{{ experience.description|raw }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="text-center mt-40"><a class="btn-primary-nine" href="#"><span>En savoir plus</span></a></div>
+            </div>
+        </div>
+    </section>
+    {% include 'blocks/curvedown.html' with {'color': 'curveDownColor'} %}
+
+    {% include 'blocks/curveup.html' with {'color': 'curveDownColorDark'} %}
+    <section id="creations" class="bg-darkblue section-padding">
+        <div class="container">
+            <div class="row">
+                <h2 class="mb-50 text-center text-uppercase" id="">Créations</h2>
+
+                <div class="nine-carousel">
+                    {% for creation in data.creationsList %}
+                        <div class="item"><img src="{{ absolute_url('images/creations/' ~ creation) }}" alt="" class="rounded shadow-sm"></div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+        <div class="text-center mt-30"><a class="btn-primary-nine" href="/creations"><span>Afficher plus</span></a></div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ absolute_url('js/animated-headline.js') }}"></script>
+{% endblock %}

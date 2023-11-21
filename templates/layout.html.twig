@@ -9,62 +9,189 @@
         <meta name="robots" content="index,follow">
 
         <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
         <title>Caroline Noyer | {% block title %}Product Owner{% endblock %}</title>
 
         {% block stylesheets %}
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body id="{{ page }}>
-        {{ page }}<br>
+    <body class="" data-bs-target="#navbar-main" id="{{ page }}">
+        <header class="cursor-light">
+        </header>
+        <!-- Start Navbar Area -->
+            <nav class="navbar navbar-nine navbar-expand-md fixed-top {% if page == "home" %}navbar-trans{% else %}navbar-reduce{% endif %}" id="mainNav">
+                <div class="container">
+                    <a class="navbar-brand js-scroll" href="/">
+                        <img src="{{ absolute_url('images/logo-nine-2021.png') }}" alt="TheDarkNine" width="30" class="d-inline-block align-text-top">
+                    </a>
+                    <h5 class="mb-0 d-none d-sm-block"><a class="text-nine-blue" href="/"><span class="text-smallcaps">Caroline</span> <span class="text-uppercase">Noyer</span></a></h5>
+                    <button class="fullnav-toggler link d-block d-sm-none" id="full-menu-1" type="button">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </button>
+                    <div class="navbar-collapse collapse justify-content-end" id="navbar-main">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item{% if page == "experience" %} active{% endif %}"><a href="/experience" class="nav-link hvr-underline-from-center">Expérience</a></li>
+                            <li class="nav-item{% if page == "competences" %} active{% endif %}"><a href="/competences" class="nav-link hvr-underline-from-center">Compétences</a></li>
+                            <li class="nav-item{% if page == "formation" %} active{% endif %}"><a href="/formation" class="nav-link hvr-underline-from-center">Formation</a></li>
+                            <li class="nav-item{% if page == "projets" %} active{% endif %}"><a href="/projets" class="nav-link hvr-underline-from-center">Projets</a></li>
+                            <li class="nav-item{% if page == "arcade" %} active{% endif %}"><a href="/arcade" class="nav-link hvr-underline-from-center">Arcade</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        <!-- End Navbar Area -->
 
-    <footer class="page-footer">
-    <div class="container">
-        <div class="row py-4">
-            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                <h6 class="text-uppercase font-weight-bold mb-4">Parcours</h6>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-2"><a href="/experience" class="text-muted">Expérience</a></li>
-                    <li class="mb-2"><a href="/competences" class="text-muted">Compétences</a></li>
-                    <li class="mb-2"><a href="/formation" class="text-muted">Formation</a></li>
-                    <li class="mb-2"><a href="/projets" class="text-muted">Projets</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                <h6 class="text-uppercase font-weight-bold mb-4">Centres d'intérêt</h6>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-2"><a href="/creations" class="text-muted">Créations</a></li>
-                    <li class="mb-2"><a href="/photos" class="text-muted">Photos</a></li>
-                    <li class="mb-2"><a href="/arcade" class="text-muted">Arcade</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-lg-0">
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 follow-me"><img src="{{ asset('images/logo-nine-2021.png') }}" alt="" width="100" class="mb-3">
-                <p class="font-italic text-muted mt-4">Suivez-moi !</p>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/carolinenoyer" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
-                    <li class="list-inline-item"><a href="https://twitter.com/CaroNoyer" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="https://github.com/thedarknine" target="_blank" title="GitHub"><i class="fa fa-github-alt"></i></a></li>
-                    <li class="list-inline-item"><a href="https://dribbble.com/TheDarkNine" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
-                    <li class="list-inline-item"><a href="http://docs.carolinenoyer.info/pdf/cv-cnoyer-productowner.pdf" title="CV au format PDF"><span><i class="fa fa-file-pdf"></i></span></a></li>
-                </ul>
+        <div class="nav-holder main style-2">
+            <!--Menu Button-->
+            <button class="fullnav-close link" type="button">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+
+            <div class="container">
+                <div class="shape-left">
+                    <nav class="navbar full-menu-navigation left">
+                        <ul class="list-unstyled">
+                            <li><a class="link scroll" href="/">
+                                    <span class="anchor-circle"></span>
+                                    <span class="anchor-text">Home</span>
+                                </a></li>
+                            <li><a class="link scroll" href="/experience">
+                                    <span class="anchor-circle"></span>
+                                    <span class="anchor-text">Expérience</span>
+                                </a></li>
+                            <li><a class="link scroll" href="/competences">
+                                    <span class="anchor-circle"></span>
+                                    <span class="anchor-text">Compétences</span>
+                                </a></li>
+                            <li><a class="link scroll" href="/formation">
+                                    <span class="anchor-circle"></span>
+                                    <span class="anchor-text">Formation</span>
+                                </a></li>
+                            <li><a class="link scroll" href="/projets">
+                                    <span class="anchor-circle"></span>
+                                    <span class="anchor-text">Projets</span>
+                                </a></li>
+                            <li><a class="link scroll" href="/creations">
+                                    <span class="anchor-circle"></span>
+                                    <span class="anchor-text">Créations</span>
+                                </a></li>
+                            <li><a class="link scroll" href="/photos">
+                                    <span class="anchor-circle"></span>
+                                    <span class="anchor-text">Photos</span>
+                                </a></li>
+                            <li><a class="link scroll" href="/arcade">
+                                    <span class="anchor-circle"></span>
+                                    <span class="anchor-text">Arcade</span>
+                                </a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Copyrights -->
-    <div class="copyright py-4">
-        <div class="container text-center">
-            <p class="mb-0 py-2"><b>©Nine Copyright</b> 2006-2021</p>
-            <a href="https://fr.freepik.com/upklyak">Infographies vecteur créées par upklyak - fr.freepik.com</a>
-        </div>
-    </div>
-    </footer>
+        {% if page != 'home' %}
+            <div class="mt-50">&nbsp;</div>
+        {% else %}
+            <!-- Start Home Section -->
+            <header class="home-area header-nine section-padding overflow-hidden d-flex align-items-center">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-7 col-lg-6">
+                            <div class="text-left home-content z-index position-relative">
+                                <!--a href="#about" class="btn btn-light js-scroll">En savoir plus</a-->
+                                <div class="cd-intro">
+                                    <h1 class="cd-headline clip is-full-width">
+                                        <span class="text-smallcaps">Caroline Noyer</span><br>
+                                        <span class="cd-words-wrapper">
+                                            <b class="is-visible">Product Owner</b>
+                                            <b>Product Designer</b>
+                                            <b>Dév PHP Senior</b>
+                                        </span>
+                                    </h1>
+                                </div>
+
+                                <p class="banner mt-10">
+                                    <a href="https://www.linkedin.com/in/carolinenoyer" data-bs-toggle="tooltip" data-bs-placement="right" title="LinkedIn"><span class="tooltip-trigger js-tooltip-trigger" data-tooltip-position="right" title="LinkedIn"><i class="fa fa-linkedin"></i></span></a>
+                                    <a href="https://twitter.com/CaroNoyer" data-bs-toggle="tooltip" data-bs-placement="right" title="Twitter"><span><i class="fa fa-twitter"></i></span></a>
+                                    <a href="https://github.com/thedarknine" data-bs-toggle="tooltip" data-bs-placement="right" title="GitHub"><span><i class="fa fa-github-alt"></i></span></a>
+                                    <a href="https://dribbble.com/TheDarkNine" data-bs-toggle="tooltip" data-bs-placement="right" title="Dribbble"><span><i class="fab fa-dribbble"></i></span></a>
+                                    <a href="https://docs.carolinenoyer.info/pdf/cv-cnoyer-productowner.pdf" data-bs-toggle="tooltip" data-bs-placement="right" title="CV au format PDF"><span><i class="fa fa-file-pdf"></i></span></a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-5 col-lg-6">
+                            <div class="text-center z-index position-relative home-image animation-bounce-custom">
+                                <img src="images/logo-nine-2021.png" class="img-fluid w-75" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="svg-shape-bottom">
+                    <img src="images/main/wave-shape.svg" class="bottom-shape img-fluid" alt="">
+                </div>
+            </header>
+            <!-- End Home Section -->
+        {% endif %}
+
+        <button class="back-to-top" data-targets="html"><i class="fa fa-angle-up"></i></button>
+
+        {% block body %}{% endblock %}
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row py-4">
+                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                        <h6 class="text-smallcaps font-weight-bold mb-4">Parcours</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="/experience" class="text-muted">Expérience</a></li>
+                            <li class="mb-2"><a href="/competences" class="text-muted">Compétences</a></li>
+                            <li class="mb-2"><a href="/formation" class="text-muted">Formation</a></li>
+                            <li class="mb-2"><a href="/projets" class="text-muted">Projets</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                        <h6 class="text-smallcaps font-weight-bold mb-4">Centres d'intérêt</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="/creations" class="text-muted">Créations</a></li>
+                            <li class="mb-2"><a href="/photos" class="text-muted">Photos</a></li>
+                            <li class="mb-2"><a href="/arcade" class="text-muted">Arcade</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-lg-0">
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 follow-me"><img src="{{ asset('images/logo-nine-2021.png') }}" alt="" width="100" class="mb-3">
+                        <p class="font-italic text-muted mt-4">Suivez-moi !</p>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/carolinenoyer" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/CaroNoyer" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="https://github.com/thedarknine" target="_blank" title="GitHub"><i class="fa fa-github-alt"></i></a></li>
+                            <li class="list-inline-item"><a href="https://dribbble.com/TheDarkNine" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
+                            <li class="list-inline-item"><a href="https://docs.carolinenoyer.info/pdf/cv-cnoyer-productowner.pdf" title="CV au format PDF"><span><i class="fa fa-file-pdf"></i></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyrights -->
+            <div class="copyright py-4">
+                <div class="container text-center">
+                    <p class="mb-0 py-2"><b>©Nine | Copyright</b> 2006-{{ "now"|date("Y") }}</p>
+                    <a href="https://fr.freepik.com/upklyak">Infographies vecteur créées par upklyak - fr.freepik.com</a>
+                </div>
+            </div>
+        </footer>
 
     {% block javascripts %}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/4266107922.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        {{ encore_entry_script_tags('app') }}
     {% endblock %}
 
     </body>

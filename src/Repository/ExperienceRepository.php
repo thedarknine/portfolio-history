@@ -29,6 +29,25 @@ class ExperienceRepository extends ServiceEntityRepository
         parent::__construct($registry, Experience::class);
     }
 
+    public function getExperiencesWithCompany(int $limit = null): array
+    {
+        $qb = $this->createQueryBuilder('exp');
+
+        $qb
+            ->select('exp')
+            ->innerJoin('exp.company', 'comp')
+            ->addSelect('comp')
+            ->orderBy('exp.startDate', 'DESC');
+
+        if ($limit) {
+            $qb->setMaxResults(3);
+        }
+
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
+
     //    /**
     //     * @return Experience[] Returns an array of Experience objects
     //     */

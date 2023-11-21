@@ -7,10 +7,18 @@ SHELL := /bin/bash
 cc:
 	symfony console cache:clear
 
+## Build front-end
+build:
+	yarn build
+
 ## Run php cs-fixer
 cs:
 	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --verbose
 	vendor/bin/twig-cs-fixer lint templates
+
+## Run dev front-end
+yarn:
+	yarn encore dev --watch
 
 ## Update MySQL schema
 mysql-update:
