@@ -29,6 +29,18 @@ class PhotoTypeRepository extends ServiceEntityRepository
         parent::__construct($registry, PhotoType::class);
     }
 
+    public function getPhotoTypes(): array
+    {
+        $qb = $this->createQueryBuilder('phot');
+        $qb
+            ->select('phot')
+            ->orderBy('phot.position', 'ASC');
+
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
+
     //    /**
     //     * @return PhotoType[] Returns an array of PhotoType objects
     //     */

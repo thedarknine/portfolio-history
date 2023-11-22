@@ -1,12 +1,8 @@
-SetEnv SHORT_OPEN_TAGS 0
-SetEnv REGISTER_GLOBALS 0
-SetEnv MAGIC_QUOTES 0
-SetEnv SESSION_AUTOSTART 0
-SetEnv ZEND_OPTIMIZER 1
-SetEnv PHP_VER 8_2
+<IfModule mod_rewrite.c>
+RewriteEngine On
 
-RewriteEngine on
-RewriteBase /
+RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+RewriteRule ^ %1 [L,NE,R=302]
 
-RewriteCond %{REQUEST_URI} !^/public/
-RewriteRule ^(.*)$ /public/$1 [L]
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+</IfModule>

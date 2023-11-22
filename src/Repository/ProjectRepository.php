@@ -29,6 +29,18 @@ class ProjectRepository extends ServiceEntityRepository
         parent::__construct($registry, Project::class);
     }
 
+    public function getProjects(): array
+    {
+        $qb = $this->createQueryBuilder('proj');
+        $qb
+            ->select('proj')
+            ->orderBy('proj.year', 'DESC');
+
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
+
     //    /**
     //     * @return Project[] Returns an array of Project objects
     //     */

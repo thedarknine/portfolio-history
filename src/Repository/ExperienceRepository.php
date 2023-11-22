@@ -32,7 +32,6 @@ class ExperienceRepository extends ServiceEntityRepository
     public function getExperiencesWithCompany(int $limit = null): array
     {
         $qb = $this->createQueryBuilder('exp');
-
         $qb
             ->select('exp')
             ->innerJoin('exp.company', 'comp')

@@ -13,6 +13,7 @@ namespace App\Entity;
 use App\Entity\Traits\LabelTrait;
 use App\Entity\Traits\TimeStampableTrait;
 use App\Repository\ExperienceRepository;
+use Carbon\Carbon;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -56,6 +57,16 @@ class Experience
     public function __construct()
     {
         $this->skills = new ArrayCollection();
+    }
+
+    public function getDuration(): array
+    {
+        $endDate = (null == $this->endDate) ? Carbon::now() : new Carbon($this->endDate);
+        $startDate = new Carbon($this->startDate);
+
+        $diff = $endDate->diffInMonths($startDate);
+
+        return ['nbYears' => floor($diff / 12), 'nbMonths' => $diff % 12];
     }
 
     public function getId(): ?int

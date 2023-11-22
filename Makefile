@@ -17,7 +17,7 @@ cs:
 	vendor/bin/twig-cs-fixer lint templates
 
 ## Run dev front-end
-yarn:
+watch:
 	yarn encore dev --watch
 
 ## Update MySQL schema
@@ -28,6 +28,17 @@ mysql-update:
 ## Add data fixtures
 fixtures:
 	symfony console doctrine:fixtures:load
+
+## Switch to dev env
+dev:
+	composer dump-env
+	symfony console cache:clear
+
+## Build to production
+prod:
+	composer dump-env prod
+	composer install --no-dev --optimize-autoloader
+	APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear
 
 
 ## ------

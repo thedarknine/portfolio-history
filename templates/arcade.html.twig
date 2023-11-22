@@ -1,0 +1,297 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Nine Arcade Adventure{% endblock %}
+{% block pagetitle %}Nine Arcade Adventure{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 mt-40" data-aos="fade-right" data-aos-duration="1200">
+                <h2>Projet :</h2>
+                <h1>Borne d'arcade</h1>
+                <div class="mt-30 mb-10">
+                    Tout est parti d’un magazine qui trainait sur une table au boulot, et hop pourquoi pas nous
+                    lancer dans la réalisation d’une borne. Ah oui ! Mais d’en avoir une à la maison ce serait
+                    encore mieux.
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12 text-center mt-40 mb-50" data-aos="fade-left" data-aos-duration="1200">
+                <img src="{{ absolute_url('images/arcade.png') }}" alt="Borne d'arcade" class="rounded" />
+            </div>
+        </div>
+    </div>
+    <section class="bg-gray">
+        <div class="container">
+            <div class="row" data-aos="fade-in" data-aos-duration="1800">
+                <div class="col-md-12">
+                    <div class="mb-10">
+                        Pour mon arcade perso, j’étais d’abord partie sur l’idée d’acheter un kit bartop prêt à monter.
+                        Cependant ceux de base, permettant de recevoir un écran jusqu’à 19", me paraissent insuffisamment
+                        larges pour jouer à deux. Quant aux versions XXL, les différents tarifs sont rédhibitoires.
+                        Je pèse le pour et le contre, j’évalue les budgets selon les modèles et le matériel que
+                        j’aimerais intégrer. Puis se rappellent à moi mes années de bricolage, et quoi de plus
+                        challengeant que de faire tout moi-même ! <strong class="text-nine-indigo">Le défi est lancé</strong>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray lighten">
+        {% include 'blocks/curvedown.html' with {'color': 'curve-down-color'} %}
+        <div class="container">
+            <h3 class="mt-30 mb-20">This is it!</h3>
+
+            <div class="row justify-content-center" data-aos="zoom-out-up" data-aos-duration="900">
+                {% set listItemsArcade = data.arcadeList['final'] %}
+                {% for arcade in listItemsArcade %}
+                    <div class="col-lg-2 col-md-4 col-sm-6 mb-20">
+                        <div class="nine-shadow mb-10">
+                            <img src="{{ absolute_url('images/arcade/final/' ~ arcade) }}" alt="" class="rounded" />
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% include 'blocks/curveup.html' with {'color': 'curve-up-color'} %}
+    </section>
+
+    <section class="bg-gray">
+        <div class="container">
+            <h3 class="mt-30 mb-20">Step#1: les plans.</h3>
+            <div class="row">
+                <div class="col-md-12 mb-20">
+                    Je regarde ce qu’il se fait... Les plans pour bartop n’envahissent pas le web, et ne
+                    correspondent pas entièrement à ce que j’ai en tête. Ok, alors allons-y pour un plan
+                    personnalisé. Je suis partie des plans mis à dispo par
+                    <a href="http://forum.hfsplay.fr/plans-prets-emploi/bartop-frankeez-version-t8468.html" alt="Frankeezz" target="_blank">Frankeezz</a>.
+                    Je souhaite limiter au max la hauteur du control panel, tout en y insérant un tiroir pour un clavier.
+                </div>
+            </div>
+            <div class="row justify-content-center" data-aos="zoom-out-right" data-aos-duration="900">
+                {% set listItemsArcade = data.arcadeList['at-the-beginning'] %}
+                {% for arcade in listItemsArcade %}
+                    <div class="col-lg-2 col-md-4 col-sm-6 mb-20">
+                        <div class="nine-shadow mb-10">
+                            <img src="{{ absolute_url('images/arcade/at-the-beginning/' ~ arcade) }}" alt="" class="rounded" />
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray lighten">
+        {% include 'blocks/curvedown.html' with {'color': 'curve-down-color'} %}
+        <div class="container">
+            <h3 class="mt-30 mb-20">Step#2 : la découpe.</h3>
+            <div class="row">
+                <div class="col-md-12 mb-20">
+                    L'étape la plus importante, et aussi la plus délicate quand on est perfectionniste.
+                </div>
+
+                <h4 class="text-nine-blue text-uppercase text-center mt-20 mb-10">Side Panels</h4>
+
+                <div class="row justify-content-center mt-40 mb-40" data-aos="zoom-out-left" data-aos-duration="900">
+                    {% set listItemsArcade = data.arcadeList['side-panels'] %}
+                    {% for arcade in listItemsArcade %}
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb-20">
+                            <div class="nine-shadow mb-10">
+                                <img src="{{ absolute_url('images/arcade/side-panels/' ~ arcade) }}" alt="" class="rounded" />
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <h4 class="text-nine-blue text-uppercase text-center mt-20 mb-10">Control Panel</h4>
+
+                <div class="row justify-content-center mt-40 mb-40" data-aos="zoom-out-up" data-aos-duration="900">
+                    {% set listItemsArcade = data.arcadeList['control-panel'] %}
+                    {% for arcade in listItemsArcade %}
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb-20">
+                            <div class="nine-shadow mb-10">
+                                <img src="{{ absolute_url('images/arcade/control-panel/' ~ arcade) }}" alt="" class="rounded" />
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <h4 class="text-nine-blue text-uppercase text-center mt-20 mb-10">Upper Part</h4>
+
+                <div class="row justify-content-center mt-40 mb-40" data-aos="zoom-out-down" data-aos-duration="900">
+                    {% set listItemsArcade = data.arcadeList['upper-part'] %}
+                    {% for arcade in listItemsArcade %}
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb-20">
+                            <div class="nine-shadow mb-10">
+                                <img src="{{ absolute_url('images/arcade/upper-part/' ~ arcade) }}" alt="" class="rounded" />
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <h4 class="text-nine-blue text-uppercase text-center mt-20 mb-10">Back Side</h4>
+
+                <div class="row justify-content-center mt-40 mb-40" data-aos="zoom-out-left" data-aos-duration="900">
+                    {% set listItemsArcade = data.arcadeList['back-side'] %}
+                    {% for arcade in listItemsArcade %}
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb-20">
+                            <div class="nine-shadow mb-10">
+                                <img src="{{ absolute_url('images/arcade/back-side/' ~ arcade) }}" alt="" class="rounded" />
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% include 'blocks/curveup.html' with {'color': 'curve-up-color'} %}
+    </section>
+
+    <section class="bg-gray">
+        <div class="container">
+            <h3 class="mt-30 mb-20">Step#3 : l’assemblage.</h3>
+            <div class="row">
+                <div class="col-md-12 mb-20">
+                    Les différentes pièces se finalisent petit à petit, on monte et on redémonte histoire de
+                    contrôler que tout est ok. Au passage un petit coup de peinture. Ca se précise !
+                </div>
+            </div>
+
+            <div class="row justify-content-center" data-aos="zoom-out-right" data-aos-duration="900">
+                {% set listItemsArcade = data.arcadeList['assembling'] %}
+                {% for arcade in listItemsArcade %}
+                    <div class="col-lg-2 col-md-4 col-sm-6 mb-20">
+                        <div class="nine-shadow mb-10">
+                            <img src="{{ absolute_url('images/arcade/assembling/' ~ arcade) }}" alt="" class="rounded" />
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray lighten">
+        {% include 'blocks/curvedown.html' with {'color': 'curve-down-color'} %}
+        <div class="container">
+            <h3 class="mt-30 mb-20">Step#4 : le design.</h3>
+            <div class="row">
+                <div class="col-md-12 mb-20">
+                    Retour en enfance, ma première console a été la NES. Ayant grandi entre les héros de Super Mario
+                    et Super Mario Kart, l’évidence a été de baser ma déco sur ce thème avec des design assez
+                    modernes malgré tout.
+                </div>
+            </div>
+
+            <div class="row justify-content-center" data-aos="zoom-out-down" data-aos-duration="900">
+                {% set listItemsArcade = data.arcadeList['design'] %}
+                {% for arcade in listItemsArcade %}
+                    <div class="col-lg-2 col-md-4 col-sm-6 mb-20">
+                        <div class="nine-shadow mb-10">
+                            <img src="{{ absolute_url('images/arcade/design/' ~ arcade) }}" alt="" class="rounded" />
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% include 'blocks/curveup.html' with {'color': 'curve-up-color'} %}
+    </section>
+
+    <section class="bg-gray">
+        <div class="container">
+            <h3 class="mt-30 mb-20">Step#5 : l’émulateur.</h3>
+            <div class="row">
+                <div class="col-md-12 mb-20">
+                    Sur ce point j’ai surtout suivi les conseils de mes collègues. Un petit
+                    <a href="https://www.recalbox.com" title="RecalBox" target="_blank">RecalBox</a> viendra
+                    s’installer dans ma borne.
+                </div>
+            </div>
+
+            <div class="row justify-content-center" data-aos="zoom-out-left" data-aos-duration="900">
+                {% set listItemsArcade = data.arcadeList['recalbox'] %}
+                {% for arcade in listItemsArcade %}
+                    <div class="col-lg-2 col-md-4 col-sm-6 mb-20">
+                        <div class="nine-shadow mb-10">
+                            <img src="{{ absolute_url('images/arcade/recalbox/' ~ arcade) }}" alt="" class="rounded" />
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray lighten">
+        {% include 'blocks/curvedown.html' with {'color': 'curve-down-color'} %}
+        <div class="container">
+            <h3 class="mt-30 mb-20">Conception.</h3>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <h4 class="text-nine-blue text-uppercase text-center mt-20 mb-10">Matériel pour la borne</h4>
+                    <div class="mt-10 mb-10 ml-20">
+                        <ul>
+                            <li>Panneaux de bois en 16mm (voire 18)</li>
+                            <li>Plaque de Plexiglass</li>
+                            <li>Chanières universelles plates</li>
+                            <li>Coulisses à tiroir</li>
+                            <li>Quincaillerie (vis, équerres, tourillons, aimants...)</li>
+                            <li>Pieds</li>
+                            <li>T-modling</li>
+                        </ul>
+                    </div>
+
+                    <h4 class="text-nine-blue text-uppercase text-center mt-20 mb-10">Outillage</h4>
+                    <div class="mt-10 mb-10 ml-20">
+                        Mes (nouveaux) jouets pour la réalisation :
+                        <ul>
+                            <li>Défonceuse : fraise droite, fraise à copier, fraise à chanfreiner</li>
+                            <li>Scie circulaire (ou scie sauteuse)</li>
+                            <li>Perceuse : mèches plates de 24 et 28 pour les boutons, scie cloche, forêts</li>
+                            <li>Multi-outils, ponceuse, visseuse, ...</li>
+                        </ul>
+                    </div>
+                    <div class="row justify-content-center">
+                        {% set listItemsArcade = data.arcadeList['materiel'] %}
+                        {% for arcade in listItemsArcade %}
+                            <div class="col-lg-4 col-md-6 col-sm-12 mb-20">
+                                <div class="nine-shadow mb-10">
+                                    <img src="{{ absolute_url('images/arcade/materiel/' ~ arcade) }}" alt="" class="rounded" />
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-sm-12">
+                    <h4 class="text-nine-blue text-uppercase text-center mt-20 mb-10">Composants</h4>
+                    <div class="mt-10 mb-10 ml-20">
+                        <ul>
+                            <li>Kit Joystick et boutons lumineux Zippy</li>
+                            <li>Raspberry Pi3B + carte SD 64Go</li>
+                            <li>Ecran 24"</li>
+                            <li>Ampli</li>
+                            <li>Hauts-parleurs 4" 2x20W</li>
+                            <li>Ruban à LED</li>
+                            <li>Module alimentation</li>
+                            <li>Multi-prise</li>
+                            <li>Rallonge 2 ports USB</li>
+                            <li>Ventilateur 120</li>
+                            <li>Grille pour ventilateur</li>
+                            <li>Câble HDMI</li>
+                            <li>Câble d'alimentation</li>
+                        </ul>
+                    </div>
+                    <div class="row justify-content-center">
+                        {% set listItemsArcade = data.arcadeList['composants'] %}
+                        {% for arcade in listItemsArcade %}
+                            <div class="col-lg-4 col-md-6 col-sm-12 mb-20">
+                                <div class="nine-shadow mb-10">
+                                    <img src="{{ absolute_url('images/arcade/composants/' ~ arcade) }}" alt="" class="rounded" />
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'blocks/curveup.html' with {'color': 'curve-up-color'} %}
+    </section>
+{% endblock %}

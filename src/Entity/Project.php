@@ -43,8 +43,11 @@ class Project
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $screenshot = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $screenshots = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $file = null;
 
     public function getId(): ?int
     {
@@ -99,14 +102,26 @@ class Project
         return $this;
     }
 
-    public function getScreenshot(): ?string
+    public function getScreenshots(): ?string
     {
-        return $this->screenshot;
+        return $this->screenshots;
     }
 
-    public function setScreenshot(string $screenshot): static
+    public function setScreenshots(string $screenshots): static
     {
-        $this->screenshot = $screenshot;
+        $this->screenshots = $screenshots;
+
+        return $this;
+    }
+
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(?string $file): static
+    {
+        $this->file = $file;
 
         return $this;
     }

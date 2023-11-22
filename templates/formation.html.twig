@@ -1,0 +1,101 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Formation{% endblock %}
+{% block pagetitle %}Formation universitaire{% endblock %}
+
+{% block body %}
+    <section class="">
+        <div class="container mt-40 mb-50">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="pt-30">Formation professionnelle</h1>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <img src="{{ absolute_url('images/formation-professionnelle.png') }}" alt="Formation professionnelle" width="500px" />
+                </div>
+            </div>
+
+            <div class="row">
+                {% for education in data.educationsList %}
+                    {% if education.type == 'pro' %}
+                        <div class="col-lg-6 mt-30 mb-30" data-aos="{{ random(effects) }}" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-delay="{{ 600 + (loop.index0 * 300) }}">
+                            <div class="{{ education.school.label }}" id="{{ education.label }}">
+                                <div class="bg-item-indigo text-center mb-20">
+                                    <h3 class="text-nine-indigo">{{ education.year }}</h3>
+                                    <img src="{{ absolute_url('images/school/' ~ education.school.logo) }}" alt="{{ education.school.name }}" width="60px" class="mt-10">
+                                </div>
+                                <h4 class="text-nine-blue text-uppercase mb-0 pb-0">{{ education.title }}</h4>
+                                <p class="mt-0 pt-0 text-muted">
+                                    {{ education.school.name }}
+                                    - <span class="text-09">{{ education.school.city }} ({{ education.school.department|format_number({min_integer_digit: '2'}) }})</span>
+                                </p>
+
+                                <div class="m-0">
+                                    <p class="mt-0"><strong>{{ education.details }}</strong></p>
+                                    {% if education.speciality is not empty %}
+                                        <p class="mt-0">
+                                            Option : <b>{{ education.speciality }}</b>
+                                            <br>
+                                            {% if education.mention is not empty %}
+                                                Mention : <b>{{ education.mention }}</b>
+                                                <br>
+                                            {% endif %}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray lighten">
+        {{ include('blocks/curvedown.html') }}
+        <div class="container mt-40 mb-50">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="pt-30">Formation universitaire</h1>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <img src="{{ absolute_url('images/formation-universitaire.png') }}" alt="Formation universitaire" width="500px" />
+                </div>
+            </div>
+
+            <div class="row">
+                {% for education in data.educationsList %}
+                    {% if education.type == 'univ' %}
+                        <div class="col-lg-6 mt-30 mb-30" data-aos="{{ random(effects) }}" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-delay="{{ 600 + (loop.index0 * 300) }}">
+                            <div class="{{ education.school.label }} row" id="{{ education.label }}">
+                                <div class="bg-item-blue text-center mb-20">
+                                    <h3 class="text-nine-indigo">{{ education.year }}</h3>
+                                    <img src="{{ absolute_url('images/school/' ~ education.school.logo) }}" alt="{education.school.name}}" width="60px" class="mt-10">
+                                </div>
+                                <h4 class="text-nine-blue text-uppercase mb-0 pb-0">{{ education.title }}</h4>
+                                <p class="mt-0 pt-0 text-muted">
+                                    {{ education.school.name }}
+                                    - <span class="text-09">{{ education.school.city }} ({{ education.school.department|format_number({min_integer_digit: '2'}) }})</span>
+                                </p>
+
+                                <div class="m-0">
+                                    <p class="mt-0"><strong>{{ education.details }}</strong></p>
+                                    <p class="mt-0">
+                                        Option : <b>{{ education.speciality }}</b>
+                                        <br>
+                                        {% if education.mention is not empty %}
+                                            Mention : <b>{{ education.mention }}</b>
+                                            <br>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        {{ include('blocks/curveup.html') }}
+    </section>
+{% endblock %}

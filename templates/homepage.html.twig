@@ -145,18 +145,31 @@
             </div>
         </div>
     </section>
-    {% include 'blocks/curvedown.html' with {'color': 'curveDownColor'} %}
+    {% include 'blocks/curvedown.html' with {'color': 'curve-down-color'} %}
 
-    {% include 'blocks/curveup.html' with {'color': 'curveDownColorDark'} %}
+    {% include 'blocks/curveup.html' with {'color': 'curve-up-color-dark'} %}
     <section id="creations" class="bg-darkblue section-padding">
         <div class="container">
+
             <div class="row">
                 <h2 class="mb-50 text-center text-uppercase" id="">Créations</h2>
 
-                <div class="nine-carousel">
-                    {% for creation in data.creationsList %}
-                        <div class="item"><img src="{{ absolute_url('images/creations/' ~ creation) }}" alt="" class="rounded shadow-sm"></div>
-                    {% endfor %}
+                <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for creation in data.creationsList %}
+                            <div class="carousel-item {% if loop.first %}active{% endif %}">
+                                <img src="{{ absolute_url('images/creations/' ~ creation) }}" class="d-block w-50" alt="Créaations">
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
 
             </div>

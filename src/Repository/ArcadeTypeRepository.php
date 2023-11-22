@@ -29,6 +29,18 @@ class ArcadeTypeRepository extends ServiceEntityRepository
         parent::__construct($registry, ArcadeType::class);
     }
 
+    public function getArcadeTypes(): array
+    {
+        $qb = $this->createQueryBuilder('arc');
+        $qb
+            ->select('arc')
+            ->orderBy('arc.position', 'ASC');
+
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
+
     //    /**
     //     * @return ArcadeType[] Returns an array of ArcadeType objects
     //     */

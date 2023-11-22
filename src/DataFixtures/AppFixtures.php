@@ -16,6 +16,7 @@ use App\Entity\CreationType;
 use App\Entity\Education;
 use App\Entity\Experience;
 use App\Entity\PhotoType;
+use App\Entity\Project;
 use App\Entity\School;
 use App\Entity\Skill;
 use App\Entity\SkillType;
@@ -51,7 +52,7 @@ class AppFixtures extends Fixture
         ['label' => 'argile-cire', 'name' => 'Argile Ciré', 'position' => 2],
         ['label' => 'argile-peint', 'name' => 'Argile Peint', 'position' => 3],
         ['label' => 'argile-vernis', 'name' => 'Argile Vernis', 'position' => 4],
-        ['label' => 'au-tour', 'name' => 'Au tour', 'position' => 5],
+        ['label' => 'argile-tour', 'name' => 'Au tour', 'position' => 5],
     ];
     private array $photoTypesList = [
         ['label' => 'sky', 'name' => 'Sky', 'position' => 1],
@@ -78,13 +79,13 @@ class AppFixtures extends Fixture
         ['label' => 'jira', 'name' => 'Jira', 'startYear' => 2018, 'endYear' => null, 'level' => 8, 'logo' => 'jira.png', 'position' => 1, 'type' => 'methodo', 'display' => true],
         ['label' => 'agile', 'name' => 'Agile', 'startYear' => 2018, 'endYear' => null, 'level' => 6, 'logo' => 'agile.png', 'position' => 2, 'type' => 'methodo', 'display' => true],
         ['label' => 'trello', 'name' => 'Trello', 'startYear' => 2017, 'endYear' => null, 'level' => 7, 'logo' => 'trello.png', 'position' => 3, 'type' => 'methodo', 'display' => true],
-        ['label' => 'product-discovery', 'name' => 'Product Discovery', 'startYear' => 2022, 'endYear' => null, 'level' => 6, 'logo' => 'product-discovery.png', 'position' => 4, 'type' => 'methodo', 'display' => true],
-        ['label' => 'confluence', 'name' => 'confluence', 'startYear' => 2018, 'endYear' => null, 'level' => 6, 'logo' => 'confluence.png', 'position' => 5, 'type' => 'methodo', 'display' => true],
+        ['label' => 'product-discovery', 'name' => 'Product Disc', 'startYear' => 2022, 'endYear' => null, 'level' => 6, 'logo' => 'product-discovery.png', 'position' => 4, 'type' => 'methodo', 'display' => true],
+        ['label' => 'confluence', 'name' => 'Confluence', 'startYear' => 2018, 'endYear' => null, 'level' => 6, 'logo' => 'confluence.png', 'position' => 5, 'type' => 'methodo', 'display' => true],
         ['label' => 'miro', 'name' => 'Miro', 'startYear' => 2018, 'endYear' => 2022, 'level' => 7, 'logo' => 'miro.png', 'position' => 6, 'type' => 'methodo', 'display' => true],
         ['label' => 'figma', 'name' => 'Figma', 'startYear' => 2020, 'endYear' => null, 'level' => 7, 'logo' => 'figma.png', 'position' => 1, 'type' => 'design', 'display' => true],
-        ['label' => 'moqup', 'name' => 'Moqup', 'startYear' => 2018, 'endYear' => 2021, 'level' => 6, 'logo' => 'moqup.png', 'position' => 2, 'type' => 'design', 'display' => true],
-        ['label' => 'illustrator', 'name' => 'Adobe Illustrator', 'startYear' => 2010, 'endYear' => 2022, 'level' => 5, 'logo' => 'illustrator.png', 'position' => 3, 'type' => 'design', 'display' => true],
-        ['label' => 'photoshop', 'name' => 'Adobe Photoshop', 'startYear' => 2006, 'endYear' => 2017, 'level' => 3, 'logo' => 'photoshop.png', 'position' => 4, 'type' => 'design', 'display' => true],
+        ['label' => 'moqups', 'name' => 'Moqups', 'startYear' => 2018, 'endYear' => 2021, 'level' => 6, 'logo' => 'moqups.png', 'position' => 2, 'type' => 'design', 'display' => true],
+        ['label' => 'illustrator', 'name' => 'Illustrator', 'startYear' => 2010, 'endYear' => 2022, 'level' => 5, 'logo' => 'illustrator.png', 'position' => 3, 'type' => 'design', 'display' => true],
+        ['label' => 'photoshop', 'name' => 'Photoshop', 'startYear' => 2006, 'endYear' => 2017, 'level' => 3, 'logo' => 'photoshop.png', 'position' => 4, 'type' => 'design', 'display' => true],
         ['label' => 'mysql', 'name' => 'MySQL', 'startYear' => 2005, 'endYear' => null, 'level' => 8, 'logo' => 'mysql.png', 'position' => 1, 'type' => 'back-end', 'display' => true],
         ['label' => 'mongodb', 'name' => 'MongoDB', 'startYear' => 2017, 'endYear' => 2022, 'level' => 7, 'logo' => 'mongodb.png', 'position' => 2, 'type' => 'back-end', 'display' => true],
         ['label' => 'graphdb', 'name' => 'GraphDB', 'startYear' => 2022, 'endYear' => 2023, 'level' => 2, 'logo' => 'graphdb.png', 'position' => 3, 'type' => 'back-end', 'display' => true],
@@ -92,7 +93,7 @@ class AppFixtures extends Fixture
         ['label' => 'php', 'name' => 'PHP', 'startYear' => 2005, 'endYear' => null, 'level' => 9, 'logo' => 'php.png', 'position' => 5, 'type' => 'back-end', 'display' => true],
         ['label' => 'python', 'name' => 'Python', 'startYear' => 2018, 'endYear' => 2022, 'level' => 6, 'logo' => 'python.png', 'position' => 6, 'type' => 'back-end', 'display' => true],
         ['label' => 'rabbitmq', 'name' => 'RabbitMQ', 'startYear' => 2017, 'endYear' => 2022, 'level' => 5, 'logo' => 'rabbitmq.png', 'position' => 7, 'type' => 'back-end', 'display' => true],
-        ['label' => 'rest', 'name' => 'REST/SOAP', 'startYear' => 2010, 'endYear' => 2021, 'level' => 6, 'logo' => 'webservices.png', 'position' => 8, 'type' => 'back-end', 'display' => true],
+        ['label' => 'webservices', 'name' => 'Webservices', 'startYear' => 2010, 'endYear' => 2021, 'level' => 6, 'logo' => 'webservices.png', 'position' => 8, 'type' => 'back-end', 'display' => true],
         ['label' => 'mvc', 'name' => 'MVC', 'startYear' => 2008, 'endYear' => 2019, 'level' => 7, 'logo' => 'mvc.png', 'position' => 9, 'type' => 'back-end', 'display' => true],
         ['label' => 'phpstorm', 'name' => 'PHPStorm', 'startYear' => 2017, 'endYear' => 2022, 'level' => 8, 'logo' => 'phpstorm.png', 'position' => 10, 'type' => 'back-end', 'display' => false],
         ['label' => 'zend', 'name' => 'Zend', 'startYear' => 2008, 'endYear' => 2012, 'level' => 5, 'logo' => 'zend.png', 'position' => 11, 'type' => 'back-end', 'display' => false],
@@ -122,13 +123,13 @@ class AppFixtures extends Fixture
         ['label' => 'stage-limos', 'title' => 'Stagiaire en milieu de recherche', 'subtitle' => "Stage de recherche au sein de l'équipe Algorithmique au LIMOS",
             'description' => '
 <p>Sujet : <em>Symétrie dans les familles d\'ensembles : une étude algorithmique</em></p>
-<p class="text-center pt1"><a class="btn waves-effect btn-nine hvr-grow-shadow grey darken-1" href="https://web.archive.org/web/20230205083822/http://docs.carolinenoyer.info/pdf/cnoyer-rapportdestage-dea-2005.pdf" target="_blank" title="Téléchargez le rapport de stage"><i class="fas fa-paperclip" aria-hidden="true"></i> Rapport de stage</a></p>
+<p class="text-center pt1"><a class="btn waves-effect btn-nine hvr-grow-shadow grey darken-1" href="http://docs.carolinenoyer.fr/pdf/cnoyer-rapportdestage-dea-2005.pdf" target="_blank" title="Téléchargez le rapport de stage"><i class="fas fa-paperclip" aria-hidden="true"></i> Rapport de stage</a></p>
 <p class="text-justify pt5 text-09"><i>Résumé : </i>On souhaite définir la notion de symétrie entre attributs dans une famille d\'ensembles. Une première réponse a été proposée par R. Medina et L. Nourine à travers la notion de clones. Deux attributs sont clones s\'ils sont interchangeables dans les ensembles de la famille. Ici, on s\'intéresse au degré de symétrie entre deux attributs : la similitude. Cette mesure est représentée dans une matrice indiquant pour tout couple d\'attributs, la "distance" qui les sépare. Différents algorithmes de calcul de cette similitude sont proposés, et, sous certaines conditions, l\'un d\'entre eux est optimal. Enfin, nous montrons le lien qui existe entre attributs clones et sommets jumeaux d\'un graphe.</p>
 <div class="pt5 mb1">
     <p><strong class="">Publication</strong></p>
     <div class="bordered-grey ml2 pl1">
          <p class="text-justify">Deux articles de recherche ont été rédigés à l\'issue de ce stage dont un, <strong>"Efficient algorithms for clone items detection"</strong>, publié pour la conférence <em>CLA\'05 (Concept Lattices and Their Applications) - République Tchèque</em></p>
-         <p class="mt0 mr2"><a class="btn waves-effect btn-nine hvr-grow-shadow grey darken-1" href="https://web.archive.org/web/20230205083822/http://docs.carolinenoyer.info/pdf/article-clones-cla05.pdf" target="_blank" title="Efficient algorithms for clone items detection"><i class="fas fa-paperclip" aria-hidden="true"></i> Article publié</a></p>
+         <p class="mt0 mr2"><a class="btn waves-effect btn-nine hvr-grow-shadow grey darken-1" href="http://docs.carolinenoyer.fr/pdf/article-clones-cla05.pdf" target="_blank" title="Efficient algorithms for clone items detection"><i class="fas fa-paperclip" aria-hidden="true"></i> Article publié</a></p>
     </div>
 </div>',
             'startDate' => '2005-02-01', 'endDate' => '2005-07-31', 'company' => 'limos', 'skills' => ['cplus']],
@@ -152,7 +153,7 @@ ce n\'est qu\'ensuite que le directeur artistique pourra réaliser la maquette d
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Conception et réalisation d\'un assistant pour la rédaction des cahiers des charges</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Génération de fichiers PDF via l\'interface à partir de sources <em>LaTeX</em></span></li>
 </ul>
-<p class="text-center pt1"><a class="btn waves-effect btn-nine hvr-grow-shadow grey darken-1" href="https://web.archive.org/web/20230205083822/http://docs.carolinenoyer.info/pdf/cnoyer-rapportdestage-m2pro-2006.pdf" target="_blank" title="Téléchargez le rapport de stage"><i class="fas fa-paperclip" aria-hidden="true"></i> Rapport de stage</a></p>
+<p class="text-center pt1"><a class="btn waves-effect btn-nine hvr-grow-shadow grey darken-1" href="http://docs.carolinenoyer.fr/pdf/cnoyer-rapportdestage-m2pro-2006.pdf" target="_blank" title="Téléchargez le rapport de stage"><i class="fas fa-paperclip" aria-hidden="true"></i> Rapport de stage</a></p>
 <p class="text-justify pt5 text-09"><i>Résumé : </i>La société Actifdesign souhaite donc développer des solutions de catalogues en ligne ou des solutions de e-commerce. L\'inconvénient de la mise en place de tels projets réside dans la rédaction du cahier des charges, devant être remis rapidement au client. Afin de réduire les temps de rédaction, sans en perdre le sérieux ni la pertinence, elle souhaite factoriser au maximum les parties communes entre les différents cahiers des charges. En effet, ce type de travail passe très souvent par une phase de copier/coller intempestifs !<br>
 Ce projet nécessite donc plusieurs documents : le cahier des charges, le devis pour le client, les fiches navettes destinées aux développeurs (contenant les modules à installer et les délais à respecter), ainsi que celle pour le graphiste.<br>
 Cet outil doit donc proposer une rédaction semi-automatique de ces documents à partir de questionnaires précis. Ainsi, mon projet permet de répondre à la mise en place d\'une organisation du travail tout en respectant la contrainte de coût.</p>',
@@ -163,8 +164,8 @@ Cet outil doit donc proposer une rédaction semi-automatique de ces documents à
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Rédaction de cahiers des charges et planification de projets</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Développement web</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Intégration de sites valides aux normes du <b>W3C</b></span></li>
-    <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Développement de l\'outil &nbsp;<a href="https://web.archive.org/web/20230205083822/http://www.carolinenoyer.info/projets#nevotec" title="NevoTec">NevoTec</a></span></li>
-    <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Développement de l\'outil &nbsp;<a href="https://web.archive.org/web/20230205083822/http://www.carolinenoyer.info/projets#nevoprint" title="NevoPrint">NevoPrint</a></span></li>
+    <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Développement de l\'outil &nbsp;<a href="http://www.carolinenoyer.fr/projets#nevotec" title="NevoTec">NevoTec</a></span></li>
+    <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Développement de l\'outil &nbsp;<a href="http://www.carolinenoyer.fr/projets#nevoprint" title="NevoPrint">NevoPrint</a></span></li>
 </ul>',
             'startDate' => '2006-10-01', 'endDate' => '2008-07-15', 'company' => 'actif-design', 'skills' => ['php', 'mysql', 'xhtmlcss', 'linux', 'photoshop', 'apache']],
         ['label' => 'inge-dev', 'title' => 'Ingénieur de développement', 'subtitle' => "Développement de l'outil Cadenza",
@@ -173,15 +174,15 @@ Cet outil doit donc proposer une rédaction semi-automatique de ces documents à
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Développement d\'une plate-forme interne de gestion et de suivi de projets</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Mise en place de solutions afin de faciliter le travail en équipe</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Maintenance du site de l\'entreprise et du site support produits</span></li>
-    <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Sécurisation du logiciel <a href="https://web.archive.org/web/20230205083822/https://www.allegorithmic.com/substance" target="_blank"><strong>Substance</strong></a> développé par la société</span></li>
+    <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Sécurisation du logiciel <a href="https://www.allegorithmic.com/substance" target="_blank"><strong>Substance</strong></a> développé par la société</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Administration système pour des postes sous Windows XP, Windows Seven, Linux Fedora</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Administration réseau : gestion du firewall <strong>MonoWall</strong>, gestion de disques en partage <strong>FreeNAS</strong></span></li>
 </ul>',
             'startDate' => '2008-07-16', 'endDate' => '2012-04-30', 'company' => 'allegorithmic', 'skills' => ['xhtmlcss', 'php', 'mysql', 'zend', 'mvc', 'linux', 'svn', 'drupal', 'illustrator', 'photoshop', 'windows']],
         ['label' => 'dev-mfpdd', 'title' => 'Développeur web fullstack', 'subtitle' => 'Conception et développement du projet PREV@PASS',
             'description' => '
-<p class="text-justify pt5">Le Projet <a class="" href="https://web.archive.org/web/20230205083822/https://www.sante-auvergne.fr/" title="PREVAPASS" target="_blank"><strong>PREV@PASS</strong></a> (Parcours Accompagné Soins et Santé) permet une prise en charge coordonnée des patients dans le cadre d\'une médecine de parcours, incluant la prévention et l\'éducation thérapeutique du patient. Ce nouveau système d\'information vise à mieux synchroniser les actions de tous les professionnels du médical et du médico-social au profit de la prise en charge de qualité et sécurisée du patient.</p>
-<p class="text-center"><a class="" href="https://web.archive.org/web/20230205083822/https://www.sante-auvergne.fr/" title="Site Prev@PASS" target="_blank"><img src="/web/20230205083822im_/http://carolinenoyer.info/images/company/logo_prevapass.jpg" class="rounded responsive-img hvr-grow-shadow image-btn" alt="Prev@PASS"></a></p>
+<p class="text-justify pt5">Le Projet <a class="" href="https://www.sante-auvergne.fr/" title="PREVAPASS" target="_blank"><strong>PREV@PASS</strong></a> (Parcours Accompagné Soins et Santé) permet une prise en charge coordonnée des patients dans le cadre d\'une médecine de parcours, incluant la prévention et l\'éducation thérapeutique du patient. Ce nouveau système d\'information vise à mieux synchroniser les actions de tous les professionnels du médical et du médico-social au profit de la prise en charge de qualité et sécurisée du patient.</p>
+<p class="text-center"><a class="" href="https://www.sante-auvergne.fr/" title="Site Prev@PASS" target="_blank"><img src="http://carolinenoyer.fr/images/company/logo_prevapass.jpg" class="rounded responsive-img hvr-grow-shadow image-btn" alt="Prev@PASS"></a></p>
 <ul class="missions">
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Création graphique de l\'interface</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Développement front-end</span></li>
@@ -189,10 +190,10 @@ Cet outil doit donc proposer une rédaction semi-automatique de ces documents à
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Mise en place de webservices</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i><span>Scripts pour l\'automatisation des tâches</span></li>
 </ul>',
-            'startDate' => '2015-05-04', 'endDate' => '2017-07-16', 'company' => 'mfpdd', 'skills' => ['html', 'css', 'jquery', 'ajax', 'bootstrap', 'twig', 'responsive', 'php', 'mysql', 'rest', 'mvc', 'python', 'composer', 'git']],
+            'startDate' => '2015-05-04', 'endDate' => '2017-07-16', 'company' => 'mfpdd', 'skills' => ['html', 'css', 'jquery', 'ajax', 'bootstrap', 'twig', 'responsive', 'php', 'mysql', 'webservices', 'mvc', 'python', 'composer', 'git']],
         ['label' => 'dev-coffreo', 'title' => 'Développeur PHP Senior', 'subtitle' => 'Conception et développement des produits Coffreo Pro',
             'description' => '
-<p class="text-justify pt5"><a class="" href="https://web.archive.org/web/20230205083822/http://www.coffreo.biz/" title="Coffreo" target="_blank"><strong>COFFREO</strong></a>, acteur majeur de la dématérialisation RH et du coffre-fort numérique, sécurise et rend agile la relation entre employeurs et leurs salariés là où elle représente un fort enjeu pour leur activité, et accompagne les salariés quelle que soit leur situation afin de faciliter l’accès à l’emploi.</p>
+<p class="text-justify pt5"><a class="" href="http://www.coffreo.biz/" title="Coffreo" target="_blank"><strong>COFFREO</strong></a>, acteur majeur de la dématérialisation RH et du coffre-fort numérique, sécurise et rend agile la relation entre employeurs et leurs salariés là où elle représente un fort enjeu pour leur activité, et accompagne les salariés quelle que soit leur situation afin de faciliter l’accès à l’emploi.</p>
 <ul class="missions">
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Squad leader d\'un nouveau produit pour l\'offre Coffreo Pro (gestion de projet)</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Analyse et rédaction des spécifications techniques du produit</span></li>
@@ -212,7 +213,7 @@ Cet outil doit donc proposer une rédaction semi-automatique de ces documents à
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Priorisation des besoins et exigences métier</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Suivi de l’avancement des projets, du planning de livraison et des engagements</span></li>
 </ul>',
-            'startDate' => '2019-11-04', 'endDate' => '2022-07-17', 'company' => 'coffreo', 'skills' => ['agile', 'jira', 'figma', 'python', 'moqup', 'trello', 'confluence']],
+            'startDate' => '2019-11-04', 'endDate' => '2022-07-17', 'company' => 'coffreo', 'skills' => ['agile', 'jira', 'figma', 'python', 'moqups', 'trello', 'confluence']],
         ['label' => 'po-perfect', 'title' => 'Product Owner', 'subtitle' => 'Encadrement R&D et qualité produit',
             'description' => '
 <p class="text-justify pt5">Charnière entre les équipes de développement, l\'équipe design et l\'équipe qualité.</p>
@@ -238,7 +239,7 @@ Rédaction des expressions de besoin et spécifications fonctionnelles</span></l
         ['label' => 'datamining', 'name' => 'Fouille de données interactive par navigation', 'period' => 'De avril 2004 à juillet 2004', 'year' => 2004,
             'description' => '
 Réalisation d\'une bibliothèque <b>C++</b> à l\'aide de la <b>STL</b> afin de l\'interfacer avec l\'outil de navigation.
-<p class="center-align pt-20"><a class="btn btn-flat btn-nine waves-effect waves-light hvr-grow-shadow" href="https://web.archive.org/web/20230205074712/http://docs.carolinenoyer.info/pdf/cnoyer-rapportdestage-maitrise-2004.pdf" title="Rapport de stage"><i class="fas fa-paperclip mr-5" aria-hidden="true"></i> Rapport de stage</a></p>',
+<p class="center-align pt-20"><a class="btn btn-flat btn-nine waves-effect waves-light hvr-grow-shadow" href="https://web.archive.org/web/20230205074712/http://docs.carolinenoyer.fr/pdf/cnoyer-rapportdestage-maitrise-2004.pdf" title="Rapport de stage"><i class="fas fa-paperclip mr-5" aria-hidden="true"></i> Rapport de stage</a></p>',
             'logo' => 'stagemaitrise.png'],
         ['label' => 'nevotec', 'name' => 'Génération de sites Internet valides W3C', 'period' => 'De novembre 2006 à avril 2007', 'year' => 2006,
             'description' => '
@@ -262,15 +263,15 @@ Réalisation d\'une bibliothèque <b>C++</b> à l\'aide de la <b>STL</b> afin de
     <li>Génération de documents PDF haute définition à l\'aide de bibliothèques Java</li>
 </ul>',
             'logo' => 'nevoprint.png'],
-        ['label' => 'randos', 'name' => 'Création graphique et développement', 'period' => 'Novembre 2007', 'year' => 2007,
+        ['label' => 'randos', 'name' => 'Création graphique et développement', 'period' => 'Novembre 2007', 'year' => 2008,
             'description' => "Ce projet a pour but de valoriser les randonnées en Auvergne, en proposant des circuits de randonnées par le biais de photos, d'un bref résumé et d'avis sur les parcours.",
-            'screenshot' => 'website-randos.png', 'logo' => 'randos.png'],
+            'screenshots' => 'website-randos.png', 'logo' => 'randos.png'],
         ['label' => 'ttc', 'name' => 'Création graphique Site Internet', 'period' => 'Octobre 2010', 'year' => 2010,
             'description' => 'Création graphique du site Internet du BDE TeamTanesC.',
-            'screenshot' => 'website-teamtanesc.png', 'logo' => 'ttc.png'],
+            'screenshots' => 'website-teamtanesc.png', 'logo' => 'ttc.png'],
         ['label' => 'creations', 'name' => 'Créations graphique', 'period' => 'Depuis 2012', 'year' => 2012,
             'description' => 'Réalisation de créations graphiques pour mon entourage : faire-parts, cartes de visite, logos',
-            'screenshot' => '', 'logo' => 'nine.png'],
+            'screenshots' => 'fairepart-gus.jpg::fairepart-elea.jpg::fairepart-cf.jpg::plu2cloud-logo-verti.png::plugeekit-logo-verti.png::tradee-logo-vert.png', 'logo' => 'nine.png'],
     ];
 
     public function load(ObjectManager $manager): void
@@ -398,6 +399,21 @@ Réalisation d\'une bibliothèque <b>C++</b> à l\'aide de la <b>STL</b> afin de
             $education->setSchool($this->getReference('school_'.$item['school']));
 
             $manager->persist($education);
+        }
+
+        foreach ($this->projectsList as $item) {
+            $project = new Project();
+            $project->setLabel($item['label']);
+            $project->setName($item['name']);
+            $project->setPeriod($item['period']);
+            $project->setYear($item['year']);
+            $project->setDescription($item['description']);
+            $project->setLogo($item['logo']);
+            if (isset($item['screenshots'])) {
+                $project->setScreenshots($item['screenshots']);
+            }
+
+            $manager->persist($project);
         }
 
         $manager->flush();

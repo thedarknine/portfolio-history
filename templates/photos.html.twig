@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Photos{% endblock %}
+{% block pagetitle %}Photos{% endblock %}
+
+{% block body %}
+    <div class="mt-40"></div>
+    {% for type in data.photoTypesList %}
+        <section class="bg-gray {% if loop.index is even %}lighten{% endif %}">
+            {% if loop.index is even %}
+                {% include 'blocks/curvedown.html' with {'color': 'curve-down-color'} %}
+            {% endif %}
+
+            <div class="container">
+                <h3 class="text-center text-nine-blue text-uppercase mb-20 mt-30 pb-20 {% if loop.index is even %}bg-item-blue{% else %}bg-item-indigo{% endif %}">{{ type.name }}</h3>
+
+                <div class="row justify-content-center">
+                    {% set listItemsPhotos = data.photosList[type.label] %}
+                    {% for photo in listItemsPhotos %}
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-20" data-aos="{{ random(effects) }}" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-delay="{{ 600 + (loop.index0 * 300) }}">
+                            <div class="nine-shadow mb-10"><img src="{{ absolute_url('images/photos/' ~ type.label ~ '/' ~ photo) }}" alt="" class="rounded"></div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {% if loop.index is even %}
+                {% include 'blocks/curveup.html' with {'color': 'curve-up-color'} %}
+            {% elseif loop.last %}
+                {% include 'blocks/curveup.html' with {'color': 'curve-up-color-light'} %}
+            {% endif %}
+        </section>
+    {% endfor %}
+{% endblock %}

@@ -29,6 +29,28 @@ class SkillRepository extends ServiceEntityRepository
         parent::__construct($registry, Skill::class);
     }
 
+    public function getSkillsByType(): array
+    {
+        $qb = $this->createQueryBuilder('skl');
+        $qb
+            ->select('skl')
+            ->where('skl.display = 1')
+            ->innerJoin('skl.skillType', 'type')
+            ->addSelect('type')
+            ->orderBy('skl.position', 'ASC');
+
+        $result = $qb
+            ->getQuery()
+            ->getResult();
+
+        $listing = [];
+        foreach ($result as $skill) {
+            $listing[$skill->getSkillType()->getLabel()][] = $skill;
+        }
+
+        return $listing;
+    }
+
     //    /**
     //     * @return Skill[] Returns an array of Skill objects
     //     */

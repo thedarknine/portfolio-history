@@ -29,6 +29,20 @@ class EducationRepository extends ServiceEntityRepository
         parent::__construct($registry, Education::class);
     }
 
+    public function getEducationsWithSchool(): array
+    {
+        $qb = $this->createQueryBuilder('educ');
+        $qb
+            ->select('educ')
+            ->innerJoin('educ.school', 'sch')
+            ->addSelect('sch')
+            ->orderBy('educ.year', 'DESC');
+
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
+
     //    /**
     //     * @return Education[] Returns an array of Education objects
     //     */

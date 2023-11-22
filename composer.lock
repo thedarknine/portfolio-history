@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a489167fb3c9d54f2b49c2cdf8778a8",
+    "content-hash": "0f4cef3af0b2889a3390116e30d03321",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1750,6 +1750,112 @@
             "time": "2023-10-27T15:32:31+00:00"
         },
         {
+            "name": "nesbot/carbon",
+            "version": "2.71.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "98276233188583f2ff845a0f992a235472d9466a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/98276233188583f2ff845a0f992a235472d9466a",
+                "reference": "98276233188583f2ff845a0f992a235472d9466a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.1.8 || ^8.0",
+                "psr/clock": "^1.0",
+                "symfony/polyfill-mbstring": "^1.0",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/translation": "^3.4 || ^4.0 || ^5.0 || ^6.0"
+            },
+            "provide": {
+                "psr/clock-implementation": "1.0"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^2.0 || ^3.1.4",
+                "doctrine/orm": "^2.7",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "kylekatarnls/multi-tester": "^2.0",
+                "ondrejmirtes/better-reflection": "*",
+                "phpmd/phpmd": "^2.9",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12.99 || ^1.7.14",
+                "phpunit/php-file-iterator": "^2.0.5 || ^3.0.6",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.26 || ^9.5.20",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "bin": [
+                "bin/carbon"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev",
+                    "dev-master": "2.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Carbon\\Laravel\\ServiceProvider"
+                    ]
+                },
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Carbon\\": "src/Carbon/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Nesbitt",
+                    "email": "brian@nesbot.com",
+                    "homepage": "https://markido.com"
+                },
+                {
+                    "name": "kylekatarnls",
+                    "homepage": "https://github.com/kylekatarnls"
+                }
+            ],
+            "description": "An API extension for DateTime that supports 281 different languages.",
+            "homepage": "https://carbon.nesbot.com",
+            "keywords": [
+                "date",
+                "datetime",
+                "time"
+            ],
+            "support": {
+                "docs": "https://carbon.nesbot.com/docs",
+                "issues": "https://github.com/briannesbitt/Carbon/issues",
+                "source": "https://github.com/briannesbitt/Carbon"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/kylekatarnls",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/Carbon#sponsor",
+                    "type": "opencollective"
+                },
+                {
+                    "url": "https://tidelift.com/subscription/pkg/packagist-nesbot-carbon?utm_source=packagist-nesbot-carbon&utm_medium=referral&utm_campaign=readme",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-09-25T11:31:05+00:00"
+        },
+        {
             "name": "phpdocumentor/reflection-common",
             "version": "2.2.0",
             "source": {
@@ -2344,6 +2450,32 @@
                 "source": "https://github.com/stof/StofDoctrineExtensionsBundle/tree/v1.9.0"
             },
             "time": "2023-08-31T08:08:51+00:00"
+        },
+        {
+            "name": "symfony/apache-pack",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/apache-pack.git",
+                "reference": "3aa5818d73ad2551281fc58a75afd9ca82622e6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/apache-pack/zipball/3aa5818d73ad2551281fc58a75afd9ca82622e6c",
+                "reference": "3aa5818d73ad2551281fc58a75afd9ca82622e6c",
+                "shasum": ""
+            },
+            "type": "symfony-pack",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pack for Apache support in Symfony",
+            "support": {
+                "issues": "https://github.com/symfony/apache-pack/issues",
+                "source": "https://github.com/symfony/apache-pack/tree/master"
+            },
+            "time": "2017-12-12T01:46:35+00:00"
         },
         {
             "name": "symfony/asset",
@@ -7573,6 +7705,70 @@
                 }
             ],
             "time": "2023-07-29T15:34:56+00:00"
+        },
+        {
+            "name": "twig/intl-extra",
+            "version": "v3.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/intl-extra.git",
+                "reference": "7b3db67c700735f473a265a97e1adaeba3e6ca0c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/intl-extra/zipball/7b3db67c700735f473a265a97e1adaeba3e6ca0c",
+                "reference": "7b3db67c700735f473a265a97e1adaeba3e6ca0c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/intl": "^5.4|^6.0|^7.0",
+                "twig/twig": "^3.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^6.4|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Twig\\Extra\\Intl\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A Twig extension for Intl",
+            "homepage": "https://twig.symfony.com",
+            "keywords": [
+                "intl",
+                "twig"
+            ],
+            "support": {
+                "source": "https://github.com/twigphp/intl-extra/tree/v3.8.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/twig/twig",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-11-21T17:27:48+00:00"
         },
         {
             "name": "twig/twig",
