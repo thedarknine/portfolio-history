@@ -16,6 +16,10 @@ cs:
 	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --verbose
 	vendor/bin/twig-cs-fixer lint templates
 
+## Fix scss files
+fix-scss:
+	npx stylelint "assets/styles/*.scss"
+
 ## Run dev front-end
 watch:
 	yarn encore dev --watch
@@ -31,7 +35,7 @@ fixtures:
 
 ## Switch to dev env
 dev:
-	composer dump-env
+	composer dump-env dev
 	symfony console cache:clear
 
 ## Build to production
