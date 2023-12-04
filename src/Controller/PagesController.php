@@ -137,7 +137,15 @@ class PagesController extends AbstractController
             $finder = new Finder();
             $finder->in($this->getImagesDir().'photos/'.$type->getLabel());
             foreach ($finder as $file) {
-                $photosList[$type->getLabel()][] = $file->getFileName();
+                $caption = explode('-', str_replace(['.JPG', '.jpg'], '', $file->getFileName()));
+                $title = '';
+                if (array_key_exists(1, $caption)) {
+                    $title = str_replace('_', ' ', $caption[1]);
+                }
+                $photosList[$type->getLabel()][] = [
+                    'filename' => $file->getFileName(),
+                    'caption' => $title,
+                ];
             }
             shuffle($photosList[$type->getLabel()]);
         }

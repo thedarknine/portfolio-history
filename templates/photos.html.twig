@@ -18,7 +18,11 @@
                     {% set listItemsPhotos = data.photosList[type.label] %}
                     {% for photo in listItemsPhotos %}
                         <div class="col-lg-3 col-md-4 col-sm-6 mb-20" data-aos="{{ random(effects) }}" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-delay="{{ 600 + (loop.index0 * 300) }}">
-                            <div class="nine-shadow mb-10"><img src="{{ absolute_url('images/photos/' ~ type.label ~ '/' ~ photo) }}" alt="" class="rounded"></div>
+                            <div class="nine-shadow mb-10">
+                                <a href="{{ absolute_url('images/photos/' ~ type.label ~ '/' ~ photo.filename) }}" data-toggle="lightbox" data-gallery="{{ type.label }}-gallery" data-caption="{{ photo.caption }}">
+                                    <img src="{{ absolute_url('images/photos/' ~ type.label ~ '/' ~ photo.filename) }}" alt="" class="rounded img-fluid">
+                                </a>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
@@ -31,4 +35,9 @@
             {% endif %}
         </section>
     {% endfor %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 {% endblock %}
