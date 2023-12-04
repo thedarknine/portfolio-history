@@ -134,6 +134,50 @@ import './styles/_main.scss';
 })(jQuery);
 
 $(document).ready(function(){
+    $('#carousel-slick').slick({
+        centerMode: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true,
+        dots: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        centerPadding: '60px',
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    centerPadding: '60px',
+                    arrows: true,
+                    dots: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    centerPadding: '40px',
+                    arrows: false,
+                    dots: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    centerPadding: '60px',
+                    arrows: false,
+                    dots: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+            ]
+    });
+
     $(".progress").each(function() {
         let value = $(this).attr('data-value');
         let left = $(this).find('.progress-left .progress-bar');

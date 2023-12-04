@@ -1,5 +1,5 @@
 @import 'https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap';
-@import  'https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap';
 @import "variables";
 
 body {
@@ -113,7 +113,7 @@ strong {
 }
 
 .section-padding {
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 .nine-card {
@@ -266,7 +266,7 @@ h5.card-title {
   .fullnav-toggler {
     position: relative;
     left: auto;
-    right: 20px;
+    right: 10px;
     top: auto;
     cursor: pointer;
     background-color: transparent;
@@ -340,7 +340,7 @@ h5.card-title {
     opacity: 1;
   }
 
-  .fullnav-close{
+  .fullnav-close {
     background-color: transparent;
     cursor: pointer;
     display: inline-block;
@@ -369,7 +369,6 @@ h5.card-title {
     transition: all .2s;
     display: block;
   }
-
 
   .fullnav-close .line:first-child {
     transform: rotate(45deg);
@@ -1005,37 +1004,33 @@ h5.card-title {
   }
 }
 
-
 .tooltip > .tooltip-inner {
   background-color: $color-blue;
 }
+
 .tooltip-arrow::before {
   border-left-color: $color-blue!important;
   border-right-color: $color-blue!important;
 }
+
 .nine-tooltip {
   font-size: 12px !important;
   padding: 4px !important;
   font-family: $font-spartan;
 }
 
-#curve-up-color path,
 .curve-up-color path,
-.curve-down-color path,
-#curve-down-color path {
+.curve-down-color path {
   fill: #dde1e6;
   stroke: #dde1e6;
 }
 
-#curve-up-color-light path,
 .curve-up-color-light path,
 .curve-down-color-light path {
   fill: #f4f5f7;
   stroke: #f4f5f7;
 }
 
-#curve-up-color-dark path,
-#curve-down-color-dark path,
 .curve-up-color-dark path,
 .curve-down-color-dark path{
   fill: $color-dark;
@@ -1184,6 +1179,8 @@ ul.missions li {
   transform: scale(0.95);
   opacity: 0.9;
   margin-bottom: 25px;
+
+  // -webkit-transition: opacity 0.4s linear, -webkit-transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
 .select-single:last-child {
@@ -1289,6 +1286,35 @@ ul.missions li {
 .nine-carousel .item {
   padding: 0 10px;
   transition: ease-in-out left;
+}
+
+.slick-dots li button::before {
+  color: #fa0;
+  opacity: 0.4;
+}
+
+.slick-dots li.slick-active button::before {
+  color: #fa0;
+  opacity: 0.9;
+}
+
+// Lightbox for BS5
+.modal-content .btn-close svg {
+  fill: $color-indigo;
+}
+
+.ratio {
+  background-color: $color-dark !important;
+}
+
+p.lightbox-caption {
+  background-color: $color-dark !important;
+  opacity: 0.85;
+
+  em {
+    color: $color-yellow;
+    font-style: normal;
+  }
 }
 
 /* * Footer ****************************************************** **/

@@ -2,6 +2,12 @@
 
 {% block title %}Product Owner{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    {{ parent() }}
+{% endblock %}
+
 {% block body %}
     <section id="about" class="section-padding">
         <div class="container">
@@ -112,7 +118,7 @@
 
     <section id="experience" class="bg-gray section-padding">
         <div class="container">
-            <h2 class="mb-50" id="">Expérience</h2>
+            <h2 class="mb-50" id="experience-title">Expérience</h2>
 
             <div class="row">
                 <div class="col-md-3">
@@ -147,29 +153,62 @@
     </section>
     {% include 'blocks/curvedown.html' with {'color': 'curve-down-color'} %}
 
+    <section id="competences" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 pb-20">
+                    <div class="card nine-card bordered">
+                        <img class="card-img-top" src="{{ absolute_url('images/main/experience.jpg') }}" alt="Expérience" />
+                        <div class="card-body p-30">
+                            <h5 class="card-title text-uppercase text-nine-indigo mb-20">Expérience</h5>
+                            <p class="card-text text-nine-blue pb-20">Passionnée de nouvelles technologies depuis plus de 15 ans,
+                                dotée d'un profil expérimenté et polyvalent, je m'applique à analyser, développer,
+                                communiquer et proposer des solutions.</p>
+                            <a href="/experience" class="btn-primary-nine">Plus d'infos <i class="fas fa-angle-double-right ml5"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 pb-20">
+                    <div class="card nine-card bordered">
+                        <img class="card-img-top" src="{{ absolute_url('images/main/competences.jpg') }}" alt="Compétences" />
+                        <div class="card-body p-30">
+                            <h5 class="card-title text-uppercase text-nine-indigo mb-20">Compétences</h5>
+                            <p class="card-text text-nine-blue pb-20">Dans un souci de qualité, évolutivité, fiabilité, je m'efforce de
+                                respecter les standards mis en place à travers des outils éprouvés et n'ai de cesse de
+                                suivre leur évolution.</p>
+                            <a href="/competences" class="btn-primary-nine">Plus d'infos <i class="fas fa-angle-double-right ml5"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 pb-20">
+                    <div class="card nine-card bordered">
+                        <img class="card-img-top" src="{{ absolute_url('images/main/centres-interet.jpg') }}" alt="Centres d'intérêt" />
+                        <div class="card-body p-30">
+                            <h5 class="card-title text-uppercase text-nine-indigo mb-20">Centres d'intérêt</h5>
+                            <p class="card-text text-nine-blue pb-20">Mon goût pour les métiers d'art et la matière m'a mené vers l'un de mes
+                                loisirs : le modelage d'argile. La randonnée, quant à elle, me permet de profiter de la
+                                richesse de l'Auvergne.</p>
+                            <a href="/creations" class="btn-primary-nine">Plus d'infos <i class="fas fa-angle-double-right ml5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {% include 'blocks/curveup.html' with {'color': 'curve-up-color-dark'} %}
     <section id="creations" class="bg-darkblue section-padding">
         <div class="container">
 
             <div class="row">
-                <h2 class="mb-50 text-center text-uppercase" id="">Créations</h2>
+                <h2 class="mb-50 text-center text-uppercase" id="creations-title">Créations</h2>
 
-                <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        {% for creation in data.creationsList %}
-                            <div class="carousel-item {% if loop.first %}active{% endif %}">
-                                <img src="{{ absolute_url('images/creations/' ~ creation) }}" class="d-block w-50" alt="Créaations">
-                            </div>
-                        {% endfor %}
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                <div id="carousel-slick">
+                    {% for creation in data.creationsList %}
+                        <div class="carousel-item {% if loop.first %}active{% endif %}">
+                            <img src="{{ absolute_url('images/creations/' ~ creation) }}" class="rounded" alt="Créations" width="200px">
+                        </div>
+                    {% endfor %}
                 </div>
 
             </div>
@@ -182,4 +221,5 @@
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ absolute_url('js/animated-headline.js') }}"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 {% endblock %}
