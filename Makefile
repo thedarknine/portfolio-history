@@ -36,7 +36,8 @@ fixtures:
 ## Switch to dev env
 dev:
 	composer dump-env dev
-	symfony console cache:clear
+	composer install
+	APP_ENV=dev APP_DEBUG=1 php bin/console cache:clear
 
 ## Build to production
 prod:
