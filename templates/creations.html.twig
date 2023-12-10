@@ -18,7 +18,9 @@
                     {% for creation in listItemsCreations %}
                         <div class="col-lg-3 col-md-4 col-sm-6 mb-20" data-aos="{{ random(effects) }}" data-aos-easing="ease-in-out" data-aos-duration="600" data-aos-delay="{{ 600 + (loop.index0 * 300) }}">
                             <div class="nine-shadow mb-10">
-                                <img src="{{ absolute_url('images/creations/' ~ type.label ~ '/' ~ creation) }}" alt="" class="rounded" />
+                                <a href="{{ absolute_url('images/creations/' ~ type.label ~ '/' ~ creation) }}" data-toggle="lightbox" data-gallery="{{ type.label }}-gallery">
+                                    <img src="{{ absolute_url('images/creations/' ~ type.label ~ '/' ~ creation) }}" alt="" class="rounded img-fluid"/>
+                                </a>
                             </div>
                         </div>
                     {% endfor %}
@@ -32,4 +34,9 @@
             {% endif %}
         </section>
     {% endfor %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 {% endblock %}

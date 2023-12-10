@@ -134,6 +134,22 @@ import './styles/_main.scss';
 })(jQuery);
 
 $(document).ready(function(){
+    // AOS.init({once: true});
+    // You get the current window width
+    var width = window.innerWidth;
+
+    //Than you define the AOS settings for different widths
+    if (width <= 600) { // For example, this can be for mobile devices
+        AOS.init({disable: 'mobile'});
+    } else if (width > 600 && width <= 900) { // And you make a condition for tablets too
+        AOS.init({
+            offset: 300,
+            duration: 1200
+        });
+    } else { // Else for just, you know, desktops
+        AOS.init();
+    }
+
     $('#carousel-slick').slick({
         centerMode: true,
         infinite: true,
@@ -172,7 +188,7 @@ $(document).ready(function(){
                     arrows: false,
                     dots: false,
                     slidesToShow: 1,
-                    slidesToScroll: 1,
+                    slidesToScroll: 1
                 }
             }
             ]
