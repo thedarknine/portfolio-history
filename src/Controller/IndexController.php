@@ -35,7 +35,7 @@ class IndexController extends AbstractController
             $creationsList[] = $file->getRelativePath().'/'.$file->getFilename();
         }
         shuffle($creationsList);
-        $data['creationsList'] = array_slice($creationsList, 0, 12);
+        $data['creationsList'] = array_slice($creationsList, 0, 10);
 
         $data['lastExperiences'] = $experienceRepository->getExperiencesWithCompany(3);
 

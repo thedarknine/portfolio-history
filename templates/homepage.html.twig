@@ -3,223 +3,350 @@
 {% block title %}Product Owner{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     {{ parent() }}
 {% endblock %}
 
 {% block body %}
-    <section id="about" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 mt-20" data-aos="fade-right" data-aos-duration="3000">
-                    <div class="text-center">
-                        <img src="{{ absolute_url('images/cnoyer.jpg') }}" alt="Caroline Noyer • Product Owner & Développeur web senior" class="img-fluid shadow-lg rounded-circle w-75">
+    <section id="about" class="bg-white py-10">
+        <div class="flex flex-wrap">
+            <div class="w-5/6 sm:w-1/3 p-6">
+                <img src="{{ absolute_url('images/cnoyer.jpg') }}" alt="Caroline Noyer • Product Owner &amp; Développeur web senior" class="drop-shadow-lg rounded-full w-3/4 mx-auto mt-10">
+            </div>
+            <div class="w-full sm:w-2/3 p-6 mt-10">
+                <h3 class="text-2xl text-turquoise font-bold mb-3 font-accent">
+                    Passionnée par l'univers du web depuis 2005
+                </h3>
+                <p class="text-blue-dark mb-4">
+                    Au cours des divers projets que j'ai menés, j’ai enrichi mon expertise
+                    technique tout en élargissant mon éventail de compétences. Ceci me permet aujourd'hui de
+                    disposer de <strong>solides bases</strong> autant en Front-end qu'en Back-end. C’est ainsi
+                    que j’ai rejoint l’équipe R&amp;D de Coffreo en 2017 en qualité de <strong>développeur PHP
+                    senior</strong>.
+                </p>
+
+                <p class="text-blue-dark mb-4">
+                    <strong class="text-turquoise">Empathique</strong>, je m’intègre aisément au sein d’un groupe. La
+                    valeur du <strong>collectif</strong> et l’<strong>esprit d’équipe</strong> sont primordiaux,
+                    lorsque je suis en confiance, c’est avec plaisir que je fais en sorte de renforcer la
+                    <strong>cohésion</strong> et pourquoi pas avec quelques touches d’humour !
+                </p>
+
+                <p class="text-blue-dark mb-4">
+                    Ayant une appétence pour la coordination et la gestion de projets, j’ai évolué
+                    fin 2019 sur un poste de <strong>Product Owner</strong>, me permettant d’allier mes
+                    connaissances techniques, mon envie de dynamiser une équipe et d’élaborer une vision Produit.
+                </p>
+
+                <p class="text-blue-dark mb-4">
+                    Mon parcours professionnel a affiné ma sensibilité visuelle que ce soit au
+                    niveau de l’aspect graphique ou de l’<strong>expérience utilisateur</strong>.
+                    <strong>Motivée</strong> par l’envie de me dépasser, voire même de me surprendre, j’ai voulu
+                    donner un sens à ce que je faisais et j’ai alors suivi une formation de <strong>Product
+                    Designer</strong> pour mettre mes compétences au service des utilisateurs.
+                </p>
+
+                <p class="text-blue-dark mb-4">
+                    <strong>Curieuse</strong> de nature, je m’intéresse à des sujets variés et
+                    aime apprendre de nouvelles choses, notamment dans le domaine de l’<strong>amélioration de
+                    soi</strong> et de la qualité de vie. Apprendre des autres mais également apprendre de soi :
+                    c’est un vrai défi qui demande de l’<strong>ouverture d’esprit</strong>.
+                </p>
+
+                <p class="text-blue-dark mb-4">
+                    <strong>Dynamique</strong> et motivée par l’envie d’évoluer, je prends plaisir
+                    à relever de nouveaux challenges me permettant de m’épanouir.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="">
+        {% include 'blocks/curveup-gradient.html' %}
+        <div class="flex flex-wrap items-center">
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10">
+                <div class="p-3 text-center mb-3 mx-auto text-yellow-nine text-4xl"><i class="fas fa-seedling"></i></div>
+                <h3 class="text-2xl mb-2 font-semibold leading-normal text-center">{{ data.nbYearsExperience }} ans d'expérience</h3>
+                <div class="block pb-6 text-center">
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Dév</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">SaaS</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">B2B</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Santé</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">RH</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Sémantique</span>
+                </div>
+            </div>
+
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10">
+                <div class="p-3 text-center mb-3 mx-auto text-yellow-nine text-4xl"><i class="fas fa-code"></i></div>
+                <h3 class="text-2xl mb-2 font-semibold leading-normal text-center">Développement</h3>
+                <div class="block pb-6 text-center">
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">PHP</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Symfony</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">MySQL</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">MongoDB</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">API</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Python</span>
+                </div>
+            </div>
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10">
+                <div class="p-3 text-center mb-3 mx-auto text-yellow-nine text-4xl"><i class="fas fa-pencil-ruler"></i></div>
+                <h3 class="text-2xl mb-2 font-semibold leading-normal text-center">Web design</h3>
+                <div class="block pb-6 text-center">
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">UX/UI</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Prototype</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Figma</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Illustrator</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Veille</span>
+                </div>
+            </div>
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10">
+                <div class="p-3 text-center mb-3 mx-auto text-yellow-nine text-4xl"><i class="fas fa-tasks"></i></div>
+                <h3 class="text-2xl mb-2 font-semibold leading-normal text-center">Produit</h3>
+                <div class="block pb-6 text-center">
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Agile</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Scrum</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Equipe</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Jira</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Roadmap</span>
+                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Delivery</span>
+                </div>
+            </div>
+        </div>
+        
+        {% include 'blocks/curvedown-gradient.html' %}
+    </section>
+
+    <section id="experience" class="bg-white py-10">
+        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+            Dernières expériences
+        </h1>
+        <div class="w-full mb-10">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+
+        <div class="px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12 text-blue-dark pb-24">
+            <div class="lg:col-span-5">
+                <div class="mb-16 lg:mb-0 xl:mt-16">
+                    <div class="w-10/12 sm:w-12/12 px-12 md:px-4 mx-auto">
+                        <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-perfect">
+                            <img alt="..." src="{{ absolute_url('images/home/header-perfect.jpeg') }}" class="w-full align-middle rounded-t-lg">
+                            <blockquote class="relative p-8 mb-4">
+                                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="absolute left-0 w-full block" style="height:95px;top:-94px"><polygon points="-30,95 583,95 583,65" class="fill-perfect"></polygon></svg>
+                                <h4 class="text-xl font-bold text-white">Product Owner</h4>
+                                <h5 class="mb-8 font-semibold text-white/70">Encadrement R&amp;D et qualité Produit</h5>
+                                <p class="text-md font-light mt-2 text-white">Perfect Memory est un fournisseur d'IA sémantique, ces technologies qui permettent de donner du sens et de la valeur à toutes les données générées par une organisation.  </p>
+                            </blockquote>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-12 mt-20" data-aos="fade-left" data-aos-duration="3000">
-                    <h3>Passionnée par l'univers du web depuis 2005</h3>
-                    <div class="mt-20 mb-10">Au cours des divers projets que j'ai menés, j’ai enrichi mon expertise
-                        technique tout en élargissant mon éventail de compétences. Ceci me permet aujourd'hui de
-                        disposer de <strong>solides bases</strong> autant en Front-end qu'en Back-end. C’est ainsi
-                        que j’ai rejoint l’équipe R&D de Coffreo en 2017 en qualité de <strong>développeur PHP
-                            senior</strong>.</div>
+            </div> 
+            <div class="lg:col-span-7">
+                <div class="sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
+                    <div class="lg:col-span-6">
+                        <div class="px-4 py-5">
+                            <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-people-group"></i></div>
+                            <h6 class="text-xl mb-1 font-semibold text-perfect">Gestion équipe</h6>
+                            <p class="mb-4">Charnière entre les équipes de développement, l'équipe design et l'équipe qualité</p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="px-4 py-5">
+                            <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-list-check"></i></div>
+                            <h6 class="text-xl mb-1 font-semibold text-perfect">Gestion produit</h6>
+                            <p class="mb-4">Rédaction des expressions de besoin et spécifications fonctionnelles</p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="px-4 py-5">
+                            <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-ranking-star"></i></div>
+                            <h6 class="text-xl mb-1 font-semibold text-perfect">Amélioration</h6>
+                            <p class="mb-4">Mise en place d’un outil de discovery et priorisation<br /> <em>Jira Product Discovery</em></p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="px-4 py-5">
+                            <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-book"></i></div>
+                            <h6 class="text-xl mb-1 font-semibold text-perfect">Documentation</h6>
+                            <p class="mb-4">Rédaction du référentiel de fonctionnalités disponibles dans les différentes briques produit</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div> 
 
-                    <div class="mb-10"><strong>Empathique</strong>, je m’intègre aisément au sein d’un groupe. La
-                        valeur du <strong>collectif</strong> et l’<strong>esprit d’équipe</strong> sont primordiaux,
-                        lorsque je suis en confiance, c’est avec plaisir que je fais en sorte de renforcer la
-                        <strong>cohésion</strong> et pourquoi pas avec quelques touches d’humour !</div>
+        <div class="px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12 text-blue-dark">
+            <div class="lg:col-span-5">
+                <div class="mb-16 lg:mb-0 xl:mt-16">
+                    <div class="w-10/12 sm:w-12/12 px-12 md:px-4 mx-auto">
+                        <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-coffreo">
+                            <img alt="..." src="{{ absolute_url('images/home/header-coffreo.png') }}" class="w-full align-middle rounded-t-lg">
+                            <blockquote class="relative p-8 mb-4">
+                                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="absolute left-0 w-full block" style="height:95px;top:-94px"><polygon points="-30,95 583,95 583,65" class="fill-coffreo"></polygon></svg>
+                                <h4 class="text-xl font-bold text-white">Product Owner</h4>
+                                <h5 class="mb-8 font-semibold text-white/70">Coordination des développements</h5>
+                                <p class="text-md font-light mt-2 text-white">Au coeur de la transformation digitale RH, Coffreo a créé une plateforme SaaS pour accélérer et fluidifier les échanges entre les agences d’intérim, les prestataires de l’événementiel, les traiteurs, les sociétés de sécurité, les organismes médicaux, … et leurs salariés temporaires.</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-7">
+                <div class="sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
+                    <div class="lg:col-span-6">
+                        <div class="px-4 py-5">
+                            <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-people-group"></i></div>
+                            <h6 class="text-xl mb-1 font-semibold text-perfect">Gestion équipe</h6>
+                            <p class="mb-4">Charnière entre l’équipe technique, l’équipe marketing et les clients</p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="px-4 py-5">
+                            <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-list-check"></i></div>
+                            <h6 class="text-xl mb-1 font-semibold text-perfect">Gestion produit</h6>
+                            <p class="mb-4">Création et gestion du Product Backlog selon la méthodologie Agile (Scrum)</p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="px-4 py-5">
+                            <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-diagram-project"></i></div>
+                            <h6 class="text-xl mb-1 font-semibold text-perfect">Priorisation</h6>
+                            <p class="mb-4">Priorisation des besoins et exigences métier, entre la roadmap et les retours clients</p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="px-4 py-5">
+                            <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-truck"></i></div>
+                            <h6 class="text-xl mb-1 font-semibold text-perfect">Livraison</h6>
+                            <p class="mb-4">Suivi de l’avancement des projets, du planning de livraison et des engagements</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="mb-10">Ayant une appétence pour la coordination et la gestion de projets, j’ai évolué
-                        fin 2019 sur un poste de <strong>Product Owner</strong>, me permettant d’allier mes
-                        connaissances techniques, mon envie de dynamiser une équipe et d’élaborer une vision Produit.</div>
+        <div class="text-center mt-10"><a class="nine-btn-primary transform transition hover:scale-105 duration-300 ease-in-out" href="#"><span>En savoir plus</span></a></div>
+    </section>
 
-                    <div class="mb-10">Mon parcours professionnel a affiné ma sensibilité visuelle que ce soit au
-                        niveau de l’aspect graphique ou de l’<strong>expérience utilisateur</strong>.
-                        <strong>Motivée</strong> par l’envie de me dépasser, voire même de me surprendre, j’ai voulu
-                        donner un sens à ce que je faisais et j’ai alors suivi une formation de <strong>Product
-                            Designer</strong> pour mettre mes compétences au service des utilisateurs.</div>
-
-                    <div class="mb-10"><strong>Curieuse</strong> de nature, je m’intéresse à des sujets variés et
-                        aime apprendre de nouvelles choses, notamment dans le domaine de l’<strong>amélioration de
-                            soi</strong> et de la qualité de vie. Apprendre des autres mais également apprendre de soi :
-                        c’est un vrai défi qui demande de l’<strong>ouverture d’esprit</strong>.</div>
-
-                    <div class="mb-10"><strong>Dynamique et motivée</strong> par l’envie d’évoluer, je prends plaisir
-                        à relever de nouveaux challenges me permettant de m’épanouir.</div>
-
-                    {# <div class="mt-20 mb-10">J’ai enrichi au cours des divers
-                        projets que j'ai menés, mon expertise technique tout en élargissant mon éventail de compétences.
-                        Ceci me permet aujourd'hui de disposer de solides bases autant en <strong>Front-end</strong>
-                        qu'en <strong>Back-end</strong>.</div>
-
-                    <div class="mb-10">Cet univers en constante évolution m'incite à découvrir et maîtriser
-                        régulièrement de nouvelles technologies. Dans le souci de produire des <strong>applications fiables
-                            et de qualité</strong>, j’attache une importance à respecter les standards et les normes
-                        actuelles. <strong>Rigoureuse</strong>, il me semble essentiel de présenter les outils les plus adaptés.</div>
-
-                    <div class="mb-10"><strong>Force de proposition et organisée</strong>, mon expérience dans
-                        les différentes équipes a développé ma capacité de communication ainsi que mon aptitude à analyser
-                        tant les besoins utilisateurs que les spécificités du domaine d’application. Mon parcours
-                        professionnel a affiné ma sensibilité visuelle que ce soit au niveau de l’aspect graphique ou
-                        de <strong>l’expérience utilisateur</strong>.</div>
-
-                    <div class="mb-10"><strong>Dynamique et motivée</strong> par l’envie d’évoluer, je prends
-                        plaisir à relever de nouveaux challenges me permettant de m'épanouir et ainsi de mettre en avant
-                        et de consolider mes connaissances.</div>
-                    #}
+    <section id="paysage" class="py-10">
+        <div class="container mx-auto py-8">
+            <div class="row">
+                <h2 class="w-full my-2 text-4xl font-bold leading-tight text-center font-accent">Paysage mental</h2>
+                <div class="w-full mb-4">
+                    <div class="h-1 mx-auto bg-light w-64 opacity-25 my-0 py-0 rounded-t"></div>
+                </div>
+            </div>
+            <div class="grid-cols-3 p-8 md:space-y-0 md:grid md:gap-3 md:grid-rows-3">
+                <div class="w-full rounded">
+                    <img src="{{ absolute_url('images/home/rugby-asm.jpeg') }}" alt="rugby" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
+                </div>
+                <div class="w-full col-span-2 row-span-2 rounded">
+                    <img src="{{ absolute_url('images/home/lac-zen.jpg') }}" alt="sérénité" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
+                </div>
+                <div class="w-full rounded">
+                    <img src="{{ absolute_url('images/home/chat.jpg') }}" alt="chats" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
+                </div>
+                <div class="w-full rounded">
+                    <img src="{{ absolute_url('images/home/auvergne.jpg') }}" alt="Auvergne" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
+                </div>
+                <div class="w-full rounded">
+                    <img src="{{ absolute_url('images/home/equipe.jpg') }}" alt="équipe" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
+                </div>
+                <div class="w-full rounded">
+                    <img src="{{ absolute_url('images/home/photographe.jpg') }}" alt="photographie" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="dark section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
-                    <strong><i class="fas fa-seedling"></i></strong>
-                    <p class="text-md">{{ data.nbYearsExperience }} ans d'expérience</p>
+    <section id="competences" class="bg-white py-10">
+        <div class="relative px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
+            <div class="relative mx-auto max-w-7xl">
+            <div class="grid max-w-lg gap-9 mx-auto lg:grid-cols-3 lg:max-w-none">
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine">
+                <div class="flex-shrink-0">
+                    <img class="object-cover w-full h-48" src="{{ absolute_url('images/main/experience.jpg') }}" alt="">
                 </div>
-                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
-                    <strong><i class="fas fa-code"></i></strong>
-                    <p class="text-md">Développement</p>
+                <div class="flex flex-col justify-between flex-1 p-6 bg-gray-nine/20">
+                    <div class="flex-1">
+                    <a href="#" class="block mt-2">
+                        <p class="text-xl font-semibold text-turquoise font-accent">Expérience</p>
+                        <p class="mt-3 text-base text-gray-500 ">Passionnée de nouvelles technologies depuis plus de 15 ans,
+                        dotée d'un profil expérimenté et polyvalent, je m'applique à analyser, développer,
+                        communiquer et proposer des solutions.</p>
+                    </a>
+                    </div>
+                    <div class="text-right mt-20">
+                        <a href="/experience" class="nine-btn-primary transform transition hover:scale-105 duration-300 ease-in-out">Plus d'infos <i class="fas fa-angle-double-right ml-3"></i></a>
+                    </div>
                 </div>
-                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="900">
-                    <strong><i class="fas fa-pencil-ruler"></i></strong>
-                    <p class="text-md">Web design</p>
                 </div>
-                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1300">
-                    <strong><i class="fas fa-tasks"></i></strong>
-                    <p class="text-md">Agile/Scrum</p>
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine">
+                <div class="flex-shrink-0">
+                    <img class="object-cover w-full h-48" src="{{ absolute_url('images/main/competences.jpg') }}" alt="Compétences">
+                </div>
+                <div class="flex flex-col justify-between flex-1 p-6 bg-gray-nine/20">
+                    <div class="flex-1">
+                    <a href="https://twitter.com/g_perales" class="block mt-2">
+                        <p class="text-xl font-semibold text-turquoise font-accent">Compétences</p>
+                        <p class="mt-3 text-base text-gray-500">Dans un souci de qualité, évolutivité, fiabilité, je m'efforce de
+                        respecter les standards mis en place à travers des outils éprouvés et n'ai de cesse de
+                        suivre leur évolution.</p>
+                    </a>
+                    </div>
+                    <div class="text-right mt-20">
+                        <a href="/competences" class="nine-btn-primary transform transition hover:scale-105 duration-300 ease-in-out">Plus d'infos <i class="fas fa-angle-double-right ml-3"></i></a>
+                    </div>
+                </div>
+                </div>
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine">
+                <div class="flex-shrink-0">
+                    <img class="object-cover w-full h-48" src="{{ absolute_url('images/main/centres-interet.jpg') }}" alt="Centres d'intérêt">
+                </div>
+                <div class="flex flex-col justify-between flex-1 p-6 bg-gray-nine/20">
+                    <div class="flex-1">
+                    <a href="#" class="block mt-2">
+                        <p class="text-xl font-semibold text-turquoise font-accent">Centres d'intérêt</p>
+                        <p class="mt-3 text-base text-gray-500">Mon goût pour les métiers d'art et la matière m'a mené vers l'un de mes
+                        loisirs : le modelage d'argile. La randonnée, quant à elle, me permet de profiter de la
+                        richesse de l'Auvergne.</p>
+                    </a>
+                    </div>
+                    <div class="text-right mt-20">
+                        <a href="/creations" class="nine-btn-primary transform transition hover:scale-105 duration-300 ease-in-out">Plus d'infos <i class="fas fa-angle-double-right ml-3"></i></a>
+                    </div>
+                </div>
                 </div>
             </div>
-        </div>
-        <div class="waves">
-            <svg width="100%" height="200px" fill="none">
-                <path
-                        fill="#dde1e6"
-                        d="M 0 67 C 273,183 822,-40 1920,106 V 359 H 0 V 67 Z">
-                    <animate
-                            repeatCount="indefinite"
-                            fill="#d8dde3"
-                            attributeName="d"
-                            dur="15s"
-                            values="
-                        M0 77 C 473,283 822,-40 1920,116 V 359 H 0 V 67 Z;
-                        M0 77 C 473,-40 1222,283 1920,136 V 359 H 0 V 67 Z;
-                        M0 77 C 973,260 1722,-53 1920,120 V 359 H 0 V 67 Z;
-                        M0 77 C 473,283 822,-40 1920,116 V 359 H 0 V 67 Z
-                        ">
-                    </animate>
-                </path>
-            </svg>
-        </div>
-    </section>
-
-    <section id="experience" class="bg-gray section-padding">
-        <div class="container">
-            <h2 class="mb-50" id="experience-title">Expérience</h2>
-
-            <div class="row">
-                <div class="col-md-3">
-                    <!-- Tabs nav -->
-                    <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        {% for experience in data.lastExperiences %}
-                            <a class="nav-link mb-3 p-3 shadow {% if loop.first %}active{% endif %}" id="v-pills-{{ experience.label }}-tab" data-toggle="pill" href="#v-pills-{{ experience.label }}" role="tab" aria-controls="v-pills-{{ experience.label }}" aria-selected="{% if loop.first %}true{% else %}false{% endif %}">
-                                <img src="{{ absolute_url('images/company/' ~ experience.company.label ~ '.png') }}" alt="{{ experience.company.name }}" width="40px" class=""> &nbsp;
-                                <span class="font-weight-bold small text-uppercase">{{ experience.title }}</span></a>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="col-md-9">
-                    <!-- Tabs content -->
-                    <div class="tab-content" id="v-pills-tabContent">
-                        {% for experience in data.lastExperiences %}
-                            <div class="tab-pane fade shadow rounded bg-white {% if loop.first %}show active{% endif %} p-5" id="v-pills-{{ experience.label }}" role="tabpanel" aria-labelledby="v-pills-{{ experience.label }}-tab">
-                                <h4 class="font-italic mb-4">{{ experience.subtitle }}</h4>
-                                <p class="font-italic text-muted mb-2">{{ experience.description|raw }}</p>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="text-center mt-40"><a class="btn-primary-nine" href="#"><span>En savoir plus</span></a></div>
-            </div>
-        </div>
-    </section>
-    {% include 'blocks/curvedown.html' with {'color': 'curve-down-color'} %}
-
-    <section id="competences" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-sm-12 pb-20">
-                    <div class="card nine-card bordered">
-                        <img class="card-img-top" src="{{ absolute_url('images/main/experience.jpg') }}" alt="Expérience" />
-                        <div class="card-body p-30">
-                            <h5 class="card-title text-uppercase text-nine-indigo mb-20">Expérience</h5>
-                            <p class="card-text text-nine-blue pb-20">Passionnée de nouvelles technologies depuis plus de 15 ans,
-                                dotée d'un profil expérimenté et polyvalent, je m'applique à analyser, développer,
-                                communiquer et proposer des solutions.</p>
-                            <a href="/experience" class="btn-primary-nine">Plus d'infos <i class="fas fa-angle-double-right ml5"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12 pb-20">
-                    <div class="card nine-card bordered">
-                        <img class="card-img-top" src="{{ absolute_url('images/main/competences.jpg') }}" alt="Compétences" />
-                        <div class="card-body p-30">
-                            <h5 class="card-title text-uppercase text-nine-indigo mb-20">Compétences</h5>
-                            <p class="card-text text-nine-blue pb-20">Dans un souci de qualité, évolutivité, fiabilité, je m'efforce de
-                                respecter les standards mis en place à travers des outils éprouvés et n'ai de cesse de
-                                suivre leur évolution.</p>
-                            <a href="/competences" class="btn-primary-nine">Plus d'infos <i class="fas fa-angle-double-right ml5"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12 pb-20">
-                    <div class="card nine-card bordered">
-                        <img class="card-img-top" src="{{ absolute_url('images/main/centres-interet.jpg') }}" alt="Centres d'intérêt" />
-                        <div class="card-body p-30">
-                            <h5 class="card-title text-uppercase text-nine-indigo mb-20">Centres d'intérêt</h5>
-                            <p class="card-text text-nine-blue pb-20">Mon goût pour les métiers d'art et la matière m'a mené vers l'un de mes
-                                loisirs : le modelage d'argile. La randonnée, quant à elle, me permet de profiter de la
-                                richesse de l'Auvergne.</p>
-                            <a href="/creations" class="btn-primary-nine">Plus d'infos <i class="fas fa-angle-double-right ml5"></i></a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    {% include 'blocks/curveup.html' with {'color': 'curve-up-color-dark'} %}
-    <section id="creations" class="bg-darkblue section-padding">
-        <div class="container">
+    {% include 'blocks/curveup-gradient.html' %}
+    <section id="creations" class="bg-darkblue py-10">
+        <h2 class="w-full my-2 text-4xl font-bold leading-tight text-center font-accent">Créations</h2>
+        <div class="w-full mb-4">
+            <div class="h-1 mx-auto bg-light w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
 
-            <div class="row">
-                <h2 class="mb-50 text-center text-uppercase" id="creations-title">Créations</h2>
-
-                <div id="carousel-slick">
-                    {% for creation in data.creationsList %}
-                        <div class="carousel-item {% if loop.first %}active{% endif %}">
-                            <img src="{{ absolute_url('images/creations/' ~ creation) }}" class="rounded" alt="Créations" width="200px">
+        <div class="container mx-auto py-8">
+            <div class="grid-cols-4 p-8 md:space-y-0 md:grid md:gap-3 md:grid-rows-3">
+                {% for creation in data.creationsList %}
+                    {% if loop.index == 2 or loop.index == 6 %}
+                        <div class="w-full col-span-2 row-span-2 rounded-lg">
+                    {% else %}
+                        <div class="w-full rounded-lg">
+                    {% endif %}
+                            <img alt="Créations" class="block h-full w-full rounded-lg object-cover object-center sm:my-4 lg:my:0 hover:scale-110 transition ease-in-out duration-500" src="{{ absolute_url('images/creations/' ~ creation) }}" />
                         </div>
-                    {% endfor %}
-                </div>
-
+                {% endfor %}
             </div>
         </div>
 
-        <div class="text-center mt-30"><a class="btn-primary-nine" href="/creations"><span>Afficher plus</span></a></div>
+        <div class="text-center mt-3"><a class="nine-btn-primary transform transition hover:scale-105 duration-300 ease-in-out"" href="/creations"><span>Afficher plus</span></a></div>
     </section>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ absolute_url('js/animated-headline.js') }}"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 {% endblock %}

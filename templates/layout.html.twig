@@ -9,10 +9,7 @@
         <meta name="robots" content="index,follow">
         <meta name="googlebot" content="index,follow">
         <link rel="sitemap" type="application/xml" title="Sitemap" href="./sitemap.xml" />
-
         <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
         <title>Caroline Noyer | {% block title %}Product Owner{% endblock %}</title>
 
@@ -20,181 +17,216 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body class="" data-bs-target="#navbar-main" id="{{ page }}">
-        {% set effects = ['fade-up', 'fade-down', 'fade-right', 'fade-left', 'zoom-in-up', 'zoom-out-down', 'zoom-in-right', 'zoom-out-left'] %}
-        <header class="cursor-light">
-        </header>
-        <!-- Start Navbar Area -->
-            <nav class="navbar navbar-nine navbar-expand-md fixed-top {% if page == "home" %}navbar-trans{% else %}navbar-reduce{% endif %}" id="mainNav">
-                <div class="container">
-                    <a class="navbar-brand js-scroll" href="/">
-                        <img src="{{ absolute_url('images/logo-nine-2021.png') }}" alt="TheDarkNine" width="30" class="d-inline-block align-text-top">
+    <body class="leading-normal tracking-normal text-white gradient" id="{{ page }}">
+        <nav id="header" class="fixed w-full z-30 top-0 text-white">
+            <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+                <div class="pl-4 flex items-center">
+                    <a class="toggleColour text-white no-underline hover:no-underline text-xl lg:text-2xl" href="#">
+                        <img src="{{ absolute_url('images/logo-nine-2021.png') }}" alt="TheDarkNine" width="30" />
+                        <span class="font-accent text-smallcaps">Caroline Noyer</span>
                     </a>
-                    <h5 class="mb-0 d-none d-sm-block"><a class="text-nine-blue" href="/"><span class="text-smallcaps">Caroline</span> <span class="text-uppercase">Noyer</span></a></h5>
-                    <button class="fullnav-toggler link d-block d-sm-none" id="full-menu-1" type="button">
-                        <span class="line"></span>
-                        <span class="line"></span>
-                        <span class="line"></span>
+                </div>
+                <div class="block lg:hidden pr-4">
+                    <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                        <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <title>Menu</title>
+                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                        </svg>
                     </button>
-                    <div class="navbar-collapse collapse justify-content-end" id="navbar-main">
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item{% if page == "experience" %} active{% endif %}"><a href="/experience" class="nav-link hvr-underline-from-center">Expérience</a></li>
-                            <li class="nav-item{% if page == "competences" %} active{% endif %}"><a href="/competences" class="nav-link hvr-underline-from-center">Compétences</a></li>
-                            <li class="nav-item{% if page == "formation" %} active{% endif %}"><a href="/formation" class="nav-link hvr-underline-from-center">Formation</a></li>
-                            <li class="nav-item{% if page == "projets" %} active{% endif %}"><a href="/projets" class="nav-link hvr-underline-from-center">Projets</a></li>
-                            <li class="nav-item{% if page == "arcade" %} active{% endif %}"><a href="/arcade" class="nav-link hvr-underline-from-center">Arcade</a></li>
-                        </ul>
+                </div>
+                <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-white p-4 lg:p-0 z-20" id="nav-content">
+                    <ul class="list-reset lg:flex justify-end flex-1 items-center">
+                        <li class="nav-item{% if page == "experience" %} active{% endif %}">
+                            <a href="/experience" class="nav-link hvr-underline-from-center">Expérience</a>
+                        </li>
+                        <li class="mr-3">
+                            <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Active</a>
+                        </li>
+                        <li class="mr-3">
+                            <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">link</a>
+                        </li>
+                        <li class="mr-3">
+                            <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">link</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+        <!--Hero-->
+        <div class="pt-24" id="hero">
+            <div class="container md:px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+                <!--Left Col-->
+                <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+                    <p class="uppercase tracking-loose w-full">Expérience</p>
+                    <div class="cd-intro my-4 leading-tight">
+                        <h1 class="cd-headline clip is-full-width text-4xl text-white font-accent">
+                            <span class="cd-words-wrapper">
+                                <b class="is-visible">Product Owner</b>
+                                <b>Product Designer</b>
+                                <b>Dév PHP Senior</b>
+                            </span>
+                        </h1>
+                    </div>
+                    <p class="leading-normal text-2xl mb-8 animate-typing">
+                        Sub-hero message, not too long and not too short. Make it just right!
+                    </p>
+
+                    <div class="social mt-10">
+                        <a href="https://www.linkedin.com/in/carolinenoyer" title="LinkedIn" data-tooltip-target="tooltip-linkedin" data-tooltip-placement="bottom"><span><i class="fa fa-linkedin"></i></span></a>
+                        <div id="tooltip-linkedin" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-blue-nine transition-opacity duration-400 bg-light rounded-lg shadow-sm opacity-0 tooltip">
+                            LinkedIn
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+
+                        <a href="https://twitter.com/CaroNoyer" title="X" data-tooltip-target="tooltip-twitter" data-tooltip-placement="bottom"><span><i class="fa-brands fa-x-twitter"></i></span></a>
+                        <div id="tooltip-twitter" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-blue-nine transition-opacity duration-400 bg-light rounded-lg shadow-sm opacity-0 tooltip">
+                            X (ex-Twitter)
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+
+                        <a href="https://github.com/thedarknine" title="GitHub" data-tooltip-target="tooltip-github" data-tooltip-placement="bottom"><span><i class="fa fa-github-alt"></i></span></a>
+                        <div id="tooltip-github" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-blue-nine transition-opacity duration-400 bg-light rounded-lg shadow-sm opacity-0 tooltip">
+                            GitHub
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+
+                        <a href="https://docs.carolinenoyer.fr/pdf/cv-cnoyer-productowner.pdf" title="CV" data-tooltip-target="tooltip-cv" data-tooltip-placement="bottom"><span><i class="fa fa-file-pdf"></i></span></a>
+                        <div id="tooltip-cv" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-blue-nine transition-opacity duration-400 bg-light rounded-lg shadow-sm opacity-0 tooltip">
+                            CV (PDF)
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        <!-- End Navbar Area -->
-
-        <div class="nav-holder main style-2">
-            <!--Menu Button-->
-            <button class="fullnav-close link" type="button">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-
-            <div class="container">
-                <div class="shape-left">
-                    <nav class="navbar full-menu-navigation left">
-                        <ul class="list-unstyled">
-                            <li><a class="link scroll" href="/">
-                                    <span class="anchor-circle"></span>
-                                    <span class="anchor-text">Home</span>
-                                </a></li>
-                            <li><a class="link scroll" href="/experience">
-                                    <span class="anchor-circle"></span>
-                                    <span class="anchor-text">Expérience</span>
-                                </a></li>
-                            <li><a class="link scroll" href="/competences">
-                                    <span class="anchor-circle"></span>
-                                    <span class="anchor-text">Compétences</span>
-                                </a></li>
-                            <li><a class="link scroll" href="/formation">
-                                    <span class="anchor-circle"></span>
-                                    <span class="anchor-text">Formation</span>
-                                </a></li>
-                            <li><a class="link scroll" href="/projets">
-                                    <span class="anchor-circle"></span>
-                                    <span class="anchor-text">Projets</span>
-                                </a></li>
-                            <li><a class="link scroll" href="/creations">
-                                    <span class="anchor-circle"></span>
-                                    <span class="anchor-text">Créations</span>
-                                </a></li>
-                            <li><a class="link scroll" href="/photos">
-                                    <span class="anchor-circle"></span>
-                                    <span class="anchor-text">Photos</span>
-                                </a></li>
-                            <li><a class="link scroll" href="/arcade">
-                                    <span class="anchor-circle"></span>
-                                    <span class="anchor-text">Arcade</span>
-                                </a></li>
-                        </ul>
-                    </nav>
+                <!--Right Col-->
+                <div class="w-full md:w-3/5 py-6 text-center nine-animation-bounce">
+                    <img src="images/logo-nine-2021.png" class="w-full md:w-4/5 z-50" alt="">
                 </div>
             </div>
         </div>
+        <div class="relative -mt-12 lg:-mt-24">
+            <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                        <path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
+                        <path
+                                d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                                opacity="0.100000001"
+                        ></path>
+                        <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" id="Path-4" opacity="0.200000003"></path>
+                    </g>
+                    <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                        <path
+                                d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"
+                        ></path>
+                    </g>
+                </g>
+            </svg>
+        </div>
 
-        {% if page != 'home' %}
-            <div class="mt-50">&nbsp;</div>
-        {% else %}
-            <!-- Start Home Section -->
-            <header class="home-area header-nine section-padding overflow-hidden d-flex align-items-center">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-12 col-md-7 col-lg-6">
-                            <div class="text-left home-content z-index position-relative">
-                                <!--a href="#about" class="btn btn-light js-scroll">En savoir plus</a-->
-                                <div class="cd-intro">
-                                    <h1 class="cd-headline clip is-full-width">
-                                        <span class="text-smallcaps">Caroline Noyer</span><br>
-                                        <span class="cd-words-wrapper">
-                                            <b class="is-visible">Product Owner</b>
-                                            <b>Product Designer</b>
-                                            <b>Dév PHP Senior</b>
-                                        </span>
-                                    </h1>
-                                </div>
-
-                                <p class="banner mt-10">
-                                    <a href="https://www.linkedin.com/in/carolinenoyer" data-bs-toggle="tooltip" data-bs-placement="right" title="LinkedIn"><span class="tooltip-trigger js-tooltip-trigger" data-tooltip-position="right" title="LinkedIn"><i class="fa fa-linkedin"></i></span></a>
-                                    <a href="https://twitter.com/CaroNoyer" data-bs-toggle="tooltip" data-bs-placement="right" title="Twitter"><span><i class="fa fa-twitter"></i></span></a>
-                                    <a href="https://github.com/thedarknine" data-bs-toggle="tooltip" data-bs-placement="right" title="GitHub"><span><i class="fa fa-github-alt"></i></span></a>
-                                    <a href="https://docs.carolinenoyer.fr/pdf/cv-cnoyer-productowner.pdf" data-bs-toggle="tooltip" data-bs-placement="right" title="CV au format PDF"><span><i class="fa fa-file-pdf"></i></span></a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 col-lg-6">
-                            <div class="text-center z-index position-relative home-image animation-bounce-custom">
-                                <img src="images/logo-nine-2021.png" class="img-fluid w-75" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="svg-shape-bottom">
-                    <img src="images/main/wave-shape.svg" class="bottom-shape img-fluid" alt="">
-                </div>
-            </header>
-            <!-- End Home Section -->
-        {% endif %}
-
-        <button class="back-to-top" data-targets="html"><i class="fa fa-angle-up"></i></button>
+        <!-- button class="back-to-top" data-targets="html"><i class="fa fa-angle-up"></i></button -->
 
         {% block body %}{% endblock %}
 
-        <footer class="page-footer">
-            <div class="container">
-                <div class="row py-4">
-                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                        <h6 class="text-smallcaps font-weight-bold mb-4">Parcours</h6>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><a href="/experience" class="text-muted">Expérience</a></li>
-                            <li class="mb-2"><a href="/competences" class="text-muted">Compétences</a></li>
-                            <li class="mb-2"><a href="/formation" class="text-muted">Formation</a></li>
-                            <li class="mb-2"><a href="/projets" class="text-muted">Projets</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                        <h6 class="text-smallcaps font-weight-bold mb-4">Centres d'intérêt</h6>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><a href="/creations" class="text-muted">Créations</a></li>
-                            <li class="mb-2"><a href="/photos" class="text-muted">Photos</a></li>
-                            <li class="mb-2"><a href="/arcade" class="text-muted">Arcade</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-lg-0">
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 follow-me"><img src="{{ asset('images/logo-nine-2021.png') }}" alt="" width="100" class="mb-3">
-                        <p class="font-italic text-muted mt-4">Suivez-moi !</p>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/carolinenoyer" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
-                            <li class="list-inline-item"><a href="https://twitter.com/CaroNoyer" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="https://github.com/thedarknine" target="_blank" title="GitHub"><i class="fa fa-github-alt"></i></a></li>
-                            <li class="list-inline-item"><a href="https://docs.carolinenoyer.fr/pdf/cv-cnoyer-productowner.pdf" title="CV au format PDF"><span><i class="fa fa-file-pdf"></i></span></a></li>
-                        </ul>
-                    </div>
-                </div>
+        <!--Footer-->
+        <footer class="bg-blue-dark mt-20">
+        <div class="container mx-auto px-8">
+        <div class="w-full flex flex-col md:flex-row py-20">
+            <div class="flex-1 mb-6 text-white">
+                <img src="{{ asset('images/logo-nine-2021.png') }}" alt="" width="100" class="mb-3">
+                <ul class="flex mt-5 space-x-4">
+                    <li><a href="https://www.linkedin.com/in/carolinenoyer" target="_blank" title="LinkedIn" class="text-gray-400 hover:text-turquoise"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://twitter.com/CaroNoyer" target="_blank" title="Twitter" class="text-gray-400 hover:text-turquoise"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://github.com/thedarknine" target="_blank" title="GitHub" class="text-gray-400 hover:text-turquoise"><i class="fa fa-github-alt"></i></a></li>
+                    <li><a href="https://docs.carolinenoyer.fr/pdf/cv-cnoyer-productowner.pdf" title="CV au format PDF" class="text-gray-400 hover:text-turquoise"><span><i class="fa fa-file-pdf"></i></span></a></li>
+                </ul>
             </div>
+            <div class="flex-1">
+            </div>
+            <div class="flex-1">
+            <p class="text-smallcaps text-light md:mb-4">Parcours</p>
+            <ul class="list-reset mb-6">
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0"><a href="/experience" class="text-gray-400 hover:text-turquoise no-underline hover:underline">Expérience</a></li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0"><a href="/competences" class="text-gray-400 hover:text-turquoise no-underline hover:underline">Compétences</a></li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0"><a href="/formation" class="text-gray-400 hover:text-turquoise no-underline hover:underline">Formation</a></li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0"><a href="/projets" class="text-gray-400 hover:text-turquoise no-underline hover:underline">Projets</a></li>
+            </ul>
+            </div>
+            <div class="flex-1">
+            <p class="text-smallcaps text-light md:mb-4">Centres d'intérêt</p>
+            <ul class="list-reset mb-6">
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0"><a href="/creations" class="text-gray-400 hover:text-turquoise no-underline hover:underline">Créations</a></li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0"><a href="/photos" class="text-gray-400 hover:text-turquoise no-underline hover:underline">Photos</a></li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0"><a href="/arcade" class="text-gray-400 hover:text-turquoise no-underline hover:underline">Arcade</a></li>
+            </ul>
+            </div>
+            <!--div class="flex-1">
+            <p class="text-smallcaps text-light md:mb-4">Legal</p>
+            <ul class="list-reset mb-6">
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
+                </li>
+            </ul>
+            </div -->
+        </div>
+        </div>
 
-            <!-- Copyrights -->
-            <div class="copyright py-4">
-                <div class="container text-center">
-                    <p class="mb-0 py-2"><b>©Nine | Copyright</b> 2006-{{ "now"|date("Y") }}</p>
-                    <a href="https://fr.freepik.com/upklyak">Infographies vecteur créées par upklyak - fr.freepik.com</a>
-                </div>
-            </div>
-        </footer>
+        <!-- Copyrights -->
+        <div class="text-xs text-center bg-blue-dark text-gray-400 pt-4 pb-24">
+            <p class="mb-0 py-2"><b>©Nine | Copyright</b> 2006-{{ "now"|date("Y") }}</p>
+            <a href="https://fr.freepik.com/auteur/upklyak">Infographies vecteur créées par upklyak - fr.freepik.com</a>
+        </div>
+    </div>
+    </footer>
+        
 
     {% block javascripts %}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/4266107922.js" crossorigin="anonymous"></script>
+        <!-- script src="https://kit.fontawesome.com/4266107922.js" crossorigin="anonymous"></script -->
+        <script src="https://kit.fontawesome.com/e13f84fe9c.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 
+        <script>
+        var scrollpos = window.scrollY;
+        var header = document.getElementById("header");
+        var navcontent = document.getElementById("nav-content");
+        var brandname = document.getElementById("brandname");
+        var toToggle = document.querySelectorAll(".toggleColour");
+
+        document.addEventListener("scroll", function () {
+            /*Apply classes for slide in bar*/
+            scrollpos = window.scrollY;
+
+            if (scrollpos > 80) {
+                header.classList.add("bg-white");
+                //Use to switch toggleColour colours
+                for (var i = 0; i < toToggle.length; i++) {
+                    toToggle[i].classList.add("text-blue-dark");
+                    toToggle[i].classList.remove("text-white");
+                }
+                header.classList.add("shadow");
+                navcontent.classList.remove("bg-gray-100");
+                navcontent.classList.add("bg-white");
+            } else {
+                header.classList.remove("bg-white");
+                //Use to switch toggleColour colours
+                for (var i = 0; i < toToggle.length; i++) {
+                    toToggle[i].classList.add("text-white");
+                    toToggle[i].classList.remove("text-blue-dark");
+                }
+
+                header.classList.remove("shadow");
+                navcontent.classList.remove("bg-white");
+                navcontent.classList.add("bg-gray-100");
+            }
+        });
+        </script>
+
+        <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
 

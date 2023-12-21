@@ -1,4 +1,5 @@
 import './bootstrap.js';
+
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -7,7 +8,6 @@ import './bootstrap.js';
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/_helpers.css';
 import './styles/_main.scss';
 
 (function ($) {
@@ -48,6 +48,7 @@ import './styles/_main.scss';
         });
     });
 
+/*
     // Navbar Menu Reduce
     $(window).trigger('scroll');
     $(window).on('scroll', function () {
@@ -130,69 +131,13 @@ import './styles/_main.scss';
         return new bootstrap.Tooltip(tooltipTriggerEl, {
             customClass: 'nine-tooltip'
         })
-    })
+    }) */
 })(jQuery);
 
+
+
 $(document).ready(function(){
-    // AOS.init({once: true});
-    // You get the current window width
-    var width = window.innerWidth;
-
-    //Than you define the AOS settings for different widths
-    if (width <= 600) { // For example, this can be for mobile devices
-        AOS.init({disable: 'mobile'});
-    } else if (width > 600 && width <= 900) { // And you make a condition for tablets too
-        AOS.init({
-            offset: 300,
-            duration: 1200
-        });
-    } else { // Else for just, you know, desktops
-        AOS.init();
-    }
-
-    $('#carousel-slick').slick({
-        centerMode: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        arrows: true,
-        dots: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        centerPadding: '60px',
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    centerPadding: '60px',
-                    arrows: true,
-                    dots: true,
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    centerPadding: '40px',
-                    arrows: false,
-                    dots: false,
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    centerPadding: '60px',
-                    arrows: false,
-                    dots: false,
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-            ]
-    });
+    // initTE({ Ripple, Lightbox });
 
     $(".progress").each(function() {
         let value = $(this).attr('data-value');
@@ -207,9 +152,12 @@ $(document).ready(function(){
                 left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
             }
         }
-    })
+    });
 
     function percentageToDegrees(percentage) {
         return percentage / 100 * 360
     }
 });
+
+
+
