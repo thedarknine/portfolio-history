@@ -13,19 +13,18 @@
   }
 }
 
+.debug {
+  @apply border-2 border-solid border-red-700;
+}
+
 body {
-  background-color: theme('colors.light');
-  color: theme('colors.blue-dark');
+  @apply bg-light text-blue-dark my-0 mx-auto p-0;
   
   font-size: 14px;
   font-weight: normal;
   overflow-x: hidden;
-  margin: 0 auto;
-  padding: 0;
   box-sizing: border-box;
   position: relative;
-
-  // line-height: 24px;
 }
 
 .gradient {
@@ -72,12 +71,38 @@ body {
   font-variant: small-caps;
 }
 
-.mx-auto {
-  margin-right: auto;
-  margin-left: auto;
+
+
+.navbar {
+  padding: 0.5rem 1rem;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 0.75rem;
+  transition: all 0.2s ease;
 }
 
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.nine-navbar {
+  @apply bg-white text-blue-nine shadow-lg;
+}
+
+
+
 /* * Homepage **************************************************** **/
+
+.home-navbar {
+  @apply bg-transparent text-white;
+}
 
 #hero {
   background: url('https://carolinenoyer.fr/images/volcans-cnoyer.png') no-repeat center center;
@@ -219,6 +244,103 @@ body {
   100% {
     transform: translateY(-5px);
   }
+}
+
+#about strong {
+  @apply text-turquoise;
+}
+
+.skill-picto {
+  @apply p-3 text-center mb-3 mx-auto text-yellow-nine text-4xl;
+}
+
+.skill-title {
+  @apply text-2xl mb-2 font-semibold leading-normal text-center text-white;
+}
+
+.skill-item {
+  @apply text-xs font-semibold inline-block py-1 px-2 rounded-full text-blue-nine bg-light/50 uppercase mr-2 mt-2
+}
+
+[class^="hvr-"] {
+  margin: .4em;
+  padding: 1em;
+  cursor: pointer;
+  background: #e1e1e1;
+  text-decoration: none;
+  color: #666;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nav-item {
+  position: relative;
+  padding: 10px;
+
+  a {
+    background-color: transparent;
+    border-radius: 4px;
+  }
+
+  &:hover {
+    background-color: rgba(106 106 106 / 30%); 
+    border-radius: 4px;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+  }
+
+  &.active {
+    text-transform: uppercase;
+    border-bottom: 2px solid theme('colors.turquoise');
+  }
+}
+
+
+
+.nav-link {
+  // color: #fff;
+  text-transform: capitalize;
+
+  &:hover {
+    background-color: rgba(106 106 106 / 30%);
+  }
+}
+
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #2098D1;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+/* Gallery */
+.translate {
+  transform: translate3d(0px, -51px, 0px);
 }
 
 

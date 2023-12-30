@@ -7,13 +7,84 @@
 {% endblock %}
 
 {% block body %}
+    <!--Hero-->
+    <div class=" pt-24" id="hero">
+        <div class="container md:px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+            <!--Left Col-->
+            <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left text-white">
+                <p class="uppercase tracking-loose w-full">Expérience</p>
+                <div class="cd-intro my-4 leading-tight">
+                    <h1 class="cd-headline clip is-full-width text-4xl font-accent">
+                        <span class="cd-words-wrapper">
+                            <b class="is-visible">Product Owner</b>
+                            <b>Product Designer</b>
+                            <b>Dév PHP Senior</b>
+                        </span>
+                    </h1>
+                </div>
+                <p class="leading-normal text-2xl mb-8 animate-typing">
+                    PO depuis {{ "now"|date("Y") - 2019 }} ans | Background technique &amp; compétences UX
+                </p>
+
+                <div class="social mt-10">
+                    <a href="https://www.linkedin.com/in/carolinenoyer" title="LinkedIn" data-tooltip-target="tooltip-linkedin" data-tooltip-placement="bottom"><span><i class="fa fa-linkedin"></i></span></a>
+                    <div id="tooltip-linkedin" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-blue-nine transition-opacity duration-400 bg-light rounded-lg shadow-sm opacity-0 tooltip">
+                        LinkedIn
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+
+                    <a href="https://twitter.com/CaroNoyer" title="X" data-tooltip-target="tooltip-twitter" data-tooltip-placement="bottom"><span><i class="fa-brands fa-x-twitter"></i></span></a>
+                    <div id="tooltip-twitter" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-blue-nine transition-opacity duration-400 bg-light rounded-lg shadow-sm opacity-0 tooltip">
+                        X (ex-Twitter)
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+
+                    <a href="https://github.com/thedarknine" title="GitHub" data-tooltip-target="tooltip-github" data-tooltip-placement="bottom"><span><i class="fa fa-github-alt"></i></span></a>
+                    <div id="tooltip-github" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-blue-nine transition-opacity duration-400 bg-light rounded-lg shadow-sm opacity-0 tooltip">
+                        GitHub
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+
+                    <a href="https://docs.carolinenoyer.fr/pdf/cv-cnoyer-productowner.pdf" title="CV" data-tooltip-target="tooltip-cv" data-tooltip-placement="bottom"><span><i class="fa fa-file-pdf"></i></span></a>
+                    <div id="tooltip-cv" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-blue-nine transition-opacity duration-400 bg-light rounded-lg shadow-sm opacity-0 tooltip">
+                        CV (PDF)
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                </div>
+            </div>
+            <!--Right Col-->
+            <div class="w-full md:w-3/5 py-6 text-center nine-animation-bounce">
+                <img src="images/logo-nine-2021.png" class="w-full md:w-4/5 z-50" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="relative -mt-12 lg:-mt-24">
+        <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
+                    <path
+                            d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                            opacity="0.100000001"
+                    ></path>
+                    <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" id="Path-4" opacity="0.200000003"></path>
+                </g>
+                <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <path
+                            d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"
+                    ></path>
+                </g>
+            </g>
+        </svg>
+    </div>
+
     <section id="about" class="bg-white py-10">
         <div class="flex flex-wrap">
-            <div class="w-5/6 sm:w-1/3 p-6">
+            <div class="w-5/6 sm:w-1/3 p-6 nine-animate">
                 <img src="{{ absolute_url('images/cnoyer.jpg') }}" alt="Caroline Noyer • Product Owner &amp; Développeur web senior" class="drop-shadow-lg rounded-full w-3/4 mx-auto mt-10">
             </div>
-            <div class="w-full sm:w-2/3 p-6 mt-10">
-                <h3 class="text-2xl text-turquoise font-bold mb-3 font-accent">
+            <div class="w-full sm:w-2/3 p-6 mt-10 nine-animate">
+                <h3 class="text-2xl text-turquoise font-semibold mb-3 font-accent">
                     Passionnée par l'univers du web depuis 2005
                 </h3>
                 <p class="text-blue-dark mb-4">
@@ -25,7 +96,7 @@
                 </p>
 
                 <p class="text-blue-dark mb-4">
-                    <strong class="text-turquoise">Empathique</strong>, je m’intègre aisément au sein d’un groupe. La
+                    <strong>Empathique</strong>, je m’intègre aisément au sein d’un groupe. La
                     valeur du <strong>collectif</strong> et l’<strong>esprit d’équipe</strong> sont primordiaux,
                     lorsque je suis en confiance, c’est avec plaisir que je fais en sorte de renforcer la
                     <strong>cohésion</strong> et pourquoi pas avec quelques touches d’humour !
@@ -60,74 +131,73 @@
         </div>
     </section>
 
+    {% include 'blocks/curveup-gradient.html' %}
     <section class="">
-        {% include 'blocks/curveup-gradient.html' %}
         <div class="flex flex-wrap items-center">
-            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10">
-                <div class="p-3 text-center mb-3 mx-auto text-yellow-nine text-4xl"><i class="fas fa-seedling"></i></div>
-                <h3 class="text-2xl mb-2 font-semibold leading-normal text-center">{{ data.nbYearsExperience }} ans d'expérience</h3>
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10 fade-in">
+                <div class="skill-picto"><i class="fas fa-seedling"></i></div>
+                <h3 class="skill-title">{{ data.nbYearsExperience }} ans d'expérience</h3>
                 <div class="block pb-6 text-center">
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Dév</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">SaaS</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">B2B</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Santé</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">RH</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Sémantique</span>
+                    <span class="skill-item last:mr-0">Dév</span>
+                    <span class="skill-item last:mr-0">SaaS</span>
+                    <span class="skill-item last:mr-0">B2B</span>
+                    <span class="skill-item last:mr-0">Santé</span>
+                    <span class="skill-item last:mr-0">RH</span>
+                    <span class="skill-item last:mr-0">Sémantique</span>
                 </div>
             </div>
 
-            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10">
-                <div class="p-3 text-center mb-3 mx-auto text-yellow-nine text-4xl"><i class="fas fa-code"></i></div>
-                <h3 class="text-2xl mb-2 font-semibold leading-normal text-center">Développement</h3>
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10 fade-in fade-in-delay-0.5">
+                <div class="skill-picto"><i class="fas fa-code"></i></div>
+                <h3 class="skill-title">Développement</h3>
                 <div class="block pb-6 text-center">
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">PHP</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Symfony</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">MySQL</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">MongoDB</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">API</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Python</span>
+                    <span class="skill-item last:mr-0">PHP</span>
+                    <span class="skill-item last:mr-0">Symfony</span>
+                    <span class="skill-item last:mr-0">MySQL</span>
+                    <span class="skill-item last:mr-0">MongoDB</span>
+                    <span class="skill-item last:mr-0">API</span>
+                    <span class="skill-item last:mr-0">Python</span>
                 </div>
             </div>
-            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10">
-                <div class="p-3 text-center mb-3 mx-auto text-yellow-nine text-4xl"><i class="fas fa-pencil-ruler"></i></div>
-                <h3 class="text-2xl mb-2 font-semibold leading-normal text-center">Web design</h3>
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10 fade-in fade-in-delay-1">
+                <div class="skill-picto"><i class="fas fa-pencil-ruler"></i></div>
+                <h3 class="skill-title">Web design</h3>
                 <div class="block pb-6 text-center">
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">UX/UI</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Prototype</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Figma</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Illustrator</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Veille</span>
+                    <span class="skill-item last:mr-0">UX/UI</span>
+                    <span class="skill-item last:mr-0">Prototype</span>
+                    <span class="skill-item last:mr-0">Figma</span>
+                    <span class="skill-item last:mr-0">Illustrator</span>
+                    <span class="skill-item last:mr-0">Veille</span>
                 </div>
             </div>
-            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10">
-                <div class="p-3 text-center mb-3 mx-auto text-yellow-nine text-4xl"><i class="fas fa-tasks"></i></div>
-                <h3 class="text-2xl mb-2 font-semibold leading-normal text-center">Produit</h3>
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10 fade-in fade-in-delay-1.5">
+                <div class="skill-picto"><i class="fas fa-tasks"></i></div>
+                <h3 class="skill-title">Produit</h3>
                 <div class="block pb-6 text-center">
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Agile</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Scrum</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Equipe</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Jira</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Roadmap</span>
-                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-nine bg-light/50 uppercase last:mr-0 mr-2 mt-2">Delivery</span>
+                    <span class="skill-item last:mr-0">Agile</span>
+                    <span class="skill-item last:mr-0">Scrum</span>
+                    <span class="skill-item last:mr-0">Equipe</span>
+                    <span class="skill-item last:mr-0">Jira</span>
+                    <span class="skill-item last:mr-0">Roadmap</span>
+                    <span class="skill-item last:mr-0">Delivery</span>
                 </div>
             </div>
         </div>
-        
-        {% include 'blocks/curvedown-gradient.html' %}
     </section>
+    {% include 'blocks/curvedown-gradient.html' %}
 
-    <section id="experience" class="bg-white py-10">
-        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+    <section id="experience" class="bg-white py-10 nine-animate">
+        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 nine-animate">
             Dernières expériences
         </h1>
-        <div class="w-full mb-10">
+        <div class="w-full mb-10 nine-animate">
           <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
         </div>
 
         <div class="px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12 text-blue-dark pb-24">
-            <div class="lg:col-span-5">
+            <div class="lg:col-span-5 nine-animate">
                 <div class="mb-16 lg:mb-0 xl:mt-16">
-                    <div class="w-10/12 sm:w-12/12 px-12 md:px-4 mx-auto">
+                    <div class="w-10/12 sm:w-12/12 mx-auto">
                         <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-perfect">
                             <img alt="..." src="{{ absolute_url('images/home/header-perfect.jpeg') }}" class="w-full align-middle rounded-t-lg">
                             <blockquote class="relative p-8 mb-4">
@@ -140,30 +210,30 @@
                     </div>
                 </div>
             </div> 
-            <div class="lg:col-span-7">
-                <div class="sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
-                    <div class="lg:col-span-6">
+            <div class="lg:col-span-7 nine-animate">
+                <div class="sm:px-8 grid grid-cols-12 lg:gap-x-12">
+                    <div class="col-span-6">
                         <div class="px-4 py-5">
                             <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-people-group"></i></div>
                             <h6 class="text-xl mb-1 font-semibold text-perfect">Gestion équipe</h6>
                             <p class="mb-4">Charnière entre les équipes de développement, l'équipe design et l'équipe qualité</p>
                         </div>
                     </div>
-                    <div class="lg:col-span-6">
+                    <div class="col-span-6">
                         <div class="px-4 py-5">
                             <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-list-check"></i></div>
                             <h6 class="text-xl mb-1 font-semibold text-perfect">Gestion produit</h6>
                             <p class="mb-4">Rédaction des expressions de besoin et spécifications fonctionnelles</p>
                         </div>
                     </div>
-                    <div class="lg:col-span-6">
+                    <div class="col-span-6">
                         <div class="px-4 py-5">
                             <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-ranking-star"></i></div>
                             <h6 class="text-xl mb-1 font-semibold text-perfect">Amélioration</h6>
                             <p class="mb-4">Mise en place d’un outil de discovery et priorisation<br /> <em>Jira Product Discovery</em></p>
                         </div>
                     </div>
-                    <div class="lg:col-span-6">
+                    <div class="col-span-6">
                         <div class="px-4 py-5">
                             <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-book"></i></div>
                             <h6 class="text-xl mb-1 font-semibold text-perfect">Documentation</h6>
@@ -175,9 +245,9 @@
         </div> 
 
         <div class="px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12 text-blue-dark">
-            <div class="lg:col-span-5">
+            <div class="lg:col-span-5 nine-animate">
                 <div class="mb-16 lg:mb-0 xl:mt-16">
-                    <div class="w-10/12 sm:w-12/12 px-12 md:px-4 mx-auto">
+                    <div class="w-10/12 sm:w-12/12 mx-auto">
                         <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-coffreo">
                             <img alt="..." src="{{ absolute_url('images/home/header-coffreo.png') }}" class="w-full align-middle rounded-t-lg">
                             <blockquote class="relative p-8 mb-4">
@@ -190,30 +260,30 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:col-span-7">
-                <div class="sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
-                    <div class="lg:col-span-6">
+            <div class="lg:col-span-7 nine-animate">
+                <div class="sm:px-8 grid grid-cols-12 lg:gap-x-12">
+                    <div class="col-span-6">
                         <div class="px-4 py-5">
                             <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-people-group"></i></div>
                             <h6 class="text-xl mb-1 font-semibold text-perfect">Gestion équipe</h6>
                             <p class="mb-4">Charnière entre l’équipe technique, l’équipe marketing et les clients</p>
                         </div>
                     </div>
-                    <div class="lg:col-span-6">
+                    <div class="col-span-6">
                         <div class="px-4 py-5">
                             <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-list-check"></i></div>
                             <h6 class="text-xl mb-1 font-semibold text-perfect">Gestion produit</h6>
                             <p class="mb-4">Création et gestion du Product Backlog selon la méthodologie Agile (Scrum)</p>
                         </div>
                     </div>
-                    <div class="lg:col-span-6">
+                    <div class="col-span-6">
                         <div class="px-4 py-5">
                             <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-diagram-project"></i></div>
                             <h6 class="text-xl mb-1 font-semibold text-perfect">Priorisation</h6>
                             <p class="mb-4">Priorisation des besoins et exigences métier, entre la roadmap et les retours clients</p>
                         </div>
                     </div>
-                    <div class="lg:col-span-6">
+                    <div class="col-span-6">
                         <div class="px-4 py-5">
                             <div class="text-turquoise p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"><i class="fa-solid fa-truck"></i></div>
                             <h6 class="text-xl mb-1 font-semibold text-perfect">Livraison</h6>
@@ -224,36 +294,23 @@
             </div>
         </div>
 
-        <div class="text-center mt-10"><a class="nine-btn-primary transform transition hover:scale-105 duration-300 ease-in-out" href="#"><span>En savoir plus</span></a></div>
+        <div class="text-center mt-10 nine-animate"><a class="nine-btn-primary transform transition hover:scale-105 duration-300 ease-in-out" href="#"><span>En savoir plus</span></a></div>
     </section>
 
     <section id="paysage" class="py-10">
         <div class="container mx-auto py-8">
             <div class="row">
-                <h2 class="w-full my-2 text-4xl font-bold leading-tight text-center font-accent">Paysage mental</h2>
+                <h2 class="w-full my-2 text-4xl font-bold leading-tight text-center font-accent text-white">Paysage mental</h2>
                 <div class="w-full mb-4">
                     <div class="h-1 mx-auto bg-light w-64 opacity-25 my-0 py-0 rounded-t"></div>
                 </div>
             </div>
-            <div class="grid-cols-3 p-8 md:space-y-0 md:grid md:gap-3 md:grid-rows-3">
-                <div class="w-full rounded">
-                    <img src="{{ absolute_url('images/home/rugby-asm.jpeg') }}" alt="rugby" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
+            <div class="grid-cols-4 p-8 md:space-y-0 md:grid md:gap-3 md:grid-rows-2">
+                {% for landscape in data.mentalLandscape %}
+                <div class="w-full rounded {% if landscape.big %}col-span-2 row-span-2{% endif %} slide-in-right slide-in-right-delay-{{ loop.index0 * 0.25 }}">
+                    <img src="{{ absolute_url(landscape.image) }}" alt="{{ landscape.alt }}" class="block h-full w-full rounded-lg my-4 lg:my:0 object-cover object-center">
                 </div>
-                <div class="w-full col-span-2 row-span-2 rounded">
-                    <img src="{{ absolute_url('images/home/lac-zen.jpg') }}" alt="sérénité" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
-                </div>
-                <div class="w-full rounded">
-                    <img src="{{ absolute_url('images/home/chat.jpg') }}" alt="chats" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
-                </div>
-                <div class="w-full rounded">
-                    <img src="{{ absolute_url('images/home/auvergne.jpg') }}" alt="Auvergne" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
-                </div>
-                <div class="w-full rounded">
-                    <img src="{{ absolute_url('images/home/equipe.jpg') }}" alt="équipe" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
-                </div>
-                <div class="w-full rounded">
-                    <img src="{{ absolute_url('images/home/photographe.jpg') }}" alt="photographie" class="block h-full w-full rounded-lg sm:my-4 lg:my:0 object-cover object-center">
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -262,7 +319,7 @@
         <div class="relative px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
             <div class="relative mx-auto max-w-7xl">
             <div class="grid max-w-lg gap-9 mx-auto lg:grid-cols-3 lg:max-w-none">
-                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine">
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine slide-in-left slide-in-left-delay-0">
                 <div class="flex-shrink-0">
                     <img class="object-cover w-full h-48" src="{{ absolute_url('images/main/experience.jpg') }}" alt="">
                 </div>
@@ -280,7 +337,7 @@
                     </div>
                 </div>
                 </div>
-                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine">
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine slide-in-left slide-in-left-delay-0.5">
                 <div class="flex-shrink-0">
                     <img class="object-cover w-full h-48" src="{{ absolute_url('images/main/competences.jpg') }}" alt="Compétences">
                 </div>
@@ -298,7 +355,7 @@
                     </div>
                 </div>
                 </div>
-                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine">
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine slide-in-left slide-in-left-delay-1">
                 <div class="flex-shrink-0">
                     <img class="object-cover w-full h-48" src="{{ absolute_url('images/main/centres-interet.jpg') }}" alt="Centres d'intérêt">
                 </div>
@@ -323,22 +380,23 @@
 
     {% include 'blocks/curveup-gradient.html' %}
     <section id="creations" class="bg-darkblue py-10">
-        <h2 class="w-full my-2 text-4xl font-bold leading-tight text-center font-accent">Créations</h2>
-        <div class="w-full mb-4">
-            <div class="h-1 mx-auto bg-light w-64 opacity-25 my-0 py-0 rounded-t"></div>
-        </div>
-
         <div class="container mx-auto py-8">
-            <div class="grid-cols-4 p-8 md:space-y-0 md:grid md:gap-3 md:grid-rows-3">
-                {% for creation in data.creationsList %}
-                    {% if loop.index == 2 or loop.index == 6 %}
-                        <div class="w-full col-span-2 row-span-2 rounded-lg">
-                    {% else %}
-                        <div class="w-full rounded-lg">
-                    {% endif %}
-                            <img alt="Créations" class="block h-full w-full rounded-lg object-cover object-center sm:my-4 lg:my:0 hover:scale-110 transition ease-in-out duration-500" src="{{ absolute_url('images/creations/' ~ creation) }}" />
-                        </div>
-                {% endfor %}
+            <div class="row">
+                <h2 class="w-full my-2 text-4xl font-bold leading-tight text-center font-accent text-white">Créations</h2>
+                <div class="w-full mb-4">
+                    <div class="h-1 mx-auto bg-light w-64 opacity-25 my-0 py-0 rounded-t"></div>
+                </div>
+                <div class="grid-cols-4 p-8 md:space-y-0 md:grid md:gap-3 md:grid-rows-3">
+                    {% for creation in data.creationsList %}
+                        {% if loop.index == 2 or loop.index == 6 %}
+                            <div class="w-full col-span-2 row-span-2 rounded-lg fade-in fade-in-delay-{{ loop.index0 * 0.25 }}">
+                        {% else %}
+                            <div class="w-full rounded-lg fade-in fade-in-delay-{{ loop.index0 * 0.25 }}">
+                        {% endif %}
+                                <img alt="Créations" class="block h-full w-full rounded-lg object-cover object-center my-4 lg:my:0 hover:scale-110 transition ease-in-out duration-500" src="{{ absolute_url('images/creations/' ~ creation) }}" />
+                            </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
 
