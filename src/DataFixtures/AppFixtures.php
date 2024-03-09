@@ -118,6 +118,13 @@ class AppFixtures extends Fixture
         ['label' => 'linux', 'name' => 'Linux', 'startYear' => 2003, 'endYear' => null, 'level' => 7, 'logo' => 'linux.png', 'position' => 7, 'type' => 'sysadmin', 'display' => true],
         ['label' => 'windows', 'name' => 'Windows', 'startYear' => 1996, 'endYear' => null, 'level' => 5, 'logo' => 'windows.png', 'position' => 8, 'type' => 'sysadmin', 'display' => false],
         ['label' => 'drupal', 'name' => 'Drupal', 'startYear' => 2008, 'endYear' => 2012, 'level' => 3, 'logo' => 'drupal.png', 'position' => 9, 'type' => 'sysadmin', 'display' => false],
+
+        ['label' => 'kibana', 'name' => 'Kibana', 'startYear' => 2019, 'endYear' => 2022, 'level' => 3, 'logo' => 'kibana.png', 'position' => 11, 'type' => 'sysadmin', 'display' => true],
+        ['label' => 'zendesk', 'name' => 'Zendesk', 'startYear' => 2019, 'endYear' => 2022, 'level' => 4, 'logo' => 'zendesk.png', 'position' => 12, 'type' => 'sysadmin', 'display' => true],
+        ['label' => 'mailchimp', 'name' => 'MailChimp', 'startYear' => 2019, 'endYear' => 2022, 'level' => 4, 'logo' => 'mailchimp.png', 'position' => 10, 'type' => 'sysadmin', 'display' => true],
+        ['label' => 'postman', 'name' => 'Postman', 'startYear' => 2019, 'endYear' => null, 'level' => 5, 'logo' => 'postman.png', 'position' => 13, 'type' => 'sysadmin', 'display' => true],
+        ['label' => 'slack', 'name' => 'Slack', 'startYear' => 2018, 'endYear' => null, 'level' => 7, 'logo' => 'slack.png', 'position' => 7, 'type' => 'methodo', 'display' => false],
+        ['label' => 'teams', 'name' => 'Teams', 'startYear' => 2022, 'endYear' => null, 'level' => 4, 'logo' => 'teams.png', 'position' => 8, 'type' => 'methodo', 'display' => false],
     ];
     private array $experiencesList = [
         ['label' => 'stage-limos', 'title' => 'Stagiaire en milieu de recherche', 'subtitle' => "Stage de recherche au sein de l'équipe Algorithmique au LIMOS",
@@ -202,7 +209,7 @@ Cet outil doit donc proposer une rédaction semi-automatique de ces documents à
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Développement Back &amp; API sur le Framework Symfony sur le principe de micro services</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Création d\'un service supplémentaire basé sur API-Platform</span></li>
 </ul>',
-            'startDate' => '2017-07-17', 'endDate' => '2019-11-03', 'company' => 'coffreo', 'skills' => ['html', 'materialize', 'twig', 'responsive', 'php', 'mongodb', 'symfony', 'rabbitmq', 'linux', 'composer', 'git', 'docker']],
+            'startDate' => '2017-07-17', 'endDate' => '2019-11-03', 'company' => 'coffreo', 'skills' => ['html', 'materialize', 'twig', 'responsive', 'php', 'mongodb', 'symfony', 'rabbitmq', 'linux', 'composer', 'git', 'docker', 'kibana', 'postman', 'mailchimp', 'slack']],
         ['label' => 'po-coffreo', 'title' => 'Product Owner', 'subtitle' => 'Animation des sprints et coordination des développements',
             'description' => '
 <p class="text-justify pt5">Charnière entre l’équipe technique, l’équipe marketing et les clients.</p>
@@ -213,7 +220,7 @@ Cet outil doit donc proposer une rédaction semi-automatique de ces documents à
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Priorisation des besoins et exigences métier</span></li>
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>Suivi de l’avancement des projets, du planning de livraison et des engagements</span></li>
 </ul>',
-            'startDate' => '2019-11-04', 'endDate' => '2022-07-17', 'company' => 'coffreo', 'skills' => ['agile', 'jira', 'figma', 'python', 'moqups', 'trello', 'confluence']],
+            'startDate' => '2019-11-04', 'endDate' => '2022-07-17', 'company' => 'coffreo', 'skills' => ['agile', 'jira', 'figma', 'python', 'moqups', 'trello', 'confluence', 'kibana', 'postman', 'mailchimp', 'slack']],
         ['label' => 'po-perfect', 'title' => 'Product Owner', 'subtitle' => 'Encadrement R&D et qualité produit',
             'description' => '
 <p class="text-justify pt5">Charnière entre les équipes de développement, l\'équipe design et l\'équipe qualité.</p>
@@ -223,7 +230,7 @@ Cet outil doit donc proposer une rédaction semi-automatique de ces documents à
     <li><i class="fas fa-tasks" aria-hidden="true"></i> <span>	
 Rédaction des expressions de besoin et spécifications fonctionnelles</span></li>
 </ul>',
-            'startDate' => '2022-07-18', 'endDate' => null, 'company' => 'perfect-memory', 'skills' => ['agile', 'jira', 'product-discovery', 'confluence']],
+            'startDate' => '2022-07-18', 'endDate' => null, 'company' => 'perfect-memory', 'skills' => ['agile', 'jira', 'product-discovery', 'confluence', 'teams']],
     ];
 
     private $educationsList = [

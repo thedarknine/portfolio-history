@@ -33,12 +33,6 @@
                         <div class="tooltip-arrow" data-popper-arrow></div>
                     </div>
 
-                    <a href="https://twitter.com/CaroNoyer" title="X" data-tooltip-target="tooltip-twitter" data-tooltip-placement="bottom"><span><i class="fa-brands fa-x-twitter"></i></span></a>
-                    <div id="tooltip-twitter" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-blue-nine transition-opacity duration-400 bg-light rounded-lg shadow-sm opacity-0 tooltip">
-                        X (ex-Twitter)
-                        <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
-
                     <a href="https://github.com/thedarknine" title="GitHub" data-tooltip-target="tooltip-github" data-tooltip-placement="bottom"><span><i class="fa fa-github-alt"></i></span></a>
                     <div id="tooltip-github" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-blue-nine transition-opacity duration-400 bg-light rounded-lg shadow-sm opacity-0 tooltip">
                         GitHub
@@ -50,6 +44,14 @@
                         CV (PDF)
                         <div class="tooltip-arrow" data-popper-arrow></div>
                     </div>
+
+                    <a href="https://stackshare.io/thedarknine/atwork" title="StackShare" data-tooltip-target="tooltip-stack" data-tooltip-placement="bottom"><span><i class="fa-solid fa-cubes-stacked"></i></span></a>
+                    <div id="tooltip-stack" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-blue-nine transition-opacity duration-400 bg-light rounded-lg shadow-sm opacity-0 tooltip">
+                        StackShare
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+
+                    
                 </div>
             </div>
             <!--Right Col-->
@@ -80,10 +82,10 @@
 
     <section id="about" class="bg-white py-10">
         <div class="flex flex-wrap">
-            <div class="w-5/6 sm:w-1/3 p-6 nine-animate">
+            <div class="w-5/6 sm:w-1/3 p-6 ">
                 <img src="{{ absolute_url('images/cnoyer.jpg') }}" alt="Caroline Noyer • Product Owner &amp; Développeur web senior" class="drop-shadow-lg rounded-full w-3/4 mx-auto mt-10">
             </div>
-            <div class="w-full sm:w-2/3 p-6 mt-10 nine-animate">
+            <div class="w-full sm:w-2/3 p-6 mt-10 ">
                 <h3 class="text-2xl text-turquoise font-semibold mb-3 font-accent">
                     Passionnée par l'univers du web depuis 2005
                 </h3>
@@ -134,7 +136,7 @@
     {% include 'blocks/curveup-gradient.html' %}
     <section class="">
         <div class="flex flex-wrap items-center">
-            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10 fade-in">
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10" data-aos="fade-up" data-aos-delay="100">
                 <div class="skill-picto"><i class="fas fa-seedling"></i></div>
                 <h3 class="skill-title">{{ data.nbYearsExperience }} ans d'expérience</h3>
                 <div class="block pb-6 text-center">
@@ -147,7 +149,7 @@
                 </div>
             </div>
 
-            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10 fade-in fade-in-delay-0.5">
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10" data-aos="fade-up" data-aos-delay="500">
                 <div class="skill-picto"><i class="fas fa-code"></i></div>
                 <h3 class="skill-title">Développement</h3>
                 <div class="block pb-6 text-center">
@@ -159,7 +161,7 @@
                     <span class="skill-item last:mr-0">Python</span>
                 </div>
             </div>
-            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10 fade-in fade-in-delay-1">
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10" data-aos="fade-up" data-aos-delay="1000">
                 <div class="skill-picto"><i class="fas fa-pencil-ruler"></i></div>
                 <h3 class="skill-title">Web design</h3>
                 <div class="block pb-6 text-center">
@@ -170,7 +172,7 @@
                     <span class="skill-item last:mr-0">Veille</span>
                 </div>
             </div>
-            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10 fade-in fade-in-delay-1.5">
+            <div class="w-full md:w-3/12 px-12 md:px-4 ml-auto mr-auto mt-10" data-aos="fade-up" data-aos-delay="1500">
                 <div class="skill-picto"><i class="fas fa-tasks"></i></div>
                 <h3 class="skill-title">Produit</h3>
                 <div class="block pb-6 text-center">
@@ -186,16 +188,18 @@
     </section>
     {% include 'blocks/curvedown-gradient.html' %}
 
-    <section id="experience" class="bg-white py-10 nine-animate">
-        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 nine-animate">
-            Dernières expériences
-        </h1>
-        <div class="w-full mb-10 nine-animate">
-          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+    <section id="experience" class="bg-white py-10">
+        <div data-aos="fade-up">
+            <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+                Dernières expériences
+            </h1>
+            <div class="w-full mb-10">
+                <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            </div>
         </div>
 
-        <div class="px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12 text-blue-dark pb-24">
-            <div class="lg:col-span-5 nine-animate">
+        <div class="px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12 text-blue-dark pb-24" data-aos="fade-right">
+            <div class="lg:col-span-5">
                 <div class="mb-16 lg:mb-0 xl:mt-16">
                     <div class="w-10/12 sm:w-12/12 mx-auto">
                         <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-perfect">
@@ -210,7 +214,7 @@
                     </div>
                 </div>
             </div> 
-            <div class="lg:col-span-7 nine-animate">
+            <div class="lg:col-span-7">
                 <div class="sm:px-8 grid grid-cols-12 lg:gap-x-12">
                     <div class="col-span-6">
                         <div class="px-4 py-5">
@@ -244,8 +248,8 @@
             </div> 
         </div> 
 
-        <div class="px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12 text-blue-dark">
-            <div class="lg:col-span-5 nine-animate">
+        <div class="px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12 text-blue-dark" data-aos="fade-left">
+            <div class="lg:col-span-5 ">
                 <div class="mb-16 lg:mb-0 xl:mt-16">
                     <div class="w-10/12 sm:w-12/12 mx-auto">
                         <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-coffreo">
@@ -260,7 +264,7 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:col-span-7 nine-animate">
+            <div class="lg:col-span-7 ">
                 <div class="sm:px-8 grid grid-cols-12 lg:gap-x-12">
                     <div class="col-span-6">
                         <div class="px-4 py-5">
@@ -294,12 +298,12 @@
             </div>
         </div>
 
-        <div class="text-center mt-10 nine-animate"><a class="nine-btn-primary transform transition hover:scale-105 duration-300 ease-in-out" href="#"><span>En savoir plus</span></a></div>
+        <div class="text-center mt-10 "><a class="nine-btn-primary transform transition hover:scale-105 duration-300 ease-in-out" href="#"><span>En savoir plus</span></a></div>
     </section>
 
     <section id="paysage" class="py-10">
         <div class="container mx-auto py-8">
-            <div class="row">
+            <div class="row" data-aos="fade-up">
                 <h2 class="w-full my-2 text-4xl font-bold leading-tight text-center font-accent text-white">Paysage mental</h2>
                 <div class="w-full mb-4">
                     <div class="h-1 mx-auto bg-light w-64 opacity-25 my-0 py-0 rounded-t"></div>
@@ -307,7 +311,7 @@
             </div>
             <div class="grid-cols-4 p-8 md:space-y-0 md:grid md:gap-3 md:grid-rows-2">
                 {% for landscape in data.mentalLandscape %}
-                <div class="w-full rounded {% if landscape.big %}col-span-2 row-span-2{% endif %} slide-in-right slide-in-right-delay-{{ loop.index0 * 0.25 }}">
+                <div class="w-full rounded {% if landscape.big %}col-span-2 row-span-2{% endif %}" data-aos="zoom-in" data-aos-delay="{{ loop.index0 * 200 }}">
                     <img src="{{ absolute_url(landscape.image) }}" alt="{{ landscape.alt }}" class="block h-full w-full rounded-lg my-4 lg:my:0 object-cover object-center">
                 </div>
                 {% endfor %}
@@ -319,7 +323,7 @@
         <div class="relative px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
             <div class="relative mx-auto max-w-7xl">
             <div class="grid max-w-lg gap-9 mx-auto lg:grid-cols-3 lg:max-w-none">
-                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine slide-in-left slide-in-left-delay-0">
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine" data-aos="zoom-in" data-aos-delay="500">
                 <div class="flex-shrink-0">
                     <img class="object-cover w-full h-48" src="{{ absolute_url('images/main/experience.jpg') }}" alt="">
                 </div>
@@ -337,7 +341,7 @@
                     </div>
                 </div>
                 </div>
-                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine slide-in-left slide-in-left-delay-0.5">
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine" data-aos="zoom-in" data-aos-delay="1000">
                 <div class="flex-shrink-0">
                     <img class="object-cover w-full h-48" src="{{ absolute_url('images/main/competences.jpg') }}" alt="Compétences">
                 </div>
@@ -355,7 +359,7 @@
                     </div>
                 </div>
                 </div>
-                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine slide-in-left slide-in-left-delay-1">
+                <div class="flex flex-col overflow-hidden rounded-lg shadow-lg border-b-8 border-b-yellow-nine" data-aos="zoom-in" data-aos-delay="1500">
                 <div class="flex-shrink-0">
                     <img class="object-cover w-full h-48" src="{{ absolute_url('images/main/centres-interet.jpg') }}" alt="Centres d'intérêt">
                 </div>
@@ -389,9 +393,9 @@
                 <div class="grid-cols-4 p-8 md:space-y-0 md:grid md:gap-3 md:grid-rows-3">
                     {% for creation in data.creationsList %}
                         {% if loop.index == 2 or loop.index == 6 %}
-                            <div class="w-full col-span-2 row-span-2 rounded-lg fade-in fade-in-delay-{{ loop.index0 * 0.25 }}">
+                            <div class="w-full col-span-2 row-span-2 rounded-lg overflow-hidden" data-aos="zoom-in" data-aos-delay="{{ loop.index0 * 200 }}">
                         {% else %}
-                            <div class="w-full rounded-lg fade-in fade-in-delay-{{ loop.index0 * 0.25 }}">
+                            <div class="w-full rounded-lg overflow-hidden" data-aos="zoom-in" data-aos-delay="{{ loop.index0 * 200 }}">
                         {% endif %}
                                 <img alt="Créations" class="block h-full w-full rounded-lg object-cover object-center my-4 lg:my:0 hover:scale-110 transition ease-in-out duration-500" src="{{ absolute_url('images/creations/' ~ creation) }}" />
                             </div>
