@@ -24,16 +24,6 @@ class IndexController extends AbstractController
     #[Route('/', name: 'homepage')]
     public function index(): Response
     {
-        $data = ['nbYearsExperience' => (new \DateTime('2006-10-01'))->diff(new \DateTime('now'))->y];
-
-        $data['mentalLandscape'] = [
-            'rugby' => ['image' => 'images/home/rugby-asm.jpeg', 'alt' => 'Rugby', 'big' => false],
-            'zen' => ['image' => 'images/home/lac-zen.jpg', 'alt' => 'Sérénité', 'big' => true],
-            'chat' => ['image' => 'images/home/chat.jpg', 'alt' => 'Chat', 'big' => false],
-            'auvergne' => ['image' => 'images/home/auvergne.jpg', 'alt' => 'Auvergne', 'big' => false],
-            'equipe' => ['image' => 'images/home/equipe.jpg', 'alt' => 'Equipe', 'big' => false],
-        ];
-
-        return $this->render('home.html.twig', ['page' => 'home', 'data' => $data]);
+        return $this->render('base.html.twig', ['page' => 'home']);
     }
 }
