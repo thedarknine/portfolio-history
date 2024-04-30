@@ -1,8 +1,16 @@
+{% apply inline_css %}
+<style>
+* {
+    font-family: 'Verdana';
+    color: #666666;
+}
+</style>
+
 <container>
     <row>
         <columns>
             <spacer size="16"></spacer>
-            <p>Une nouvelle demande de contact a été reçue</p>
+            <h4>Une nouvelle demande de contact a été reçue</h4>
 
             <ul>
                 <li>Nom : {{ data.name }}</li>
@@ -16,3 +24,4 @@
         </columns>
     </row>
 </container>
+{% endapply %}
