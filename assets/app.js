@@ -1,3 +1,4 @@
+import './bootstrap.js';
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -5,6 +6,9 @@
  * which should already be in your base.html.twig.
  */
 import './vendor/@fontsource/oxygen/index.min.css';
+import './vendor/@fontsource/oxygen/300.css';
+import './vendor/@fontsource/oxygen/400.css';
+import './vendor/@fontsource/oxygen/700.css';
 import './vendor/@fontsource-variable/league-spartan/index.min.css';
 import './styles/app.css';
 
@@ -19,20 +23,6 @@ window.$ = window.jQuery = $;
 (function ($) {
     "use strict";
 
-    /*-----------------
-        Menu Stick
-    -----------------*/
-    var header = $('.sticky-bar');
-    var win = $(window);
-    win.on('scroll', function () {
-        var scroll = win.scrollTop();
-        if (scroll < 40) {
-            header.removeClass('stick');
-        } else {
-            header.addClass('stick');
-        }
-    });
-
     /*------ AOS ----*/
     // You get the current window width
     var width = window.innerWidth;
@@ -43,12 +33,14 @@ window.$ = window.jQuery = $;
     } else if (width > 600 && width <= 900) { // And you make a condition for tablets too
         AOS.init({
             offset: 300,
-            duration: 1200
+            duration: 1200,
+            once: true,
         });
     } else { // Else for just, you know, desktops
         AOS.init({
             offset: 50,
             duration: 1200,
+            once: true,
             // easing: 'ease-out-cubic',
         });
     }

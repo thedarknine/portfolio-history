@@ -38,6 +38,7 @@ fixtures:
 ## Check security
 security:
 	symfony check:security
+	symfony console importmap:audit
 
 ## Switch to dev env
 dev:
@@ -50,6 +51,7 @@ dev:
 prod:
 	composer dump-env production
 	composer install --no-dev --optimize-autoloader
+	symfony console importmap:install
 	symfony console tailwind:build --minify
 	symfony console asset-map:compile
 	APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear

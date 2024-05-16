@@ -2,6 +2,13 @@
 
 {% block title %}Product Owner{% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script type="module">
+        import '{{ asset('scripts/home.js') }}';
+    </script>
+{% endblock %}
+
 {% block body %}
 <!--Hero-->
 <section id="home" class="home-area -mt-24 pt-24 static">

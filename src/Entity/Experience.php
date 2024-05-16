@@ -161,10 +161,8 @@ class Experience
     public function getDuration(): array
     {
         $endDate = (null == $this->endDate) ? Carbon::now() : new Carbon($this->endDate);
-        $startDate = new Carbon($this->startDate);
 
-        $diff = $startDate->diffInMonths($endDate);
-
-        return ['nbYears' => floor($diff / 12), 'nbMonths' => $diff % 12];
+        return ['nbYears' => (new Carbon($this->startDate))->diff($endDate)->format('%y'), 
+            'nbMonths' => (new Carbon($this->startDate))->diff($endDate)->format('%m')];
     }
 }

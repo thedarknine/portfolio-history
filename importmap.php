@@ -51,4 +51,16 @@ return [
         'version' => '5.0.20',
         'type' => 'css',
     ],
+    '@fontsource/oxygen/300.css' => [
+        'version' => '5.0.13',
+        'type' => 'css',
+    ],
+    '@fontsource/oxygen/400.css' => [
+        'version' => '5.0.13',
+        'type' => 'css',
+    ],
+    '@fontsource/oxygen/700.css' => [
+        'version' => '5.0.13',
+        'type' => 'css',
+    ],
 ];

@@ -93,65 +93,66 @@
     background-size: 200% auto;
     border-radius: 5px;
     outline: none !important;
+}
 
-    &:hover {
-        color: white;
-        background-position: right center;
-        box-shadow: 0 0 30px -15px rgb(46 54 78 / 20%);
-    }
+.nine-btn-primary:hover {
+    color: white;
+    background-position: right center;
+    box-shadow: 0 0 30px -15px rgb(46 54 78 / 20%);
 }
 
 .text-muted {
     color: #a3a6a8 !important;
 }
 
-/* HEADER */
+/******************************/
+/* HEADER                     */
+/******************************/
 .sticky-bar {
     position: relative;
     z-index: 3;
     font-family: theme("fontFamily.accent");
     color: #fff;
+}
 
-    .menu-item {
-        @apply font-semibold;
+.sticky-bar:not(.stick) {
+    margin-top: 8px;
+}
 
-        border-bottom: 4px solid transparent;
+.sticky-bar.stick {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    margin-top: 0 !important;
+    color: #fff;
+    background: theme("colors.blue-dark");
+    box-shadow: 0 8px 10px 0 rgb(0 0 0 / 15%);
+    transition: all 0.3s ease 0s;
+    animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
+}
 
-        &:hover:not(.active) {
-            background-color: rgba(106 106 106 / 30%);
-            border-bottom: 4px solid theme("colors.turquoise");
-            border-radius: 6px 6px 0 0;
-            transition-delay: 0.3s;
-            transition-timing-function: ease-out;
-            transition-duration: 0.6s;
-        }
+.sticky-bar .menu-item {
+    @apply font-semibold;
 
-        &.active {
-            font-weight: 500;
-            color: theme("colors.turquoise");
-            text-transform: uppercase;
-            border-bottom: 2px solid theme("colors.turquoise");
-        }
-    }
+    border-bottom: 4px solid transparent;
+}
 
-    &.stick {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        width: 100%;
-        margin-top: 0 !important;
-        color: #fff;
-        background: theme("colors.blue-dark");
-        box-shadow: 0 8px 10px 0 rgb(0 0 0 / 15%);
-        transition: all 0.3s ease 0s;
-        animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
+.sticky-bar .menu-item:hover:not(.active) {
+    background-color: rgba(106 106 106 / 30%);
+    border-bottom: 4px solid theme("colors.turquoise");
+    border-radius: 6px 6px 0 0;
+    transition-delay: 0.3s;
+    transition-timing-function: ease-out;
+    transition-duration: 0.6s;
+}
 
-        .menu-item:hover {
-            
-            color: theme("colors.turquoise");
-        }
-    }
+.sticky-bar.stick .menu-item.active {
+    font-weight: 500;
+    color: theme("colors.turquoise");
+    text-transform: uppercase;
+    border-bottom: 2px solid theme("colors.turquoise");
 }
 
 .navbar-menu {
@@ -163,16 +164,18 @@
     @apply transform transition ease-in-out;
 
     color: theme("colors.perfect") !important;
-
-    &:hover {
-        @apply scale-105 shadow-lg bg-slate-400 p-2 rounded;
-
-        color: #fff;
-        text-decoration: none;
-    }
 }
 
-/* HOME */
+.btn-nine:hover {
+    @apply scale-105 shadow-lg bg-slate-400 p-2 rounded;
+
+    color: #fff;
+    text-decoration: none;
+}
+
+/******************************/
+/* HOME                       */
+/******************************/
 .home-area {
     position: relative;
     z-index: 1;
@@ -187,14 +190,13 @@
 
     transition: 0.5s;
     transition-delay: 0.3s;
-
-    &:hover {
-        background: linear-gradient(to right bottom,
-                theme("colors.blue-dark") 0%,
-                theme("colors.turquoise") 51%,
-                theme("colors.blue-dark") 100%);
-        border-color: theme("colors.turquoise");
-    }
+}
+.btn-social:hover {
+    background: linear-gradient(to right bottom,
+            theme("colors.blue-dark") 0%,
+            theme("colors.turquoise") 51%,
+            theme("colors.blue-dark") 100%);
+    border-color: theme("colors.turquoise");
 }
 
 #about p strong {
@@ -223,7 +225,9 @@
     @apply text-xs font-semibold inline-block py-1 px-2 rounded-full text-blue-nine bg-light/50 uppercase mr-2 mt-2;
 }
 
-/* FOOTER */
+/******************************/
+/* FOOTER                     */
+/******************************/
 .footer {
     @apply text-slate-400;
 
@@ -233,17 +237,19 @@
 .list-inline {
     padding-left: 0;
     list-style: none;
-
-    .list-inline-item {
-        display: inline-block;
-    }
-
-    .list-inline-item:not(:last-child) {
-        margin-right: 0.5rem;
-    }
 }
 
-/* Experience */
+.list-inline .list-inline-item {
+    display: inline-block;
+}
+
+.list-inline .list-inline-item:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+/******************************/
+/* Experience                 */
+/******************************/
 .bg-img-1 {
     background: url('https://carolinenoyer.fr/images/global/background-path-2.svg') no-repeat top center;
 }
@@ -274,7 +280,9 @@
     opacity: 0.25;
 }
 
-/* Skills */
+/******************************/
+/* Skills                     */
+/******************************/
 .skill {
     @apply border-light border-solid;
 
@@ -284,7 +292,9 @@
 
 /** ---------------------------------------------------------------------- **/
 
-/* Animations */
+/******************************/
+/* Animations                 */
+/******************************/
 @keyframes jump {
     0% {
         transform: translate3d(0, 15px, 0);
