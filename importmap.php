@@ -25,47 +25,30 @@ return [
     '@hotwired/turbo' => [
         'version' => '8.0.4',
     ],
-    '@fortawesome/fontawesome-free/css/all.css' => [
-        'version' => '6.5.2',
-        'type' => 'css',
-    ],
-    '@fontsource-variable/league-spartan/index.css' => [
-        'version' => '5.0.20',
-        'type' => 'css',
-    ],
-    '@fontsource/oxygen/index.css' => [
-        'version' => '5.0.13',
-        'type' => 'css',
-    ],
-    'aos/dist/aos.css' => [
-        'version' => '2.3.4',
-        'type' => 'css',
-    ],
-    'aos/dist/aos.js' => [
-        'version' => '2.3.4',
-    ],
-    'jquery/dist/jquery.min.js' => [
-        'version' => '3.7.1',
-    ],
     'typed.js' => [
         'version' => '2.1.0',
     ],
-    'jquery-ui/dist/jquery-ui.min.js' => [
-        'version' => '1.13.3',
+    'aos' => [
+        'version' => '2.3.4',
     ],
-    '@fontsource/oxygen/300.css' => [
+    'glightbox' => [
+        'version' => '3.3.0',
+    ],
+    'jquery' => [
+        'version' => '3.7.1',
+    ],
+    '@fontsource/oxygen' => [
+        'version' => '5.0.13',
+    ],
+    '@fontsource/oxygen/index.min.css' => [
         'version' => '5.0.13',
         'type' => 'css',
     ],
-    '@fontsource/oxygen/700.css' => [
-        'version' => '5.0.13',
-        'type' => 'css',
+    '@fontsource-variable/league-spartan' => [
+        'version' => '5.0.20',
     ],
-    'glightbox/dist/js/glightbox.min.js' => [
-        'version' => '3.3.0',
-    ],
-    'glightbox/dist/css/glightbox.min.css' => [
-        'version' => '3.3.0',
+    '@fontsource-variable/league-spartan/index.min.css' => [
+        'version' => '5.0.20',
         'type' => 'css',
     ],
 ];

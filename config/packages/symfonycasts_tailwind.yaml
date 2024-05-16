@@ -1,3 +1,0 @@
-symfonycasts_tailwind:
-    config_file: 'tailwind.config.js'
-    binary: 'bin/tailwindcss'

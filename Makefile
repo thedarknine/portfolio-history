@@ -42,13 +42,16 @@ security:
 ## Switch to dev env
 dev:
 	composer dump-env dev
+	composer install
 	symfony console cache:clear
 	APP_ENV=dev APP_DEBUG=1 php bin/console cache:clear
 
 ## Build to production
 prod:
-	composer dump-env prod
+	composer dump-env production
 	composer install --no-dev --optimize-autoloader
+	symfony console tailwind:build --minify
+	symfony console asset-map:compile
 	APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear
 
 

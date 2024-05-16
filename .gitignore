@@ -28,10 +28,9 @@
 /.php-cs-fixer.cache
 ###< friendsofphp/php-cs-fixer ###
 .twig-cs-fixer.cache
+*.sql
 
 ###> symfony/asset-mapper ###
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
-
-*.sql
